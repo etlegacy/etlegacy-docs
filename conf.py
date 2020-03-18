@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'ET: Legacy documentation'
+project = 'ET: Legacy'
 copyright = '2012-2020, ET: Legacy Team'
 author = 'ET: Legacy Team'
 
