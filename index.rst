@@ -25,6 +25,10 @@ There are two aspects to this project, an updated game version **ET: Legacy** an
 .. toctree::
    :maxdepth: 2
 
+   cvars
+   commands
+   resources
+
 
 Indices and tables
 ==================
