@@ -26,6 +26,7 @@ There are two aspects to this project:
    :maxdepth: 2
    :caption: Contents
 
+   manual
    cvars
    commands
    resources
