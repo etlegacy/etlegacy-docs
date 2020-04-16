@@ -24,17 +24,8 @@ There are two aspects to this project:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
 
    manual
    cvars
    commands
    resources
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
