@@ -12,13 +12,10 @@ Welcome to the ET: Legacy's documentation!
 
 Set during World War II and heavily focused on team work, the game was initially released in 2003 by Splash Damage and id Software. More than a decade after its release, after spending countless hours of escorting tanks and trucks, stealing gold and radar parts and transmitting confidential documents, it was time to dust off the game which consistently refused to go down.
 
-Ambition
---------
-
 There are two aspects to this project:
 
 * An updated game engine, **ET: Legacy**, which aims to fix bugs and security exploits, remove old dependencies, add useful features and modernize its graphics while still remaining compatible with ET 2.60b and as many of its mods as possible.
-* A new mod, **egacy**, which aims to add many useful features and improvements while staying close to the original gameplay, as well as being lightweight and extensible through Lua scripts.
+* A new mod, **Legacy**, which aims to add many useful features and improvements while staying close to the original gameplay, as well as being lightweight and extensible through Lua scripts.
 
 .. note:: This documentation aims to be a centralized reference only. For information about common issues, getting help or contributing to the project, ensure to visit our official `website <https://www.etlegacy.com>`_ and `wiki <https://github.com/etlegacy/etlegacy/wiki>`_.
 
