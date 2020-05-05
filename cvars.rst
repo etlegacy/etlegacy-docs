@@ -45,7 +45,9 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 						:height: 128 px
 						:scale:  20 %
 .. |ETL Logo|       image:: https://raw.githubusercontent.com/etlegacy/etlegacy-assets/master/logo/regular_black.png
-					      :width: 30 px
+					      :width:  1592 px
+					      :height: 1990 px
+					      :scale:  10 %
 					      :align: left
 
 --------
