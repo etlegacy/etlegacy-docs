@@ -47,7 +47,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 .. |ETL logo|       image:: https://raw.githubusercontent.com/etlegacy/etlegacy-assets/master/logo/regular_black.png
 					      :width:  1592 px
 					      :height: 1990 px
-					      :scale:  10 %
+					      :scale:  2 %
 						  
 .. |ss| raw:: html
 
@@ -120,7 +120,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_animState|se| |CVAR removed|
+|ss| cg_animState |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -200,7 +200,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_bigFont|se| |CVAR removed|
+|ss| cg_bigFont |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0.4"| *Possible values:* 
@@ -209,7 +209,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_blinktime|se| |CVAR removed|
+|ss| cg_blinktime |se| |CVAR removed|
 ^^^^
 
  - *Default:* "100" | *Possible values:* 
@@ -289,7 +289,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_bobYaw|se| |CVAR removed|
+|ss| cg_bobYaw |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0.002"| *Possible range:* 
@@ -298,7 +298,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_botMenuType|se| |CVAR removed|
+|ss| cg_botMenuType |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0"| *Possible values:*  
@@ -324,7 +324,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_cameraMode|se| |CVAR removed|
+|ss| cg_cameraMode |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0"| *Possible values:*  
@@ -332,7 +332,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_cameraOrbit|se| |CVAR removed|
+|ss| cg_cameraOrbit |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0"| *Possible values:*  
@@ -341,7 +341,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_cameraOrbitDelay|se| |CVAR removed|
+|ss| cg_cameraOrbitDelay |se| |CVAR removed|
 ^^^^
 
  - *Default:* "50"| *Possible values:*  
@@ -361,7 +361,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_clipboardName|se| |CVAR removed|
+|ss| cg_clipboardName |se| |CVAR removed|
 ^^^^
 
  - *Default:* " "| *Possible values:*  
@@ -577,7 +577,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_deferPlayers|se| |CVAR removed|
+|ss| cg_deferPlayers |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -826,7 +826,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_enableBreath|se| |CVAR removed|
+|ss| cg_enableBreath |se| |CVAR removed|
 ^^^^
 
  - *Default:* "1" | *Possible values:* 
@@ -842,7 +842,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_etVersion|se| |CVAR private|
+|ss| cg_etVersion |se| |CVAR private|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -850,7 +850,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_fastSolids|se| |CVAR removed|
+|ss| cg_fastSolids |se| |CVAR removed|
 ^^^^
 
  - *Default:* "1" | *Possible values:* 
@@ -909,7 +909,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_footsteps|se| |CVAR removed|
+|ss| cg_footsteps |se| |CVAR removed|
 ^^^^
 
  - *Default:* "1" | *Possible values:* 
@@ -1013,7 +1013,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_ignore|se| |CVAR removed|
+|ss| cg_ignore |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -1080,7 +1080,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_message|se| |CVAR removed|
+|ss| cg_message |se| |CVAR removed|
 ^^^^
 
  - *Default:* "1" | *Possible values:* 
@@ -1088,7 +1088,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_messagePlayer|se| |CVAR removed|
+|ss| cg_messagePlayer |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -1096,7 +1096,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_messagePlayerName|se| |CVAR removed|
+|ss| cg_messagePlayerName |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -1122,7 +1122,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_movespeed|se| |CVAR removed|
+|ss| cg_movespeed |se| |CVAR removed|
 ^^^^
 
  - *Default:* "76" | *Possible values:* 
@@ -1172,7 +1172,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_noRender|se| |CVAR removed|
+|ss| cg_noRender |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -1180,7 +1180,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_noTaunt|se| |CVAR removed|
+|ss| cg_noTaunt |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -1188,7 +1188,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_noVoiceChats|se| |CVAR removed|
+|ss| cg_noVoiceChats |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -1196,7 +1196,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 --------
 
-|ss|cg_noVoiceText|se| |CVAR removed|
+|ss| cg_noVoiceText |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -1312,7 +1312,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_railTrailTime|se| |CVAR removed|
+|ss| cg_railTrailTime |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -1368,7 +1368,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_runpitch|se| |CVAR removed|
+|ss| cg_runpitch |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0.002" | *Possible values:* 
@@ -1376,7 +1376,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_runroll|se| |CVAR removed|
+|ss| cg_runroll |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0.005" | *Possible values:*
@@ -1468,7 +1468,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_smallFont|se| |CVAR removed|
+|ss| cg_smallFont |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0.25"| *Possible values:* 
@@ -1506,7 +1506,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_specSwing|se| |CVAR removed|
+|ss| cg_specSwing |se| |CVAR removed|
 ^^^^
 
  - *Default:* | *Possible values:* 
@@ -1524,7 +1524,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_stereoSeparation|se| |CVAR removed|
+|ss| cg_stereoSeparation |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0.4" | *Possible values:* 
@@ -1618,7 +1618,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_timescaleFadeEnd|se| |CVAR removed|
+|ss| cg_timescaleFadeEnd |se| |CVAR removed|
 ^^^^
 
  - *Default:* "1"| *Possible values:*  
@@ -1626,7 +1626,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_timescaleFadeSpeed|se| |CVAR removed|
+|ss| cg_timescaleFadeSpeed |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0"| *Possible values:*  
@@ -1724,7 +1724,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_viewsize|se| |CVAR removed|
+|ss| cg_viewsize |se| |CVAR removed|
 ^^^^
 
  - *Default:* "100"| *Possible values:*  
@@ -1801,7 +1801,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_zoomDefaultBinoc|se| |CVAR removed|
+|ss| cg_zoomDefaultBinoc |se| |CVAR removed|
 ^^^^
 
  - *Default:* "22.5" = enabled| *Possible values:*  
@@ -1810,7 +1810,7 @@ h### *cg_popupStayTime* |CVAR added|
 --------
 
 
-|ss|cg_zoomDefaultFG|se| |CVAR removed|
+|ss| cg_zoomDefaultFG |se| |CVAR removed|
 ^^^^
 
  - *Default:* "55" = enabled| *Possible values:*  
@@ -1834,7 +1834,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_zoomDefaultSnooper|se| |CVAR removed|
+|ss| cg_zoomDefaultSnooper |se| |CVAR removed|
 ^^^^
 
  - *Default:* "40" = enabled| *Possible values:* 
@@ -1842,7 +1842,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_zoomFOV|se| |CVAR removed|
+|ss| cg_zoomFOV |se| |CVAR removed|
 ^^^^
 
  - *Default:* "22.5" = enabled| *Possible values:*  
@@ -1850,7 +1850,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_zoomStepBinoc|se| |CVAR removed|
+|ss| cg_zoomStepBinoc |se| |CVAR removed|
 ^^^^
 
  - *Default:* "3" = enabled| *Possible values:*  
@@ -1858,7 +1858,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_zoomStepFG|se| |CVAR removed|
+|ss| cg_zoomStepFG |se| |CVAR removed|
 ^^^^
 
  - *Default:* "10" = enabled| *Possible values:*  
@@ -1877,7 +1877,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cg_zoomStepSnooper|se| |CVAR removed|
+|ss| cg_zoomStepSnooper |se| |CVAR removed|
 ^^^^
 
  - *Default:* "5" = enabled| *Possible values:*  
@@ -2029,7 +2029,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cl_debugTranslation|se| |CVAR removed|
+|ss| cl_debugTranslation |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" = disabled| *Possible values:*  
@@ -2132,7 +2132,7 @@ h### *cg_popupStayTime* |CVAR added|
 
 --------
 
-|ss|cl_inGameVideo|se| |CVAR removed|
+|ss| cl_inGameVideo |se| |CVAR removed|
 ^^^^
 
  - *Default:* "1" | *Possible values:* 
@@ -2159,7 +2159,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|cl_language|se| |CVAR removed|
+|ss| cl_language |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" = English| *Possible values:* 
@@ -2185,7 +2185,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|cl_motd|se| |CVAR removed|
+|ss| cl_motd |se| |CVAR removed|
 ^^^^
 
  - *Default:* "1"| *Possible values:* 
@@ -2194,7 +2194,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|cl_motdString|se| |CVAR removed|
+|ss| cl_motdString |se| |CVAR removed|
 ^^^^
 
  - *Default:* " "| *Possible values:* 
@@ -2455,7 +2455,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|cl_updateAvailable|se| |CVAR removed|
+|ss| cl_updateAvailable |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -2463,7 +2463,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|cl_updateFiles|se| |CVAR removed|
+|ss| cl_updateFiles |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -2471,7 +2471,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|cl_visibleClients|se| |CVAR removed|
+|ss| cl_visibleClients |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -2479,7 +2479,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|cl_waitForFire|se| |CVAR removed|
+|ss| cl_waitForFire |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -2569,7 +2569,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|com_cameraMode|se| |CVAR removed|
+|ss| com_cameraMode |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0"| *Possible values:* 
@@ -2728,7 +2728,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|com_logosPlaying|se| |CVAR removed|
+|ss| com_logosPlaying |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -2980,7 +2980,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|con_debug|se| |CVAR removed|
+|ss| con_debug |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -3017,7 +3017,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|con_restricted|se| |CVAR removed|
+|ss| con_restricted |se| |CVAR removed|
 ^^^^
 
  - *Default:* "0" | *Possible values:* 
@@ -3218,7 +3218,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|fs_buildGame|se| |CVAR removed|
+|ss| fs_buildGame |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -3226,7 +3226,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|fs_buildPath|se| |CVAR removed|
+|ss| fs_buildPath |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -3234,7 +3234,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|fs_CDpath|se| |CVAR removed|
+|ss| fs_CDpath |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -3242,7 +3242,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|fs_copyFiles|se| |CVAR removed|
+|ss| fs_copyFiles |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -3297,7 +3297,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|fs_restrict|se| |CVAR removed|
+|ss| fs_restrict |se| |CVAR removed|
 ^^^^
 
  - *Default:* " " | *Possible values:* 
@@ -3443,7 +3443,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|r_ati_fsaa_samples|se| |CVAR removed|
+|ss| r_ati_fsaa_samples |se| |CVAR removed|
 ^^^^
 
 {TODO} *Seems to be removed in ETL, please check.*
@@ -3453,7 +3453,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|r_ati_truform_normalmode|se| |CVAR removed|
+|ss| r_ati_truform_normalmode |se| |CVAR removed|
 ^^^^
 
  - *Default:* | *Possible values:* 
@@ -3461,7 +3461,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|r_ati_truform_pointmode|se| |CVAR removed|
+|ss| r_ati_truform_pointmode |se| |CVAR removed|
 ^^^^
 
  - *Default:* | *Possible values:* 
@@ -3469,7 +3469,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-|ss|r_ati_truform_tess|se| |CVAR removed|
+|ss| r_ati_truform_tess |se| |CVAR removed|
 ^^^^
 
  - *Default:* | *Possible values:* 
