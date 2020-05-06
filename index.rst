@@ -25,4 +25,5 @@ There are two aspects to this project:
    manual
    cvars
    commands
+   vsays
    resources
