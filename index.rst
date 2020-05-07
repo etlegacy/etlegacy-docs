@@ -27,3 +27,4 @@ There are two aspects to this project:
    commands
    vsays
    resources
+   skillrating
