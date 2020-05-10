@@ -17,7 +17,9 @@ There are two aspects to this project:
 * An updated game engine, **ET: Legacy**, which aims to fix bugs and security exploits, remove old dependencies, add useful features and modernize its graphics while still remaining compatible with ET 2.60b and as many of its mods as possible.
 * A new mod, **Legacy**, which aims to add many useful features and improvements while staying close to the original gameplay, as well as being lightweight and extensible through Lua scripts.
 
-.. note:: This documentation aims to be a centralized reference only. For information about common issues, getting help or contributing to the project, ensure to visit our official `website <https://www.etlegacy.com>`_ and `wiki <https://github.com/etlegacy/etlegacy/wiki>`_.
+.. important:: This documentation aims to be a centralized reference only. For information about common issues, getting help or contributing to the project, ensure to visit the official `website <https://www.etlegacy.com>`_ and `wiki <https://github.com/etlegacy/etlegacy/wiki>`_.
+
+.. note:: For scripting customization of Legacy mod, check the `Lua API reference <https://legacy-lua-api.readthedocs.io/>`_.
 
 .. toctree::
    :maxdepth: 2
