@@ -652,7 +652,7 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 
 {TODO} *Remove CVAR and add it as bitflag 4 to [[List_of_Cvars_(new)/#cg_drawCrosshairInfo|cg_drawCrosshairInfo]].*
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
+ - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = white names, "1" = coloured names
  - Display names of teammates when hovering over them with your crosshair.
  - *See also:* [[List_of_Cvars_(new)/#cg_fontScaleCN|cg_fontScaleCN]] 
 
@@ -764,6 +764,14 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
 .. image:: https://i.imgur.com/9rRZePK.jpg 
 
 --------
+
+*cg_drawSpectatorNames* |CVAR added|
+^^^^
+
+ - *Default:* "2" = enabled| *Possible values:* "0" = disabled; "1" = white names, "2" = coloured names 
+ - Display names of players when spectating or playing demos.
+
+ --------
 
 *cg_drawSpeed* |CVAR added|
 ^^^^
