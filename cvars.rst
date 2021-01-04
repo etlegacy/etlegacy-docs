@@ -2736,6 +2736,14 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
+*com_masterServer* |CVAR added|
+^^^^
+
+ - *Default:* "master.etlegacy.com:27950" = maximized| *Possible values:* domain:port
+ -  Allow to override the default master server
+
+--------
+
 *com_maxFPS*
 ^^^^
 
@@ -2769,6 +2777,14 @@ ET: Legacy comes with translations created by the community. In case you would l
 
  - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
  - Display the official ET: Legacy "message of the day". 
+
+--------
+
+*com_motdServer* |CVAR added|
+^^^^
+
+ - *Default:* "motd.etlegacy.com:27951" = maximized| *Possible values:* domain:port
+ -  Allow to override the default motd server
 
 --------
 
@@ -2916,6 +2932,14 @@ ET: Legacy comes with translations created by the community. In case you would l
 
  - *Default:* "New version available. Do you want to update now?" | *Possible values:* 
  - Stores the string used for the pop-up when there is a new update. 
+
+--------
+
+*com_updateServer* |CVAR added|
+^^^^
+
+ - *Default:* "update.etlegacy.com:27951" = maximized| *Possible values:* domain:port
+ -  Allow to override the default update server
 
 --------
 
