@@ -18,7 +18,7 @@ As FPS require skills in multiple areas like reflex, planning, tactical analysis
 
 One another important reason why a skill rating system should only consider match results to compute the skill is that accounting for extra information given by in-game parameters might be abused by players. This can be very detrimental to team-based games, where players would try to maximize statistics that boost their skill (e.g. their own number of kills or awards) instead of doing what is best for their team to win.
 
-To give an exemple, let's consider the following: Which is the better player, the rambo medic that kills these 20 random enemies that are easy targets, or that one guy that smartly avoid fight but actually steals and retrieves the objective to win the map? The former contributes a bit to the team, but it is the latter that makes the decisive move. Any system based on in-game parameters (such as number of kills) would give lot of credits to the first player and only a few to the second one, but it it he that did the most important part of the job. By looking at only the outcome, and with the laws of probability, it is the real ability of making the team win that is measured on the long term. Such a skill rating also cannot be "farmed" with specific actions, but requires players to do their best to help the team to increase.
+To give an example, let's consider the following: Which is the better player, the rambo medic that kills these 20 random enemies that are easy targets, or that one guy that smartly avoid fight but actually steals and retrieves the objective to win the map? The former contributes a bit to the team, but it is the latter that makes the decisive move. Any system based on in-game parameters (such as number of kills) would give lot of credits to the first player and only a few to the second one, but it is them that did the most important part of the job. By looking at only the outcome, and with the laws of probability, it is the real ability of making the team win that is measured on the long term. Such a skill rating also cannot be "farmed" with specific actions, but requires players to do their best to help the team to increase.
 
 In addition, in-game ranks are tied to the Skill Rating value when the system is enabled. Ranks thus provide a quick way to display the actual skill of players. When Skill Rating is disabled, the ranks will behave as they normally do by being tied to XPs.
 
@@ -165,7 +165,7 @@ The model allows for real time win performance prediction.
 
 Parameters:
 
-    * **Rating uncertainty**: the down side to this method of modeling uncertainty is that is does not allow for a later change in an individuals rating due to long periods of inactivity or due to improving rating over time. This could be implemented with a form of certainty decay that lowered an individual's certainty value over time (see Glicko-2 rating volatility).
+    * **Rating uncertainty**: the downside to this method of modeling uncertainty is that is does not allow for a later change in an individuals rating due to long periods of inactivity or due to improving rating over time. This could be implemented with a form of certainty decay that lowered an individual's certainty value over time (see Glicko-2 rating volatility).
     * **Map side**: a similar measure of uncertainty could be applied to the field-group parameters.
     * **Server difficulty**: the accuracy of server difficulty comparison is affected by how often players move between servers.
 
@@ -186,11 +186,11 @@ Two approaches to improving the robustness of the current model include:
 **Bug**
 
    * In the latest implementation of etpub, there is a bug concerning the time played in each team values (`mapAxisTime`/`mapAlliesTime`). This value is not computed when players are in limbo (most likely due to an unrelated change that was later implemented), so the more a player spend in limbo, the less accurate these values are.
-   * Consequently, the PRW can't be accurate either. This bug is also still present in latest release of the silent mod. It's been reported to the Silent team but they didn't fix the issue.
+   * Consequently, the PRW can't be accurate either. This bug is also still present in the latest release of the Silent mod. It's been reported to the Silent team, but they didn't fix the issue.
 
 TrueSkill
 ---------
-The TrueSkill system is a more modern algorythm that has been developed by MicroSoft for its XBox matching service. It has the advantage over the ETPub PR that it starts very low and increases over time (like XPs), before stabilizing when the skill rating is accurate (like the ETPub PR).
+The TrueSkill system is a more modern algorithm that has been developed by MicroSoft for its XBox matching service. It has the advantage over the ETPub PR that it starts very low and increases over time (like XPs), before stabilizing when the skill rating is accurate (like the ETPub PR).
 
 .. important::
     **Type**: Bayesian network using Thurstone-Mosteller model (Normal distribution)
