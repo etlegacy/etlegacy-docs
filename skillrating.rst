@@ -371,41 +371,132 @@ Anwers to common questions about the implemented Bayesian skill rating system.
 
 General
 -------
+
 * What is the Skill rating system?
+
+ It is an implementation of the `TrueSkill <https://en.wikipedia.org/wiki/TrueSkill>`_ statistical ranking system developed by Microsoft for its video game matchmaking on Xbox Live.
+
 * How does this compare to the popular Elo?
+
+`Elo <https://en.wikipedia.org/wiki/Elo_rating_system>`_ is a simple rating system that models the relative strength (or skill) of players by a single number.
+`Glicko <https://en.wikipedia.org/wiki/Glicko_rating_system>`_ is more elaborated system models the strength `Mu` and additionally the uncertainty `Sigma` of that value.
+TrueSkill is a generalization of Glicko for multiple teams and multiple players games, and the Skill Rating expands on it to fit ET: Legacy FPS matches.
+
 * What does the rating value represent?
+
+The Skill Rating value is modeled as `SR = Mu - 3 * Sigma`, and represents the conservative relative skill of a player in a specific pool of players. In other words, it's a conservative way to say "the player skill is 99.7% likely to be better than this value" and can't be absolutely compared across servers.
+
 * New players have a rating of zero. Does this mean the system believe they are noob?
+
+No, every player starts with an average rating `Mu = 25` with a defined uncertainty of `Sigma = 25/3`, which means every new player SR is displayed as zero despite being evaluated as "average" under the hood.
+
 * Why not using kills or in-game actions to rate players?
+
+As FPS require skills in multiple areas like reflex, planning, tactical analysis or teamwork, with the relative importance of these skills depending on the map, game mode, player roles or team compositions. A **skill rating** could be defined as a metric measuring *"all the parameters of a player that help his team to win"* rather than the various in-game micro-parameters (such as accuracy, number of kills, etc.), which are vastly limited to define what the skill of a player is. Over the long term, the skill of a player can be measured more accurately by simply looking at the result of a game.
+
+Another important reason why a skill rating system should only consider match results to compute the skill is that accounting for extra information given by in-game parameters might be abused by players. This can be very detrimental to team-based games, where players would try to maximize statistics that boost their skill (e.g. their own number of kills or awards) instead of doing what is best in a specific situation to help their team win.
+
 * Why is TrueSkill adapted to public servers?
+
+Public servers don't have many constraints. Players can join, leave a match at any time, switch team at any moment, or join the team with the most players at their own discretion. All of these aspects are taken into account by the SR algorithm.
+
 * What is the map bias?
+
+The vast majority of the maps played are asymmetric, and as such are easier for one side compared to the other. While this aspect isn't modelled in the original TrueSkill system, it is taken into account into the implemented SR system as an additional parameter.
+
 * What is taken into account while calculating SR?
+
+The mean and uncertainty values of a player skill, the skill of their teammates and enemy players, the difference of strength of each team, the time played in each team, the bias of the map played.
 
 What if...
 ----------
+
 * What if players change team to be on the winning team instead?
-* What happens if I am playing only with noobs, which make me lose evertime. I cannot get a strong rating, despite being better than them!
+
+The relative strength of teams is taken into account. Winning a game in a team that is evaluated as much stronger than the other will indeed results in an increase of SR of the player, but that increase will be very minimal and can be as low as thousandths of a more balanced game.
+
+* What happens if I am playing only with noobs, which make me lose ever time. I cannot get a strong rating, despite being better than them!
+
+Again, the relative strength of teams is taken into account. Losing a game in a team that is evaluated as much weaker than the other will indeed results in an decrease of SR of the player, but that decrease will be very minimal and can be as low as thousandths of a more balanced game.
+
 * What happens if players switch team to the winning team before the end of the map?
+
+The time played in both team is taken into account. Switching team at the last moment will not result in a significant increase of rating, and in fact can still result in a significant decrease of rating. 
+
 * What happens if players disconnect from the current match?
+
+The time played by each player, even those that left before the end of the match, is taken into account in the SR calculation. Their SR will also be adjusted accordingly.
+
 * What happens if players disconnect and reconnect to the same match?
+
+The time played prior disconnection will be taken into account. Their SR will be adjusted accordingly.
+
 * How does one cheat the system?
+
+By trying to do their best to help their team win a game.
 
 Tell me more...
 ---------------
+
 * The win percentage indicated team A would win, but team actually B won. Explain!
+
+The win percentage is a real time calculation of the expected outcome of a game, based on the above mentioned parameters. It can't predict the future accurately, but is somewhat good at giving a prediction that is better than flipping a coin. For reference, accuracy data taken on millions of Halo games reveals that the win percentage is accurate in about ~70% of times.
+
 * I'm playing alone on an empty server, and the win percentage indicate 50%. Explain!
+
 * How does one make advantage of the system to boost his rating?
+
+As the relative strength of teams is taken into account, an "easy" way to get a significant SR increase is to play in the weaker team and beat the odds.
+
 * The Scoreboard has most strong players in one team, yet the scoreboard set the winning percentage to the weak team. Explain!
+
+The winning percentage isn't a measure taken for a specific time only, but takes the time played prior to it. As such, if most strong players are in a weaker team, it means they switched team at some point during the match.
+
 * How long does it take for the rating to converge toward an accurate value?
+
+It depends on the number of players, their existing relative SR and the size of teams during matches. As a rule of thumb, the more players on a server and the more experienced they are, the faster your SR will converge.
+
 * Why use shuffle by SR instead of XP shuffle?
+
+XP shuffle is based on the ongoing match or campaign, and is based on micro-parameters that might not be relevant for determining who is better skilled. SR is based on long term data of game outcomes and as such is a better way to balance team.
+
 * The maps are always favoring a side. What about this?
+
+The map bias is taken into account in the SR calculation. As such, playing one side or the other isn't a determinant factor to increase SR.
+
 * How is the map bias computed?
+
+It is modeled as an extra parameter evaluating home field advantage using past outcome on that specific map. 
+
 * What influence do bots have on map bias (is this good for bias calculation)?
+
+Since bots are equally stupid, they actually do help in evaluating the map bias. 
 
 Advanced questions
 ------------------
+
 * Why using TrueSKill and not using the system implemented in ETPub?
+
+Simply said, TrueSkill is a more modern approach of the model used by ETPub. Specifically, it is less prone to rating uncertainty becoming stuck over time, and its conservative estimation that is slowly increasing provides a better alternative to replace XPs save in the eyes of players.
+What the ETPub system did better than TrueSkill is in taking the map bias parameter (absent in the original TrueSkill), which was implemented as an extension in the SR implementation.
+
 * What are the differences between TrueSkill and the system implemented in Legacy mod?
-* What are the actual limitation of the system?
-* Why aren't you calling this system "True Skill"?
+
+The implementation extends the algorithm with an extra parameter to take into account the map bias of each match.
+
+* What are the actual limitations of the system?
+
+The system does several simplification by assuming associations to be additive and linear, such as team performance, which could be improved upon.
+The evaluated SR also doesn't take long periods of inactivity into account, as player performance should be expected to be lower than it was estimated previously. While some random noise is added in order to prevent the SR to converge so much that it wouldn't change anymore, certainty decay might be another possibility of improving the system.
+
+* Why aren't you calling this system "TrueSkill"?
+
+TrueSkill is trademarked by Microsoft. While the algorithm is also patented in the US, software patents are however excluded from patentability in Europe (where all the core members of ET:Legacy team are located), not to mention there is very little that isn't actually pure Bayesian statistics. Also, the ET: Legacy project is not commercially driven.
+
 * Will this system be used for match making?
-* Can you give me resource to learn more about the system?
+
+It could be used as a basis for an upcoming matchmaking feature.
+
+* Can you give me resources to learn more about the system?
+
+See the `Existing implementations` for resources, articles and the different papers used in the SR implementation in ET:Legacy.
