@@ -298,7 +298,7 @@ We'll implement TrueSkill, for the following reasons:
 * Add cvar in default config file
 * Implements useful commands (/rating, /allrating, ..)
 
-See also `#403` for implementation details.
+See also the `related tracker issue <https://github.com/etlegacy/etlegacy/issues/403>`_ for implementation details.
 
 **Language**
 
