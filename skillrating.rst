@@ -380,7 +380,7 @@ General
 
 `Elo <https://en.wikipedia.org/wiki/Elo_rating_system>`_ is a simple rating system that models the relative strength (or skill) of players by a single number.
 `Glicko <https://en.wikipedia.org/wiki/Glicko_rating_system>`_ is more elaborated system models the strength `Mu` and additionally the uncertainty `Sigma` of that value.
-TrueSkill is a generalization of Glicko for multiple teams and multiple players games, and the Skill Rating expands on it to fit ET: Legacy FPS matches.
+TrueSkill is a generalization of Glicko for multiple teams and multiple players games, and the Skill Rating system expands on it to fit Legacy matches even better.
 
 * What does the rating value represent?
 
@@ -413,15 +413,15 @@ What if...
 
 * What if players change team to be on the winning team instead?
 
-The relative strength of teams is taken into account. Winning a game in a team that is evaluated as much stronger than the other will indeed results in an increase of SR of the player, but that increase will be very minimal and can be as low as thousandths of a more balanced game.
+The relative strength of teams is taken into account. Winning a game in a team that is evaluated as much stronger than the other will indeed result in an increase of SR of the player, but that increase will be very minimal and can be as low as thousandths of a more balanced game.
 
 * What happens if I am playing only with noobs, which make me lose ever time. I cannot get a strong rating, despite being better than them!
 
-Again, the relative strength of teams is taken into account. Losing a game in a team that is evaluated as much weaker than the other will indeed results in an decrease of SR of the player, but that decrease will be very minimal and can be as low as thousandths of a more balanced game.
+Again, the relative strength of teams is taken into account. Losing a game in a team that is evaluated as much weaker than the other will indeed result in an decrease of SR of the player, but that decrease will be very minimal and can be as low as thousandths of a more balanced game.
 
 * What happens if players switch team to the winning team before the end of the map?
 
-The time played in both team is taken into account. Switching team at the last moment will not result in a significant increase of rating, and in fact can still result in a significant decrease of rating. 
+The time played in both team is taken into account. Switching team at the last moment will not result in a significant increase of rating, and in fact will likely still result in a significant decrease of rating.
 
 * What happens if players disconnect from the current match?
 
@@ -443,6 +443,8 @@ Tell me more...
 The win percentage is a real time calculation of the expected outcome of a game, based on the above mentioned parameters. It can't predict the future accurately, but is somewhat good at giving a prediction that is better than flipping a coin. For reference, accuracy data taken on millions of Halo games reveals that the win percentage is accurate in about ~70% of times.
 
 * I'm playing alone on an empty server, and the win percentage indicate 50%. Explain!
+
+Some crash-inducing mathematical weirdness occurs when dividing by zero. As such, the algorithm assumes that at least one player is present in each team, which shouldn't be a big problem in a multiplayer game.
 
 * How does one make advantage of the system to boost his rating?
 
@@ -478,11 +480,10 @@ Advanced questions
 * Why using TrueSKill and not using the system implemented in ETPub?
 
 Simply said, TrueSkill is a more modern approach of the model used by ETPub. Specifically, it is less prone to rating uncertainty becoming stuck over time, and its conservative estimation that is slowly increasing provides a better alternative to replace XPs save in the eyes of players.
-What the ETPub system did better than TrueSkill is in taking the map bias parameter (absent in the original TrueSkill), which was implemented as an extension in the SR implementation.
 
 * What are the differences between TrueSkill and the system implemented in Legacy mod?
 
-The implementation extends the algorithm with an extra parameter to take into account the map bias of each match.
+What the ETPub system did better than TrueSkill is in modeling the effect of asymmetric maps, which is completely absent in the original TrueSkill. The implementation extends the algorithm to take into account this map bias in each match.
 
 * What are the actual limitations of the system?
 
@@ -495,8 +496,8 @@ TrueSkill is trademarked by Microsoft. While the algorithm is also patented in t
 
 * Will this system be used for match making?
 
-It could be used as a basis for an upcoming matchmaking feature.
+It could be used as a basis for an upcoming matchmaking feature. However, such feature first and foremost depends on the availability of a wide pool of players, which might not be big enough anymore to ensure it works reliably.
 
 * Can you give me resources to learn more about the system?
 
-See the `Existing implementations` for resources, articles and the different papers used in the SR implementation in ET:Legacy.
+See the `Existing implementations` section for resources, articles and the different papers used in the SR implementation in Legacy mod.
