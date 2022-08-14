@@ -2,7 +2,9 @@
 List of CVARs
 ===================
 
-Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, offers a wide range of console variables, so-called *CVARs*. These are options that can be used to customize the game's behaviour, setup and appearance to accommodate the player's needs or preferences. They can be set from inside a configuration file _(.cfg)_ , the command line or, in most cases from the console. For help on how to use and set CVARs, please refer to the [[FAQ_(new)#How-can-I-customize-my-game| "How can I customize my game?"]] section in the [[FAQ_(new)|FAQ]].
+Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, offers a wide range of console variables, so-called *CVARs*. These are options that can be used to customize the game's behaviour, setup and appearance to accommodate the player's needs or preferences. Most can be set from the menu. But all can be set from inside a configuration file _(.cfg)_ , the command line or, in most cases from the console.
+
+Version goes here:
 
 .. contents:: `Table of contents`
    :depth: 1
@@ -10,26 +12,6 @@ Enemy Territory: Legacy, just like the original Wolfenstein: Enemy Territory, of
    
 --------
 
-.. |CVAR removed|   image:: https://i.imgur.com/5hXJzMU.png
-						:width:  256 px
-						:height: 128 px
-						:scale:  20 %
-.. |CVAR changed|   image:: https://i.imgur.com/swu617s.png
-						:width:  256 px
-						:height: 128 px
-						:scale:  20 %
-.. |CVAR added|     image:: https://i.imgur.com/T11StpW.png
-						:width:  256 px
-						:height: 128 px
-						:scale:  20 %
-.. |CVAR protected| image:: https://i.imgur.com/6Fs1PjK.png
-						:width:  256 px
-						:height: 128 px
-						:scale:  20 %
-.. |CVAR private|   image:: https://i.imgur.com/7XQuKlF.png
-						:width:  256 px
-						:height: 128 px
-						:scale:  20 %
 .. |ETL logo|       image:: https://raw.githubusercontent.com/etlegacy/etlegacy-assets/master/logo/regular_black.png
 					      :width:  1592 px
 					      :height: 1990 px
@@ -111,23 +93,25 @@ Player cvars
 *cg_announcer*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled | *Possible values:* "0" = disabled; "1" = enabled.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
  - Toggles the announcer voice on map start _("FIGHT!")_, and _("Prepare to Fight!")_.
-
---------
-
-*cg_antilag*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled | *Possible values:* "0" = disabled; "1" = enabled
- - Internal CVAR. This CVAR is not used and should be removed.
 
 --------
 
 *cg_atmosphericEffects*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled | *Possible values:* "0" = disabled; "1" = enabled.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
  - Toggles display of atmospheric map effects like rain and snow.
 
 --------
@@ -164,27 +148,43 @@ Player cvars
 *cg_autoActivate*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled.
- - Toggles automatically picking up items such as ammo/health packs, weapons, objectives, etc.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/xqTpCtd.jpg
+ - Toggles automatically picking up items such as ammo/health packs, weapons, objectives, etc.
 
 --------
 
 *cg_autoMapZoom*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "5.159"| *Possible range:* "0" = disabled; < ?
- - Adjust the zoom level of the compass minimap.
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 5.159                                     |
+  +-------------------------------------+-------------------------------------------+
+  | Range start                         | Range end                                 |
+  +=====================================+===========================================+
+  | 1                                   | 7.43                                      |
+  +-------------------------------------+-------------------------------------------+
+  |                   .. centered:: Higher value is more zoomed in.                 |
+  +---------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/Hbct0DD.jpg
+ - Adjust the zoom level of the compass minimap.
+ - There is no limit on the range when setting the cvar manually.
 
 --------
 
 *cg_autoReload*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
  - Automatically reload weapon when clip becomes empty. Keep in mind that reloading can't be cancelled!
 
 --------
@@ -192,230 +192,337 @@ Player cvars
 *cg_autoSwitch*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
  - Automatically switch to a new weapon when out of ammunition.
- - *CAREFUL:* Do not confuse with [[List_of_Cvars_(new)/#cg_noAmmoAutoSwitch|cg_noAmmoAutoSwitch]]!
+ - *CAREFUL:* Do not confuse with `cg_noAmmoAutoSwitch`_!
 
 --------
 
 *cg_showBlood*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Toggles showing blood spurt effect when players are shot
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/XlEbfZl.jpg
+ - Toggles showing blood spurt effect when players are shot
 
 --------
 
 *cg_bloodDamageBlend*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1.0" = opaque| *Possible range:* "0.0" = transparent; "0.25" = light; "0.5" = medium; "0.75" = heavy; "1.0" = opaque
- - Opaqueness of on-screen blood splatter effect when you are being shot.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.0                                 | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Opaqueness of on-screen blood splatter effect when you are being shot |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/EVsomjX.jpg
+ - Menu entries are None, Light, Medium, Heavy, Full. Value increased by 0.25 per step respectively.
 
 --------
 
 *cg_bloodFlash*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Doesn't seem to have any effect.*
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.0                                 | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Scale of on-screen blood splatter effect when you are being shot      |
+  +-------------------------------------------------------------------------------------+
 
- - *Default:* "1.0" = full| *Possible range:* "0.0" = none; "0.25" = light; "0.5" = medium; "0.75" = heavy; "1.0" = full
- - Toggles the blood effect when you are shot. _(source: antman)_
- - Red blood \"flash\" scale when receiving damage. _(source: UI Options)_
+ - Menu entries are None, Light, Medium, Heavy, Full. Value increased by 0.25 per step respectively.
 
 --------
 
 *cg_bloodTime*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "120" = 2 min. | *Possible range:* "0" = none; < ?
- - Display duration of blood puddle effects on the world _(walls, floors, etc.)_ in *seconds*.
- - *See also:* [[List_of_Cvars_(new)/#cg_brassTime|cg_brassTime]] and [[List_of_Cvars_(new)/#cg_markTime|cg_markTime]]
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 120                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration of blood puddle effects _(walls, floors, etc.)_ in *seconds* |
+  +-------------------------------------------------------------------------------------+
 
---------
-
-*cg_bluelimbotime*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "30000" | *Possible range:*
- - Internal CVAR communicated by systeminfo and used for spawn timers, in *milliseconds*.
+ - *See also:* `cg_brassTime`_ and `cg_markTime`_
 
 --------
 
 *cg_brassTime*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "2500"| *Possible range:* "15000" = high; "2500" = medium; "0" = disabled
- - Sets the duration ejected bullet shells last for, in *milliseconds*.
- - See also: [[List_of_Cvars_(new)/#cg_bloodTime|cg_bloodTime]]  and [[List_of_Cvars_(new)/#cg_markTime|cg_markTime]]
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 2500                                          |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration ejected bullet shells last for, in *milliseconds*            |
+  +-------------------------------------------------------------------------------------+
+
+ - Menu entries are Off, Med, High. Values are 0, 2500 and 15000 respectively.
+ - See also: `cg_bloodTime`_ and `cg_markTime`_
 
 --------
 
 *cg_centerTime*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "5"| *Possible range:* "0" = disabled; < ?
- - Duration for which center print popups are displayed, in *seconds*.
- - *See also:* [[List_of_Cvars_(new)#cg_fontScaleCP|cg_fontScaleCP]]
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 5                                             |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration for which center print popups are displayed, in *seconds*    |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/4mH3cw3.jpg
+ - See `example <https://i.imgur.com/4mH3cw3.jpg>`__
+ - *See also:* `cg_fontScaleCP`_
 
 --------
 
 *cg_complaintPopUp*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display the UI popup to file complaints against teammates who teamkill you.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/KFBjriT.jpg
+ - Display the UI popup to file complaints against teammates who teamkill you.
+ - See `example <https://i.imgur.com/KFBjriT.jpg>`__
 
 --------
 
 *cg_coronaFarDist*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1536" | *Possible range:* "0" = disabled; "800" = near; "1536" = normal; "4096" = far; "16000" = extreme.
- - Sets the maximum distance coronas are displayed before fading from view, in *in-game units*.
- - See [[List_of_Cvars_(new)/#cg_coronas|cg_coronas]] for toggling the effect.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 1536                                          |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Maximum distance coronas are displayed before fading from view        |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/6WWVH6w.jpg
+ - Menu entries are Off, Near, Normal, Far. Values are 0, 800 and 1536, 4096, 16000 respectively.
+ - See `cg_coronas`_ for toggling the effect.
 
 --------
 
 *cg_coronas*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *why is "2":https://github.com/etlegacy/etlegacy/blob/033b393c8096d50935c10c38317e4bf65d7b8671/src/cgame/cg_draw.c#L3716 a thing when cg_coronaFarDist exists?*
+  +-------------------------------------+---------------------------------------------------+
+  | Default                             | 1                                                 |
+  +-------------------------------------+---------------------------------------------------+
+  | Value                               | Effect                                            |
+  +=====================================+===================================================+
+  | 0                                   | Disabled                                          |
+  +-------------------------------------+---------------------------------------------------+
+  | 1                                   | Enabled                                           |
+  +-------------------------------------+---------------------------------------------------+
+  | 2                                   | Traces everything and ignores `cg_coronaFarDist`_ |
+  +-------------------------------------+---------------------------------------------------+
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled; "2" = unlimited
  - Toggles the display of coronas.
- - See [[List_of_Cvars_(new)/#cg_coronaFarDist|cg_coronaFarDist]] for adjusting the draw distance of the effect.
-
-.. image:: https://i.imgur.com/7qJQQts.jpg
+ - See `cg_coronaFarDist`_ for adjusting the draw distance of the effect.
 
 --------
 
 *cg_countryflags*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled, "1" = enabled
- - Displays players' country flags in score board.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/mKfD3X1.jpg
+ - Displays players' country flags in score board.
+ - See `example <https://i.imgur.com/mKfD3X1.jpg>`__
 
 --------
 
 *cg_crosshairAlpha*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1.0" = opaque| *Possible range:* "0.0" = transparent; "1.0" = opaque
- - Set the transparency level for the primary crosshair.
-
-.. image:: https://i.imgur.com/UzkWonW.jpg
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.0                                 | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Transparency level for the primary crosshair                          |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_crosshairAlphaAlt*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1.0" = opaque| *Possible range:* "0.0" = transparent; "1.0" = opaque
- - Set the transparency level for the secondary crosshair.
-
-.. image:: https://i.imgur.com/DFO1ot1.jpg
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.0                                 | 1.0                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Transparency level for the secondary crosshair                        |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_crosshairColor*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "white". *Possible values:* "white"; "yellow"; "red"; "green"; "blue"; "magenta"; "cyan"; "orange"; "0xa0c0ff" (light blue); "mdblue"; "0xffc0a0" (light red); "mdred"; "0xa0ffc0" (light green); "mdgreen"; "dkgreen"; "mdcyan"; "mdyellow"; "mdorange"; "ltgrey"; "mdgrey"; "dkgrey"; "black". *You can also use custom Hex colour codes in this format: 0xFF1E00*
- - Set the colour for the secondary crosshair.
-
-.. image:: https://i.imgur.com/30FkqjJ.jpg
+ - *Default:* "white". For menu values see :ref:`menu-colors`
+ - You can also use custom Hex colour codes in this format: 0xFF1E00
+ - Set the colour for the primary crosshair.
+ - See `example <https://i.imgur.com/30FkqjJ.jpg>`__
 
 --------
 
 *cg_crosshairColorAlt*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "white". *Possible values:* "white"; "yellow"; "red"; "green"; "blue"; "magenta"; "cyan"; "orange"; "0xa0c0ff" (light blue); "mdblue"; "0xffc0a0" (light red); "mdred"; "0xa0ffc0" (light green); "mdgreen"; "dkgreen"; "mdcyan"; "mdyellow"; "mdorange"; "ltgrey"; "mdgrey"; "dkgrey"; "black". *You can also use custom Hex colour codes in this format: 0xFF1E00*
+ - *Default:* "white". For menu values see :ref:`menu-colors`
+ - You can also use custom Hex colour codes in this format: 0xFF1E00
  - Set the colour for the secondary crosshair.
-
-.. image:: https://i.imgur.com/FYbv4bX.jpg
+ - See `example <https://i.imgur.com/FYbv4bX.jpg>`__
 
 --------
 
 *cg_crosshairHealth*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = enabled
- - Colors the crosshair based on current health _(overrides cg_crosshairColor settings)_.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/2rDVcSQ.jpg
+ - Colors the crosshair based on current health _(overrides `cg_crosshairColor`_ settings)_.
+ - See `example <https://i.imgur.com/2rDVcSQ.jpg>`__
 
 --------
 
 *cg_crosshairPulse*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = enabled
- - Increases the crosshair spread/sizing while moving, shooting, etc. to provide a visual representation of actual weapon spread.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/a3WyWQl.jpg
+ - Increases the crosshair spread/sizing while moving, shooting, etc. to provide a visual representation of actual weapon spread.
+ - See `example <https://i.imgur.com/a3WyWQl.jpg>`__
 
 --------
 
 *cg_crosshairSize*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "48". *Possible range:* "24" = tiny; "32" = small; "48" = medium; "64" = large; "96" = huge
- - Sets the size of the displayed crosshair, in *pixels*.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 48                                            |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Size of the displayed crosshair, in *pixels*                          |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/BSDGLLk.jpg
+ - Menu entries are Tiny, Small, Medium, Large, Huge. Values are 24, 32, 48, 64 and 96 respectively.
+ - See `example <https://i.imgur.com/BSDGLLk.jpg>`__
 
 --------
 
 *cg_crosshairX*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = center|<{width:600px}. *Possible range:* "0" = center; positive values = right; negative values = left
- - Offset of the crosshair position on-screen, in *pixels*.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0                                             |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | (Your resolution / 2) * -1          | Your resolution / 2                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Offset of the crosshair position on-screen, in *pixels*. Left - Right |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/PClrjlj.jpg
+ - See `example <https://i.imgur.com/PClrjlj.jpg>`__
 
 --------
 
 *cg_crosshairY*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = center|<{width:600px}. *Possible range:* "0" = center; positive values = down; negative values = up
- - Offset of the crosshair position on-screen, in *pixels*.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0                                             |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | (Your resolution / 2) * -1          | Your resolution / 2                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Offset of the crosshair position on-screen, in *pixels*. Up - Down    |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/zc7YuSS.jpg
+ - See `example <https://i.imgur.com/zc7YuSS.jpg>`__
 
 --------
 
 *cg_cursorHints*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = enabled
- - Displays hint and information icons for certain actions when near interactive objects.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/1F4sy6Q.jpg
+ - Displays hint and information icons for certain actions when near interactive objects.
+ - See `example <https://i.imgur.com/1F4sy6Q.jpg>`__
 
 --------
 
 *cg_cycleAllWeaps*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Doesn't seem to be doing anything. Would propose to delete anyway.*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "1" = enabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = enabled
+ - When enabled loops around while cycling through inventory.
  - Include non-weapon items when cycling through inventory.
 
 --------
@@ -424,190 +531,280 @@ Player cvars
 *cg_drawCompass*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled | *Possible values:* "0" = disabled; "1" = enabled
- - Display the HUD compass.
+  +-------------------------------------+------------------------------------------+
+  | Default                             | 1                                        |
+  +-------------------------------------+------------------------------------------+
+  | Value                               | Effect                                   |
+  +=====================================+==========================================+
+  | 0                                   | Disable compass                          |
+  +-------------------------------------+------------------------------------------+
+  | 1                                   | Selects default compass                  |
+  +-------------------------------------+------------------------------------------+
+  | 2                                   | Selects alternative compass              |
+  +-------------------------------------+------------------------------------------+
 
-.. image:: https://i.imgur.com/3qj74wJ.jpg
+ - Display the HUD compass.
 
 --------
 
 *cg_drawCrosshair*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled | *Possible values:* "0"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"
- - Choose from 10 different crosshair styles.
-
-.. image:: https://i.imgur.com/mtP9tm5.jpg
+ - *Default:* "1", See :ref:`crosshairs`
 
 --------
 
 *cg_drawCrosshairInfo*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Implement bitflag 4 for names and remove [[List_of_Cvars_(new)/#cg_drawCrosshairNames|cg_drawCrosshairNames]]*
+  +-------------------------------------+------------------------------------------+
+  | Default                             | 3                                        |
+  +-------------------------------------+------------------------------------------+
+  | Value                               | Effect                                   |
+  +=====================================+==========================================+
+  | 0                                   | Disabled                                 |
+  +-------------------------------------+------------------------------------------+
+  | 1                                   | Shows player class                       |
+  +-------------------------------------+------------------------------------------+
+  | 2                                   | Shows player rank                        |
+  +-------------------------------------+------------------------------------------+
+  | 3                                   | Shows player class + rank                |
+  +-------------------------------------+------------------------------------------+
+  | 4                                   | Shows player prestige                    |
+  +-------------------------------------+------------------------------------------+
+  | 5                                   | Shows player class + prestige            |
+  +-------------------------------------+------------------------------------------+
+  | 6                                   | Shows player rank + prestige             |
+  +-------------------------------------+------------------------------------------+
+  | 7                                   | Shows player class + rank + prestige     |
+  +-------------------------------------+------------------------------------------+
 
- - *Default:* "3"| *Bit flags:* "0" = nothing; "1" = class; "2" = rank
  - Displays player info when the crosshair is over a teammate.
-
-.. image:: https://i.imgur.com/s8bt3oP.jpg
+ - See `example <https://i.imgur.com/s8bt3oP.jpg>`__
 
 --------
 
 *cg_drawCrosshairNames*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Remove CVAR and add it as bitflag 4 to [[List_of_Cvars_(new)/#cg_drawCrosshairInfo|cg_drawCrosshairInfo]].*
+  +-------------------------------------+------------------------------------------+
+  | Default                             | 1                                        |
+  +-------------------------------------+------------------------------------------+
+  | Value                               | Effect                                   |
+  +=====================================+==========================================+
+  | 0                                   | Disabled                                 |
+  +-------------------------------------+------------------------------------------+
+  | 1                                   | Enabled, white names                     |
+  +-------------------------------------+------------------------------------------+
+  | 2                                   | Enabled, coloured names                  |
+  +-------------------------------------+------------------------------------------+
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = white names, "1" = coloured names
  - Display names of teammates when hovering over them with your crosshair.
- - *See also:* [[List_of_Cvars_(new)/#cg_fontScaleCN|cg_fontScaleCN]]
-
-.. image:: https://i.imgur.com/mUeYd3j.jpg
+ - See `example <https://i.imgur.com/mUeYd3j.jpg>`__
+ - *See also:* `cg_fontScaleCN`_
 
 --------
 
 *cg_drawCrosshairPickups*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *No visible difference between "1" and "2". I propose to remove and move functionality to [[List_of_Cvars_(new)/#cg_cursorHints|cg_cursorHints]].*
+  +-------------------------------------+------------------------------------------+
+  | Default                             | 1                                        |
+  +-------------------------------------+------------------------------------------+
+  | Value                               | Effect                                   |
+  +=====================================+==========================================+
+  | 0                                   | Disabled                                 |
+  +-------------------------------------+------------------------------------------+
+  | 1                                   | Enabled                                  |
+  +-------------------------------------+------------------------------------------+
+  | 2                                   | Enabled, force highlights                |
+  +-------------------------------------+------------------------------------------+
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled; "2" = "force highlights":https://github.com/etlegacy/etlegacy/blob/52219af45338681566120a427b9b3124f1e13946/src/cgame/cg_ents.c#L835
  - Give pickup items a highlight. Very subtle.
-
-.. image:: https://i.imgur.com/B37zyuF.jpg
+ - See `example <https://i.imgur.com/B37zyuF.jpg>`__
 
 --------
 
 *cg_drawFireteamOverlay*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display Fireteam HUD window.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/VlztNc5.jpg
+ - Display Fireteam HUD window. See `example <https://i.imgur.com/VlztNc5.jpg>`__
 
 --------
 
 *cg_drawFPS*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display a FPS counter in the HUD below the compass.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/sygCXOw.jpg
+ - Display a FPS counter in the HUD below the compass. See `example <https://i.imgur.com/sygCXOw.jpg>`__
 
 --------
 
 *cg_drawGun*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display equipped weapon.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/CWhbxLt.jpg
+ - Display equipped weapon. See `example <https://i.imgur.com/CWhbxLt.jpg>`__
 
 --------
 
 *cg_drawNotifyText*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Safe to delete?*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - CVAR is unused.
+ - Shows notifications in console.
 
 --------
 
 *cg_drawPing*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display the ping in the HUD below the compass.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/m7MAfpu.jpg
+ - Display the ping in the HUD below the compass. See `example <https://i.imgur.com/m7MAfpu.jpg>`__
 
 --------
 
 *cg_drawReinforcementTime*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display reinforcement timer for your team in the HUD below the compass (in light blue).
- - *See also:* [[List_of_Cvars_(new)/#cg_drawRoundTimer|cg_drawRoundTimer]]
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/j4aNyKk.jpg
+ - Display reinforcement(spawn) timer for your team in the HUD below the compass (in light blue). See `example <https://i.imgur.com/j4aNyKk.jpg>`__
+ - *See also:* `cg_drawRoundTimer`_
 
 --------
 
 *cg_drawRoundTimer*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display remaining mission time in the HUD below the compass.
- - *NOTE:* Also disables [[List_of_Cvars_(new)/#cg_drawReinforcementTime|cg_drawReinforcementTime]]
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/ldF48BY.jpg
+ - Display remaining mission time in the HUD below the compass. See `example <https://i.imgur.com/ldF48BY.jpg>`__
+ - *NOTE:* Also disables `cg_drawReinforcementTime`_
 
 --------
 
 *cg_drawSmallPopupIcons*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Use small icons for obituary messages.
- - *See also:* [[List_of_Cvars_(new)#cg_fontScaleSP|cg_fontScaleSP]]
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/aCVVRTo.jpg
+ - Use small icons for obituary messages. See `example <https://i.imgur.com/aCVVRTo.jpg>`__
+ - *See also:* `cg_fontScaleSP`_
 
 --------
 
 *cg_drawSnapshot*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display the snapshot counter in the HUD below the compass.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/9rRZePK.jpg
+ - Display the snapshot counter in the HUD below the compass. See `example <https://i.imgur.com/9rRZePK.jpg>`__
 
 --------
 
-*cg_drawSpectatorNames* |CVAR added|
+*cg_drawSpectatorNames*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "2" = enabled| *Possible values:* "0" = disabled; "1" = white names, "2" = coloured names
+  +-------------------------------------+------------------------------------------+
+  | Default                             | 2                                        |
+  +-------------------------------------+------------------------------------------+
+  | Value                               | Effect                                   |
+  +=====================================+==========================================+
+  | 0                                   | Disabled                                 |
+  +-------------------------------------+------------------------------------------+
+  | 1                                   | Enabled, white names                     |
+  +-------------------------------------+------------------------------------------+
+  | 2                                   | Enabled, coloured names                  |
+  +-------------------------------------+------------------------------------------+
+
  - Display names of players when spectating or playing demos.
 
 --------
 
-*cg_drawSpeed* |CVAR added|
+*cg_drawSpeed*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Displays current player speed in the HUD below the compass, in *in-game units per second*.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/7X5XnYM.jpg
+ - Displays current player speed in the HUD below the compass, in *in-game units per second*. See `example <https://i.imgur.com/7X5XnYM.jpg>`__
 
 --------
 
 *cg_drawSpreadScale*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled for scoped weapons; "2" = enabled for all weapons
- - Displays a coloured bar on the left of the screen showing the current weapon spread. Increases when turning around, shooting, etc.
- - A value of "1" enables it for scoped weapons only.
- - A value of "2" enables it for all weapons.
- - A value of "0" disables it entirely.
+  +-------------------------------------+------------------------------------------+
+  | Default                             | 1                                        |
+  +-------------------------------------+------------------------------------------+
+  | Value                               | Effect                                   |
+  +=====================================+==========================================+
+  | 0                                   | Disabled                                 |
+  +-------------------------------------+------------------------------------------+
+  | 1                                   | Enabled, for scoped weapons              |
+  +-------------------------------------+------------------------------------------+
+  | 2                                   | Enabled, for all weapons                 |
+  +-------------------------------------+------------------------------------------+
 
-.. image:: https://i.imgur.com/rYo8syD.jpg
+ - Displays a coloured bar on the left of the screen showing the current weapon spread. Increases when turning around, shooting, etc. See `example <https://i.imgur.com/rYo8syD.jpg>`__
 
 --------
 
 *cg_drawStatus*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Check if it works and take screenshots*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
  - The alpha (transparency) of the watermark HUD display, if the server has one.  "Reference":https://github.com/etlegacy/etlegacy/blob/033b393c8096d50935c10c38317e4bf65d7b8671/src/cgame/cg_draw.c#L3505
 
 --------
@@ -620,127 +817,171 @@ Player cvars
 
 --------
 
-*cg_drawTime* |CVAR added|
+*cg_drawTime*  
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display local time.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/dX18GjL.jpg
+ - Display local time. See `example <https://i.imgur.com/dX18GjL.jpg>`__
 
 --------
 
 *cg_drawWeaponIconFlash*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Flashes the weapon icon on the bottom right during certain events.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/NpvFv5g.jpg
+ - Flashes the weapon icon on the bottom right during certain events. See `example <https://i.imgur.com/NpvFv5g.jpg>`__
 
 --------
 
 *cg_descriptiveText*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Displays additional descriptive text on the screen.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/R1xIDPO.jpg
+ - Displays additional descriptive text on the screen. See `example <https://i.imgur.com/R1xIDPO.jpg>`__
 
 --------
 
 *cg_draw2D*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled | *Possible values:* "0" = disabled; "1" = enabled
- - Display all UI and HUD elements.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/zre7ptp.jpg
+ - Display all UI and HUD elements. See `example <https://i.imgur.com/zre7ptp.jpg>`__
 
 --------
 
 *cg_fireteamLatchedClass*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Draw latched class of fireteam members in the fireteam overlay.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/gyey9ae.jpg
+ - Draw latched class of fireteam members in the fireteam overlay. See `example <https://i.imgur.com/gyey9ae.jpg>`__
 
 --------
 
 *cg_fontScaleCN*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0.25"| *Possible range:* "0" = disabled; < ?
- - Set font scale for entitiy/player names when aiming crosshair at them.
- - *See:* [[List_of_Cvars_(new)/#cg_drawCrosshairNames|cg_drawCrosshairNames]]
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0.25                                          |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.00                                | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Font scale for entitiy/player names when aiming crosshair at them     |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/fRBur8Y.jpg
+ - See `example <https://i.imgur.com/fRBur8Y.jpg>`__
+ - *See:* `cg_drawCrosshairNames`_
 
 --------
 
 *cg_fontScaleCP*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0.22"| *Possible range:* "0" = disabled; < ?
- - Set font scale for center prints.
- - *See also:* [[List_of_Cvars_(new)#cg_centerTime|cg_centerTime]]
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0.22                                          |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.00                                | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Font scale for center prints                                          |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/7LrbjeX.jpg
+ - See `example <https://i.imgur.com/7LrbjeX.jpg>`__
+ - *See also:* `cg_centerTime`_
 
 --------
 
 *cg_fontScaleSP*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0.22"| *Possible range:* "0" = disabled; < ?
- - Set font scale for side prints.
- - *See also:* [[List_of_Cvars_(new)#cg_drawSmallPopupIcons|cg_drawSmallPopupIcons]] and [[List_of_Cvars_(new)#cg_graphicObituaries|cg_graphicObituaries]]
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0.22                                          |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.00                                | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Font scale for side prints                                            |
+  +-------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/92QJUZO.jpg
+ - See `example <https://i.imgur.com/92QJUZO.jpg>`__
+ - *See also:* `cg_drawSmallPopupIcons`_ and `cg_graphicObituaries`_
 
 --------
 
 *cg_fontScaleTP*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0.35"| *Possible range:* "0" = disabled; < ?
- - Set font scale for top of the screen prints.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0.35                                          |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0.00                                | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Font scale for top of the screen prints                               |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_etVersion*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* " " | *Possible values:*
- - {TODO}
+ - Shows client mod version when connected to a server.
 
 --------
 
 *cg_fov*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "90" | *Possible range:* "90" - "160"
- - Sets the Field of View.
-
---------
-
-*cg_gameType*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Why is that necessary when g_gametype exists?*
-
- - *Default:* "0" | *Possible values:*
- - Internal CVAR communicated by systeminfo.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 90                                            |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 75                                  | 120                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Sets the Field of View                                                |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_gibs*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" | *Possible values:* "0" = disabled; "1" = enabled
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
  - Likely intended to toggle display remaining bodyparts from splatted bodies.
 
 --------
@@ -748,99 +989,139 @@ Player cvars
 *cg_graphicObituaries*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = Victim Weapon Killer; "2" = Killer Weapon Victim
- - Display simple graphic kill messages to safe space.
- - *See also:* [[List_of_Cvars_(new)#cg_fontScaleSP|cg_fontScaleSP]]
+  +-------------------------------------+------------------------------------------+
+  | Default                             | 0                                        |
+  +-------------------------------------+------------------------------------------+
+  | Value                               | Effect                                   |
+  +=====================================+==========================================+
+  | 0                                   | Disabled                                 |
+  +-------------------------------------+------------------------------------------+
+  | 1                                   | Victim -> Weapon -> Killer               |
+  +-------------------------------------+------------------------------------------+
+  | 2                                   | Killer -> Weapon -> Victim               |
+  +-------------------------------------+------------------------------------------+
 
-.. image:: https://i.imgur.com/2s36V33.jpg
-
---------
-
-*cg_gun_frame*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = frame 1; etc.
- - Freeze weapon in the specified _(CVAR value)_ frame.
+ - Display simple graphic kill messages to safe space. See `example <https://i.imgur.com/2s36V33.jpg>`__
+ - *See also:* `cg_fontScaleSP`_
 
 --------
 
 *cg_gunX*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = center| *Possible range:* "0" = center; positive values = forwards; negative values = backwards
- - Offset of equipped weapon on screen along the X-axis, in *in-game units*.
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 0 (center)                                    |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | No functional negative value (forward) | No functional positive value (backward)       |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Offset of equipped weapon on screen along the X-axis, in *in-game units* |
+  +----------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/nBCOM4o.jpg
+ - See `example <https://i.imgur.com/nBCOM4o.jpg>`__
 
 --------
 
 *cg_gunY*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = center| *Possible range:* "0" = center; positive values = left; negative values = right
- - Offset of equipped weapon on screen along the Y-axis, in *in-game units*.
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 0 (center)                                    |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | No functional negative value (right)   | No functional positive value (left)           |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Offset of equipped weapon on screen along the Y-axis, in *in-game units* |
+  +----------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/JtHtcg0.jpg
+ - See `example <https://i.imgur.com/JtHtcg0.jpg>`__
 
 --------
 
 *cg_gunZ*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = center| *Possible range:* "0" = center; positive values = up; negative values = down
- - Offset of equipped weapon on screen along the Z-axis, in *in-game units*.
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 0 (center)                                    |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | No functional negative value (down)    | No functional positive value (up)             |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Offset of equipped weapon on screen along the Z-axis, in *in-game units* |
+  +----------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/nn6DXdO.jpg
+ - See `example <https://i.imgur.com/nn6DXdO.jpg>`__
 
 --------
 
 *cg_hitSounds*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = all| *Bit flags:* "0" = none; "1" = all; "2" = *disable* body; "4" = *disable head; "8" = *disable* team
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 1                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | None                                      |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | All                                       |
+  +-------------------------------------+-------------------------------------------+
+  | 3                                   | Disable body hitsounds                    |
+  +-------------------------------------+-------------------------------------------+
+  | 5                                   | Disable headshot hitsounds                |
+  +-------------------------------------+-------------------------------------------+
+  | 7                                   | Disable body and headshot hitsounds       |
+  +-------------------------------------+-------------------------------------------+
+  | 11                                  | Disable body and team hitsounds           |
+  +-------------------------------------+-------------------------------------------+
+  | 13                                  | Disable headshot and team hitsounds       |
+  +-------------------------------------+-------------------------------------------+
+  | 25                                  | Disable team hitsounsd                    |
+  +-------------------------------------+-------------------------------------------+
+
  - Set active hit sounds.
-
---------
-
-*cg_hudAlpha*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Safe to delete?*
-
- - *Default:*  | *Possible values:*
- - CVAR is unused.
 
 --------
 
 *cg_instantTapOut*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Doesn't seem to be working*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Likely intended to put you directly into the respawn queue without waiting for a revive.
+ - Puts you directly into the respawn queue without waiting for a revive. Only certain situations in LMS or with limited spawns available.
 
 --------
 
 *cg_lagometer*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Displays a lag'o'meter in the HUD below the compass checking for lag spikes.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/C5ycQph.jpg
+ - Displays a lag'o'meter in the HUD below the compass checking for lag spikes. See `example <https://i.imgur.com/C5ycQph.jpg>`__
 
 --------
 
 *cg_letterbox*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *WTF?!*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Adds an overlay to the game underneath the HUD at the bottom and top of the screen simulating widescreen.
-
-.. image:: https://i.imgur.com/4sNnpaN.jpg
+ - Adds an overlay to the game underneath the HUD at the bottom and top of the screen simulating widescreen. See `example <https://i.imgur.com/4sNnpaN.jpg>`__
 
 --------
 
@@ -1092,7 +1373,7 @@ Player cvars
 
 --------
 
-*cg_visualEffects* |CVAR added|
+*cg_visualEffects*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
@@ -1102,7 +1383,7 @@ Player cvars
 
 --------
 
-*cg_voiceChats* |CVAR added|
+*cg_voiceChats*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
@@ -1111,7 +1392,7 @@ Player cvars
 
 --------
 
-*cg_voiceText* |CVAR added|
+*cg_voiceText*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
@@ -1259,6 +1540,21 @@ A cheat protected cvar is usually used by developers to help during development.
 
 --------
 
+*cg_gun_frame*
+""""""""""""""""""""""""""""""""""""""""
+
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0                                             |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | Maximum frame of current gun animation        |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Freeze weapon in the specified _(CVAR value)_ frame                   |
+  +-------------------------------------------------------------------------------------+
+
+--------
+
 *cg_noPlayerAnims*
 """"""""""""""""""""""""""""""""""""""""
 
@@ -1280,7 +1576,7 @@ A cheat protected cvar is usually used by developers to help during development.
 
 --------
 
-*cg_swingSpeed* |CVAR protected|
+*cg_swingSpeed*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "0.1"| *Possible range:* "0" = never turn; < ?
@@ -1288,7 +1584,7 @@ A cheat protected cvar is usually used by developers to help during development.
 
 --------
 
-*cg_thirdPerson* |CVAR protected|
+*cg_thirdPerson*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
@@ -1298,7 +1594,7 @@ A cheat protected cvar is usually used by developers to help during development.
 
 --------
 
-*cg_thirdPersonAngle* |CVAR protected|
+*cg_thirdPersonAngle*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "0" = behind| *Possible range:* "0" / "360" = from behind; "180" = from ahead
@@ -1308,7 +1604,7 @@ A cheat protected cvar is usually used by developers to help during development.
 
 --------
 
-*cg_thirdPersonRange* |CVAR protected|
+*cg_thirdPersonRange*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "80"| *Possible range:* ? < ;"0" = above head; < ?
@@ -1318,7 +1614,7 @@ A cheat protected cvar is usually used by developers to help during development.
 
 --------
 
-*cg_timescale* |CVAR private|
+*cg_timescale*  
 """"""""""""""""""""""""""""""""""""""""
 
 {TODO} *Description needed.*
@@ -1585,7 +1881,7 @@ Player cvars
 
 --------
 
-*cl_aviDemoType* |CVAR added|
+*cl_aviDemoType*  
 """"""""""""""""""""""""""""""""""""""""
 
 {TODO} *There are way too many avi demo related CVARs. Are all of them necessary?*
@@ -1759,7 +2055,7 @@ ET: Legacy comes with translations created by the community. In case you would l
 
 --------
 
-*cl_renderer* |CVAR added|
+*cl_renderer*  
 """"""""""""""""""""""""""""""""""""""""
 
  - *Default:* "opengl1"| *Possible values:* "opengl1"; "opengl2"
@@ -3767,8 +4063,6 @@ Removed cvars
   | cg_zoomStepFG             | Was not used       | None                          |
   +---------------------------+--------------------+-------------------------------+
   | cg_zoomStepSnooper        | Was not used       | None                          |
-  +---------------------------+--------------------+-------------------------------+
-  | *CL_* (Client Engine)     |                    |                               |
   +---------------------------+--------------------+-------------------------------+
   | cl_activateLean           | Was not used       | cg_activateLean               |
   +---------------------------+--------------------+-------------------------------+
