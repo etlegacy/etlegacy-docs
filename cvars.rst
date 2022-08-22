@@ -25,6 +25,49 @@ Version goes here:
 
    </s>
 
+*Non prefixed CVARS*
+----------------------------------------
+.. contents:: `CVAR Types`
+   :depth: 1
+   :local:
+
+Player cvars
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*sensitivity*
+""""""""""""""""""""""""""""""""""""""""
+
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 5.0                                       |
+  +-------------------------------------+-------------------------------------------+
+  | Range start                         | Range end                                 |
+  +=====================================+===========================================+
+  | 0                                   | No functional limit                       |
+  +-------------------------------------+-------------------------------------------+
+  | .. centered:: Defines the sensitivity of mouse movements. E.g. looking around.  |
+  |               Higher is faster                                                  |
+  +---------------------------------------------------------------------------------+
+
+--------
+
+Developer cvars
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*timescale*
+""""""""""""""""""""""""""""""""""""""""
+
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 1.0                                       |
+  +-------------------------------------+-------------------------------------------+
+  | Range start                         | Range end                                 |
+  +=====================================+===========================================+
+  | 0                                   | No functional limit                       |
+  +-------------------------------------+-------------------------------------------+
+  | .. centered:: Scale of which time passes by                                     |
+  +---------------------------------------------------------------------------------+
+
+--------
+
 *CG_* (Client Game)
 ----------------------------------------
 .. contents:: `CVAR Types`
@@ -33,6 +76,19 @@ Version goes here:
 
 Player cvars
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*cg_activateLean*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Lean while using the activate button
+
+--------
 
 *cg_altHud*
 """"""""""""""""""""""""""""""""""""""""
@@ -805,15 +861,7 @@ Player cvars
   | 1       | 1       | 0        |
   +---------+---------+----------+
 
- - The alpha (transparency) of the watermark HUD display, if the server has one.  "Reference":https://github.com/etlegacy/etlegacy/blob/033b393c8096d50935c10c38317e4bf65d7b8671/src/cgame/cg_draw.c#L3505
-
---------
-
-*cg_drawTeamOverlay*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "2" = enabled| *Possible values:*
- - CVAR is not used, however, has to be kept for compatibility.
+ - The alpha (transparency) of the watermark HUD display, if the server has one.
 
 --------
 
@@ -1138,7 +1186,7 @@ Player cvars
 *cg_logFile*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* " "| *Possible values:* strings
+ - *Default:* ""| *Possible values:* strings(text)
  - Sets the name of the chat log file or if empty logging is disabled.
 
 --------
@@ -1146,37 +1194,56 @@ Player cvars
 *cg_markTime*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "20000" | *Possible range:* "0" = disabled; < ?
- - Controls behaviour of location views.
- - *See also:* [[List_of_Cvars_(new)/#cg_brassTime|cg_brassTime]] and [[List_of_Cvars_(new)/#cg_bloodTime|cg_bloodTime]]
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 20000                                         |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | No functional limit                           |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration of bullet marks on walls                                        |
+  +----------------------------------------------------------------------------------------+
+
+ - *See also:* `cg_brassTime`_ and `cg_bloodTime`_
 
 --------
 
 *cg_muzzleFlash*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled.
- - Toggles display of muzzle flash when shooting.
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/Z4oHZXu.jpg
+ - Toggles display of muzzle flash when shooting. See `example <https://i.imgur.com/Z4oHZXu.jpg>`__
 
 --------
 
 *cg_noAmmoAutoSwitch*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Merge with [[List_of_Cvars_(new)/#cg_autoSwitch|cg_autoSwitch]]*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
  - Automatically switch to a new weapon when out of ammunition.
- - *CAREFUL:* Do not confuse with [[List_of_Cvars_(new)/#cg_autoSwitch|cg_autoSwitch]]!
+ - *CAREFUL:* Do not confuse with `cg_autoSwitch`_!
 
 --------
 
 *cg_optimizePrediction*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
  - Enables unlagged optimized prediction.
 
 --------
@@ -1184,16 +1251,45 @@ Player cvars
 *cg_popupFadeTime*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "2500" = 2.5 sec| *Possible values:* "0" = disabled; < ?
- - Duration of the fading effect of popup messages.
- - *See also:* [[List_of_Cvars_(new)/#cg_popupStayTime|cg_popupStayTime]], [[List_of_Cvars_(new)/#cg_popupFilter|cg_popupFilter]]
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 2500                                          |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | No functional limit                           |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration of the fading effect of popup messages                          |
+  +----------------------------------------------------------------------------------------+
+
+ - *See also:* `cg_popupStayTime`_ and `cg_popupFilter`_
 
 --------
 
 *cg_popupBigFilter*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; 1 = filter skill promotions, 2 = filter rank promotions
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 0                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | Disabled                                  |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | Filter skill promotions                   |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Filter rank promotions                    |
+  +-------------------------------------+-------------------------------------------+
+  | 3                                   | Filter skill and rank promotions          |
+  +-------------------------------------+-------------------------------------------+
+  | 4                                   | Filter prestige promotions                |
+  +-------------------------------------+-------------------------------------------+
+  | 5                                   | Filter skill and prestige promotions      |
+  +-------------------------------------+-------------------------------------------+
+  | 6                                   | Filter rank and prestige promotions       |
+  +-------------------------------------+-------------------------------------------+
+  | 7                                   | Filter skill, rank, prestige promotions   |
+  +-------------------------------------+-------------------------------------------+
+
  - Filter promotion popups.
 
 --------
@@ -1201,46 +1297,68 @@ Player cvars
 *cg_popupFilter*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; 1 = filter connect, 2 = filter team join, 4 = filter mission, 8 = filter pickup, 16 = filter death
- - Filter message popups.
- - *See also:* [[List_of_Cvars_(new)/#cg_popupStayTime|cg_popupStayTime]],  [[List_of_Cvars_(new)/#cg_popupFadeTime|cg_popupFadeTime]]
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 0                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | Disabled                                  |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | Filter connect                            |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Filter team join                          |
+  +-------------------------------------+-------------------------------------------+
+  | 4                                   | Filter mission                            |
+  +-------------------------------------+-------------------------------------------+
+  | 8                                   | Filter pickup                             |
+  +-------------------------------------+-------------------------------------------+
+  | 16                                  | Filter death                              |
+  +-------------------------------------+-------------------------------------------+
+
+ - Filter message popups. Combining effects is done by combining the values together.
+ - *See also:* `cg_popupStayTime`_ and `cg_popupFadeTime`_
 
 --------
 
 *cg_popupStayTime*
 """"""""""""""""""""""""""""""""""""""""
- - *Default:* "2000" = 2 sec| *Possible values:* "0" = disabled; < ?
- - Duration for which popup messages stay active.
- - *See also:* [[List_of_Cvars_(new)/#cg_popupFadeTime|cg_popupFadeTime]],  [[List_of_Cvars_(new)/#cg_popupFilter|cg_popupFilter]]
+
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 2000                                          |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | No functional limit                           |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration for which popup messages stay active                            |
+  +----------------------------------------------------------------------------------------+
+
+ - *See also:* `cg_popupFadeTime`_ and `cg_popupFilter`_
 
 --------
 
 *cg_predefinedDemoKeys*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *What is this used for?*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "1" | *Possible values:*
- - Description needed.
-
---------
-
-*cg_predictItems*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Doesn't seem to be doing anything*
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Toggles use of prediction for picking up items.
+ - Use predefined key bindings to control actions in a demo such as fast forward. This way existing binds are ignored.
 
 --------
 
 *cg_printObjectiveInfo*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Doesn't seem to be doing anything*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
  - Prints important game messages to the console.
 
 --------
@@ -1248,220 +1366,23 @@ Player cvars
 *cg_quickChat*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Doesn't seem to be doing anything*
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 0                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | Disabled                                  |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | Team chat                                 |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Fireteam chat                             |
+  +-------------------------------------+-------------------------------------------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = team chat; "2" = fireteam chat
- - Specify receiver of quick radio messages.
+ - Specify receiver of quick radio messages. Quick radio messages are trigger when using alt weapon key bind and holding a specific weapon. Like "Fire in the hole" when holding a grenade.
 
 --------
 
 *cg_quickMessageAlt*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = numerical| *Possible values:* "0" = alphabetical; "1" = numerical
- - Toggles using either numbers or letters for the quick chat menu.
-
-.. image:: https://i.imgur.com/Xejzj5x.jpg
-
---------
-
-*cg_shadows*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" | *Possible values:* "0" = disabled; "1" = blob; "2" = Stencil; "3" = Projection; "4" = Polygon
- - Display player shadows underneath the player.
- - *NOTE:* It is not recommended to have it enabled, as it lowers FPS quite significantly. "Reference":https://dev.etlegacy.com/issues/1078
- - Also note that Stencil, Projection and Polygon are currently broken.
-
-.. image:: https://i.imgur.com/4yP4d05.jpg
-
---------
-
-*cg_showMiss*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Print faulty predictions into the console, for debugging purposes.
-
-.. image:: https://i.imgur.com/IjZ08dk.jpg
-
---------
-
-*cg_simpleItems*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0" = disabled | *Possible values:* "0" = disabled; "1" = enabled; "2" = enabled, but objectives use regular 3D models
- - Use minimalistic icons for item pick-ups.
-
-.. image:: https://i.imgur.com/jbFplDS.jpg
-
---------
-
-*cg_skybox*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Doesn't seem to be doing anything*
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Likely intended to toggle display of the skybox.
-
---------
-
-*cg_specHelp*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Necessary?*
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Toggle display of spectator help, *only* in multiview.
-
---------
-
-*cg_stats*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Prints client frame in the console, for debugging purposes.
-
-.. image:: https://i.imgur.com/za4IiP3.jpg
-
---------
-
-*cg_teamChatHeight*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Rename to cg_chatHeight as it is not restricted to team chat*
-
- - *Default:* "8" = 8 lines| *Possible values:* "0" = disabled; "1" = 1 line; etc.
- - Specifies the amount to chat messages are displayed at max, in *lines*.
-
---------
-
-*cg_teamChatsOnly*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Replace with bitflag CVAR to choose which chats to display.*
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Filers global chat messages and only displays team and fireteam chat.
-
---------
-
-*cg_teamChatTime*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Rename to cg_chatTime as it is not restricted to team chat*
-
- - *Default:* "8000" = 8 sec| *Possible range:* "0" = disabled; < ?
- - Duration for which messages in the chat are kept on display, in *milliseconds*.
-
---------
-
-*cg_tracers*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = all| *Possible values:* "0" = none; "1" = all; "2" = own tracers only; "3" = other's tracers only
- - Choosing which tracers to display.
-
---------
-
-*cg_useWeapsForZoom*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Allows the use of weapon switching keys for zooming.
-
---------
-
-*cg_visualEffects*  
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Draws additional visual effects _(airstrike planes, debris)_.
-
-.. image:: https://i.imgur.com/I2anIBj.jpg
-
---------
-
-*cg_voiceChats*  
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Play voice chat sound file in-game when using quick chat _(e.g. v21 for Need a Medic!)_.
- - *See also:*  [[List_of_Cvars_(new)/#cg_voiceText|cg_voiceText]]
-
---------
-
-*cg_voiceText*  
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Show voice text lines in-game when using quick chat _(e.g. v21 for Need a Medic!)_.
- - *See also:*  [[List_of_Cvars_(new)/#cg_voiceChats|cg_voiceChats]]
-
---------
-
-*cg_voiceSpriteTime*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "6000" = 6 sec| *Possible range:* "0" = disabled; < ?
- - Duration for which the chat icon appears above other players' heads, in *milliseconds*.
-
-.. image:: https://i.imgur.com/BMKja5I.jpg
-
---------
-
-*cg_weapAltReloads*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What does that CVAR do?*
-
- - *Default:* "0" | *Possible values:* "0" = disabled; "0" = enabled
- - No description available. Also there is "this":https://github.com/etlegacy/etlegacy/blob/b162f0450129a1fa1a1f0198f48c3e2bd92c8b45/src/cgame/cg_weapons.c#L3757
-
---------
-
-*cg_weaponCycleDelay*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "150" | *Possible range:* "0" = disabled; < ?
- - Duration for which a pause is enforced so keeping the weapon switch key activated won't trigger too fast, in *milliseconds*.
-
---------
-
-*cg_zoomDefaultSniper*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *This CVAR is horribly implemented! Fix (or remove) and rename to cg_zoomDefault since it's not limited to sniper.*
-
- - *Default:* "20"| *Possible range:* "0" = disabled; < ?
- - Sets the default level of zoom for binoculars, sniper and FG42.
- - This CVAR is absolutely borked!!!
- - A value of 0 disables zooming, but also screws up the display.
- - It is possible to set a value of 1 for closer zoom than allowed.
- - It is possible to set values significantly above 20 zooming out!
- - you can actually set a higher zoom as default and have an FG42 with closer zoom, breaking its intended behaviour!
- - It would therefore be possible to have different default zoom binds and simply unscope, change and scope in to adjust FG42 zoom.
-
---------
-
-*cg_zoomStepSniper*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Rename to cg_zoomStep as it's not limited to sniper.*
-
- - *Default:* "2"| *Possible range:* "0" = disabled; < ?
- - Specifies the amount of levels one key activation zooms in or out.
- - This CVAR applies to binoculars, snipers and FG42.
-
---------
-
-Cheat protected cvars
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A cheat protected cvar is usually used by developers to help during development.
-
-*cg_animSpeed*
 """"""""""""""""""""""""""""""""""""""""
 
   +-------------------------------------+-------------------------------------------+
@@ -1469,74 +1390,477 @@ A cheat protected cvar is usually used by developers to help during development.
   +-------------------------------------+-------------------------------------------+
   | Value                               | Effect                                    |
   +=====================================+===========================================+
-  | 0                                   | Disables display of player animations     |
+  | 0                                   | Disabled                                  |
   +-------------------------------------+-------------------------------------------+
-  | 1                                   | Enables display of player animations      |
+  | 1                                   | Alphabetical                              |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Numerical                                 |
   +-------------------------------------+-------------------------------------------+
 
- - *See also:* [[List_of_Cvars_(new)/#cg_noPlayerAnims|cg_noPlayerAnims]] 
+ - Toggles using either numbers or letters for the quick chat menu. See `example <https://i.imgur.com/Xejzj5x.jpg>`__
+
+--------
+
+*cg_scoreboard*
+""""""""""""""""""""""""""""""""""""""""
+
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 1                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | XP                                        |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | SR                                        |
+  +-------------------------------------+-------------------------------------------+
+
+ - Used to cycle between XP and Skill Rating (SR) scoreboard. See `example <https://i.imgur.com/1IBwm4U.jpg>`__
+
+--------
+
+*cg_shadows*
+""""""""""""""""""""""""""""""""""""""""
+
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 1                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | Disabled                                  |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | Blob                                      |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Stencil                                   |
+  +-------------------------------------+-------------------------------------------+
+  | 3                                   | Projection                                |
+  +-------------------------------------+-------------------------------------------+
+  | 4                                   | Polygon                                   |
+  +-------------------------------------+-------------------------------------------+
+
+ - Display player shadows underneath the player.
+ - *NOTE*: Stencil, Projection and Polygon are currently disabled.
+ - See `example <https://i.imgur.com/4yP4d05.jpg>`__
+
+--------
+
+*cg_showMiss*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Print faulty predictions into the console, for debugging purposes. See `example <https://i.imgur.com/IjZ08dk.jpg>`__
+
+--------
+
+*cg_simpleItems*
+""""""""""""""""""""""""""""""""""""""""
+
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 0                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | Disabled                                  |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | Enabled except objectives                 |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Enabled for all items                     |
+  +-------------------------------------+-------------------------------------------+
+
+ - Use minimalistic icons for item pick-ups. See `example <https://i.imgur.com/jbFplDS.jpg>`__
+
+--------
+
+*cg_skybox*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Likely intended to toggle display of the skybox. Also requires skybox origin the be defined in config string.
+
+--------
+
+*cg_specHelp*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Toggle display of spectator help, *only* in multiview.
+
+--------
+
+*cg_stats*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Prints client frame in the console, for debugging purposes. See `example <https://i.imgur.com/za4IiP3.jpg>`__
+
+--------
+
+*cg_teamChatHeight*
+""""""""""""""""""""""""""""""""""""""""
+
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 8                                             |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | 8                                             |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Amount of lines of chat messages displayed at once (maximum)             |
+  +----------------------------------------------------------------------------------------+
+
+--------
+
+*cg_teamChatsOnly*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Filers global chat messages and only displays team and fireteam chat.
+
+--------
+
+*cg_teamChatTime*
+""""""""""""""""""""""""""""""""""""""""
+
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 8000                                          |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | No functional limit                           |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration of chat messages that are kept on display, in *milliseconds*    |
+  +----------------------------------------------------------------------------------------+
+
+--------
+
+*cg_tracers*
+""""""""""""""""""""""""""""""""""""""""
+
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 1                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | None                                      |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | All tracers                               |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Own tracers only                          |
+  +-------------------------------------+-------------------------------------------+
+  | 3                                   | Other's tracers only                      |
+  +-------------------------------------+-------------------------------------------+
+
+ - Choosing which tracers to display.
+
+--------
+
+*cg_useWeapsForZoom*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Weapon switch will zoom in and out while scoped, rather than switch weapons.
+
+--------
+
+*cg_visualEffects*  
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Draws additional visual effects _(airstrike planes, debris)_. See `example <https://i.imgur.com/I2anIBj.jpg>`__
+
+--------
+
+*cg_voiceChats*  
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Play voice chat sound file in-game when using quick chat _(e.g. v21 for Need a Medic!)_.
+ - *See also:*  `cg_voiceText`_
+
+--------
+
+*cg_voiceText*  
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Show voice text lines in-game when using quick chat _(e.g. v21 for Need a Medic!)_.
+ - *See also:*  `cg_voiceChats`_
+
+--------
+
+*cg_voiceSpriteTime*
+""""""""""""""""""""""""""""""""""""""""
+
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 6000                                          |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | No functional limit                           |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration of chat icons shown above players their head, in *milliseconds* |
+  +----------------------------------------------------------------------------------------+
+
+ - See `example <https://i.imgur.com/BMKja5I.jpg>`__
+
+--------
+
+*cg_weapAltReloads*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Provide an alternative way to reload a weapon that doesn't have weapon an alternative fire.
+
+--------
+
+*cg_weapaltSwitches*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Provide an alternative way to use an alt weapon by pressing the respective weaponbank bind
+
+--------
+
+*cg_weaponCycleDelay*
+""""""""""""""""""""""""""""""""""""""""
+
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 150                                           |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | No functional limit                           |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Duration for which a pause is enforced so keeping the weapon switch key  |
+  |               activated won't trigger too fast, in *milliseconds*                      |
+  +----------------------------------------------------------------------------------------+
+
+--------
+
+*cg_zoomDefaultSniper*
+""""""""""""""""""""""""""""""""""""""""
+
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 20                                            |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 4                                      | 32                                            |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Set the default zoom level for scopes                                    |
+  +----------------------------------------------------------------------------------------+
+
+--------
+
+*cg_zoomStepSniper*
+""""""""""""""""""""""""""""""""""""""""
+
+  +----------------------------------------+-----------------------------------------------+
+  | Default                                | 2                                             |
+  +----------------------------------------+-----------------------------------------------+
+  | Range start                            | Range end                                     |
+  +========================================+===============================================+
+  | 0                                      | 28                                            |
+  +----------------------------------------+-----------------------------------------------+
+  | .. centered:: Set the default zoom level for scopes                                    |
+  +----------------------------------------------------------------------------------------+
+
+ - Specifies the amount of levels one key activation zooms in or out.
+ - This CVAR applies to binoculars, snipers and FG42.
+ - See `cg_zoomDefaultSniper`_ for the step range.
+
+--------
+
+Developer cvars
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A cheat protected cvar is usually used by developers to help during development.
+
+*cg_animSpeed*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 1       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Display of player animations
+ - *See also:* `cg_noPlayerAnims`_
 
 --------
 
 *cg_debugAnim*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = player anim; "2" = weapon anim
- - Used to debug player model and weapon animations. 
- - When set to "1", the game prints the frametime and title of drawn player model animation in the console.
- - When set to "2", the game prints the drawn weapon animation in the console. 
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 1                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | Disabled                                  |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | Player animations                         |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Weapon animations                         |
+  +-------------------------------------+-------------------------------------------+
+  | 3                                   | Old and current weapon animations         |
+  +-------------------------------------+-------------------------------------------+
+  | > 3                                 | Print debug when time > lf->frameTime     |
+  +-------------------------------------+-------------------------------------------+
 
-.. image:: https://i.imgur.com/0qGZ2wF.jpg 
+ - Used to debug player model and weapon animations by printing info. See `example <https://i.imgur.com/0qGZ2wF.jpg>`__
+
+--------
+
+*cg_debugBullets*
+""""""""""""""""""""""""""""""""""""""""
+
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
+
+ - Used to debug bullets. See `cg_railTrailTime`_
 
 --------
 
 *cg_debugEvents*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = enabled
- - Used to debug entity events. When enabled, prints debug information in the console.  "Reference":https://github.com/etlegacy/etlegacy/blob/72fc9e39193945d82be24208dcbb9c29cba8d596/src/cgame/cg_event.c#L1824
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/QwBp8MF.jpg 
+ - Used to debug entity events. When enabled, prints debug information in the console. See `example <https://i.imgur.com/QwBp8MF.jpg>`__
 
 --------
 
 *cg_debugPlayerHitboxes*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *CVAR to be reworked! "Ticket":https://dev.etlegacy.com/issues/1120*
+  +-------------------------------------+-------------------------------------------+
+  | Default                             | 1                                         |
+  +-------------------------------------+-------------------------------------------+
+  | Value                               | Effect                                    |
+  +=====================================+===========================================+
+  | 0                                   | Disabled                                  |
+  +-------------------------------------+-------------------------------------------+
+  | 1                                   | Hitbox                                    |
+  +-------------------------------------+-------------------------------------------+
+  | 2                                   | Head axis                                 |
+  +-------------------------------------+-------------------------------------------+
+  | 3                                   | Hitbox and head axis                      |
+  +-------------------------------------+-------------------------------------------+
+  | 4                                   | Position marker                           |
+  +-------------------------------------+-------------------------------------------+
+  | 5                                   | Hitbox and position marker                |
+  +-------------------------------------+-------------------------------------------+
+  | 6                                   | Head axis and position marker             |
+  +-------------------------------------+-------------------------------------------+
+  | 7                                   | Hitbox, head axis and position marker     |
+  +-------------------------------------+-------------------------------------------+
 
- - *Default:* "0" = disabled| *Bit flags:* "0" = disabled; "1" = hitbox; "2" = head axis; "4" = position marker
- - Used to debug player hitboxes. 
-
-.. image:: https://i.imgur.com/WkDk0qn.jpg 
+ - Used to debug player hitboxes. See `example <https://i.imgur.com/WkDk0qn.jpg>`__
 
 --------
 
 *cg_debugPosition*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = enabled
- - Used to debug player entity yaw angle. When enabled, prints debug information in the console. "Reference":https://github.com/etlegacy/etlegacy/blob/d912b5f5c6bf89feb5068b8f08121f5090e2a209/src/cgame/cg_players.c#L3108
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
-.. image:: https://i.imgur.com/b4SOkv1.jpg 
+ - Used to debug player entity yaw angle. When enabled, prints debug information in the console. See `example <https://i.imgur.com/b4SOkv1.jpg>`__
 
 --------
 
 *cg_debugSkills*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} "*Doesn't seem to be doing anything*":https://github.com/etlegacy/etlegacy/blob/72fc9e39193945d82be24208dcbb9c29cba8d596/src/cgame/cg_draw_hud.c#L1472
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "0" = disabled|<{width:600px}. *Possible values:* "0" = disabled; "1" = enabled
- - Description needed. 
+ - Prints debug information to console when gaining a skill level and/or xp. Exact circumstances are unknown.
 
 --------
 
 *cg_errorDecay*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "100" | *Possible range:* "0" = disabled; < ?
- - Supposed to decay prediction errors over several frames instead of correcting in one jerk, in *frames*. 
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 100                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | 500                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Decay prediction errors over several frames instead of                |
+  |               correcting in one jerk, in *frames*                                   |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
@@ -1558,287 +1882,182 @@ A cheat protected cvar is usually used by developers to help during development.
 *cg_noPlayerAnims*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Rename to cg_playerAnims and merge with [[List_of_Cvars_(new)/#cg_animSpeed|cg_animSpeed]]*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
  - Toggles display of player animations. If enabled, animation is fixed in a single frame.
- - *See also:* [[List_of_Cvars_(new)/#cg_animSpeed|cg_animSpeed]]
+ - *See also:* `cg_animSpeed`_
 
 --------
 
 *cg_noPredict*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Is there a real reason for this? Shouldn't this be enabled always anyway?*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
  - Toggles prediction of player actions _(e.g. movement)_.
-
---------
-
-*cg_swingSpeed*  
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0.1"| *Possible range:* "0" = never turn; < ?
- - Speed at which the thirdperson player model turns around when looking around.
-
---------
-
-*cg_thirdPerson*  
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Enables a thirdperson perspective.
-
-.. image:: https://i.imgur.com/rd96Eue.jpg
-
---------
-
-*cg_thirdPersonAngle*  
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0" = behind| *Possible range:* "0" / "360" = from behind; "180" = from ahead
- - Specifies the angle of the thirdperson perspective.
-
-.. image:: https://i.imgur.com/gKOe7wl.jpg
-
---------
-
-*cg_thirdPersonRange*  
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "80"| *Possible range:* ? < ;"0" = above head; < ?
- - Specifies the distance from camera to player origin, in *in-game units*.
-
-.. image:: https://i.imgur.com/RjlD4xn.jpg
-
---------
-
-*cg_timescale*  
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Description needed.*
-
- - *Default:* "1"| *Possible values:*
- - unknown CVAR in-game, but used in code.
-
---------
-
-Internal cvars
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A internal cvar is used in the code for certain behaviour or compatability and is not intended to be used by player, but is not cheat protected.
-
---------
-
-*cg_messageType*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What does that CVAR do really?*
-
- - *Default:* "1" = global| *Possible values:* "1" = global; "2" = team; "3" = fireteam; 
- - Select the destination of your message. 
-
---------
-
-*cg_paused*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0" = unpaused| *Possible values:* "0" = unpaused; "1" = paused
- - Internal CVAR used to let the game behave differently when paused. 
-
---------
-
-*cg_popupLimboMenu*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled| *Possible values:*
- - CVAR is not used, however, has to be kept for compatibility.
 
 --------
 
 cg_railTrailTime
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "50" | *Possible values:*
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 750                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Specifies the time the trail a bullet takes is visualized             |
+  |               , in *milliseconds*                                                   |
+  +-------------------------------------------------------------------------------------+
+
+ - See also `cg_debugBullets`_ and `cg_debugPlayerHitboxes`_
 
 --------
 
-*cg_rconPassword*
+*cg_swingSpeed*  
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Why is that necessary when auth_rconPassword exists? vs g_password*
-
- - *Default:* " " | *Possible values:* 
- - Internal CVAR. 
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0.1                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Speed at which the thirdperson player model turns around              |
+  |               when looking around                                                   |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
-*cg_recoilPitch*
+*cg_thirdPerson*  
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Since it's read-only anyway and the client should not be able to set this, can it be removed?*
+  +---------+---------+----------+
+  | Default | Enabled | Disabled |
+  +=========+=========+==========+
+  | 0       | 1       | 0        |
+  +---------+---------+----------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Read-only CVAR encoding the kick angles into a 24-bit number, for sending to the client exe. 
+ - Enables a thirdperson perspective. See `example <https://i.imgur.com/rd96Eue.jpg>`__
 
 --------
 
-*cg_redLimboTime*
+*cg_thirdPersonAngle*  
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "30000" | *Possible values:*
- - Internal CVAR communicated by systeminfo and used for spawn timers, in *milliseconds*.
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0                                             |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | 360                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Specifies the angle of the thirdperson perspective, angle in degrees  |
+  +-------------------------------------------------------------------------------------+
+
+ - See `example <https://i.imgur.com/gKOe7wl.jpg>`__
 
 --------
 
-*cg_refereePassword*
+*cg_thirdPersonRange*  
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Why is that necessary when auth_refereePassword exists? vs g_password*
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 80                                            |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Specifies the distance from camera to player origin                   |
+  |               , in *in-game units*                                                  |
+  +-------------------------------------------------------------------------------------+
 
- - *Default:* " " | *Possible values:* 
- - Internal CVAR. 
-
---------
-
-*cg_scoreboard*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = SR| *Possible values:* "0" = XP; "1" = SR
- - Used to cycle between XP and Skill Rating (SR) scoreboard. 
-
-.. image:: https://i.imgur.com/1IBwm4U.jpg 
-
---------
-
-*cg_selectedPlayer*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Doesn't seem to have any effect.*
-
- - *Default:* " " | *Possible values:*
- - Select a "team leader"?. 
-
---------
-
-*cg_selectedPlayerName*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *Doesn't seem to have any effect.*
-
- - *Default:* " " | *Possible values:* 
- - Internal cvar to show name of player that is being spectated
-
---------
-
-*cg_blood*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Internal CVAR used in handling the display of blood effects.
-
---------
-
-*cg_spawnTimer_period*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *This is bad! Don't add CVARs that can, but shouldn't be modified!!*
-
- - *Default:* "0"| *Possible values:* 
- - *CAREFUL:* Don’t modify. Use console commands /timerSet and /resetTimer instead. 
-
---------
-
-*cg_spawnTimer_set*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *This is bad! Don't add CVARs that can, but shouldn't be modified!!*
-
- - *Default:* "-1"| *Possible values:* 
- - *CAREFUL:* Don’t modify. Use console commands /timerSet and /resetTimer instead. 
-
---------
-
-*cg_synchronousClients*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- - Internal CVAR communicated by systeminfo. 
+ - See `example <https://i.imgur.com/RjlD4xn.jpg>`__
 
 --------
 
 *cg_tracerChance*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0.4"| *Possible range:* "0" = never; "1" = always
- - Probability that a shot creates a bullet tracer. 
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0.4                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | 1                                             |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Probability that a shot creates a bullet tracer, % in decimal         |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_tracerLength*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "160"| *Possible range:* "0" = disabled; < ?
- - Length of bullet tracers. 
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 160                                           |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Length of bullet tracers, in *in-game units*                          |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_tracerSpeed*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "4500"| *Possible range:* "0" = static; < ?
- - Speed of bullet tracers. 
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 4500                                          |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Speed of bullet tracers. Setting it to 0 creates a static tracer      |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_tracerWidth*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0"| *Possible range:* "0" = disabled; < ?
- - Width of bullet tracers. 
-
---------
-
-*cg_ui_voteFlags*
-""""""""""""""""""""""""""""""""""""""""
-
- - *Default:* "0"| *Bit flags:* see below
- - *Displays the sum of available voting flags.*
- - config = "1"
- - gametype= "2"
- - kick = "4"
- - map = "8"
- - match reset = "16"
- - mute specs = "32"
- - next map = "64"
- - referee = "128"
- - shuffle teams by XP = "256"
- - shuffle teams by SR = "512"
- - swap teams = "1024"
- - friendly fire = "2048"
- - timelimit = "4096"
- - warm-up damage = "8192"
- - anti-lag = "16384"
- - balanced teams = "32768"
- - muting = "65536"
- - surrender = "131072"
- - restart campaign = "262144"
- - next campaign = "524288"
- - poll = "1048576"
- - map restart = "2097152"
- - shuffle teams by XP (NO RESTART) = "4194304"
- - shuffle teams by SR (NO RESTART) = "8388608"
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0                                             |
+  +-------------------------------------+-----------------------------------------------+
+  | Range start                         | Range end                                     |
+  +=====================================+===============================================+
+  | 0                                   | No functional limit                           |
+  +-------------------------------------+-----------------------------------------------+
+  | .. centered:: Width of bullet tracers                                               |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
 *cg_uinfo*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Since it's read-only, can it be removed?*
-
- - *Default:* "0"| *Possible values:* 
- - Read-only CVAR holding flags identifying rights of the player. 
+  +-------------------------------------+-----------------------------------------------+
+  | Default                             | 0                                             |
+  +=====================================+===============================================+
+  | .. centered:: Consists of values from `cg_autoAction`_, `cg_autoactivate`_          |
+  |               cg_predictItems, `cg_activateLean`_, `cl_timenudge`_ and              |
+  |               `cl_maxpackets`_                                                      |
+  +-------------------------------------------------------------------------------------+
 
 --------
 
