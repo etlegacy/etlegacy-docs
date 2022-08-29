@@ -2,6 +2,8 @@
 List of Commands
 ===================
 
+.. _commands:
+
 Console Commands
 ^^^^^^^^^^^^^^^^
 
