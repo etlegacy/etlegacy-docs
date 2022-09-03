@@ -22,7 +22,7 @@ copyright = '2012-2020, ET: Legacy Team'
 author = 'ET: Legacy Team'
 
 # The full version, including alpha/beta/rc tags
-release = '2.76'
+release = '2.80.2'
 
 # -- General configuration ---------------------------------------------------
 
