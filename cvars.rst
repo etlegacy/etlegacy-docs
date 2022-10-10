@@ -47,6 +47,31 @@ Player cvars
 
 --------
 
+*logfile*
+""""""""""""""""""""""""""""""""""""""""
+
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`List <cvar-types>`                                                          |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Enables logging of engine output to etconsole.log                                 |
++-----------------+-----------------------------------------------------------------------------------+
+
++-------+---------------------------------------------------------------------------------------------+
+| Value | Effect                                                                                      |
++=======+=============================================================================================+
+| **0** | Disabled                                                                                    |
++-------+---------------------------------------------------------------------------------------------+
+| **1** | Enable logging, buffer log                                                                  |
++-------+---------------------------------------------------------------------------------------------+
+| **2** | Enable logging, flush after each print                                                      |
++-------+---------------------------------------------------------------------------------------------+
+
+ - Not to be confused with the engine cvar `cg_logfile`_
+
+--------
+
 *name*
 """"""""""""""""""""""""""""""""""""""""
 
@@ -155,6 +180,35 @@ Developer cvars
 
 --------
 
+*developer*
+""""""""""""""""""""""""""""""""""""""""
+
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Toggles developer mode. Prints more info to console and provides more commands.   |
++-----------------+-----------------------------------------------------------------------------------+
+
+--------
+
+*fixedtime*
+""""""""""""""""""""""""""""""""""""""""
+
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | any positive integer                                                              |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Modifies time for debugging purpose, in *milli-seconds*. Effectively cant be      |
+|                 | lower than 1.                                                                     |
++-----------------+-----------------------------------------------------------------------------------+
+
+--------
+
 *timescale*
 """"""""""""""""""""""""""""""""""""""""
 
@@ -193,6 +247,42 @@ Developer cvars
 +-----------------+-----------------------------------------------------------------------------------+
 | **Description** | Toggles information of packet traffic                                             |
 +-----------------+-----------------------------------------------------------------------------------+
+
+--------
+
+*version*
+""""""""""""""""""""""""""""""""""""""""
+
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | "ET 2.60b " CPUSTRING " May  8 2006"                                              |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Contains the installed version. CPUSTRING is platform specific.                   |
++-----------------+-----------------------------------------------------------------------------------+
+
+--------
+
+*viewlog*
+""""""""""""""""""""""""""""""""""""""""
+
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`List <cvar-types>`                                                          |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Used for dedicated server to control the state of viewlog                         |
++-----------------+-----------------------------------------------------------------------------------+
+
++-------+---------------------------------------------------------------------------------------------+
+| Value | Effect                                                                                      |
++=======+=============================================================================================+
+| **0** | Hidden / Disabled                                                                           |
++-------+---------------------------------------------------------------------------------------------+
+| **1** | visible                                                                                     |
++-------+---------------------------------------------------------------------------------------------+
+| **2** | Minimized                                                                                   |
++-------+---------------------------------------------------------------------------------------------+
 
 --------
 
@@ -1983,7 +2073,7 @@ Player cvars
 |                 | folder with the name provided. If empty, logging is disabled.                     |
 +-----------------+-----------------------------------------------------------------------------------+
 
- - Not to be confused with the engine cvar :code:`logfile`
+ - Not to be confused with the engine cvar `logfile`_
 
 --------
 
@@ -4029,401 +4119,510 @@ Player cvars
 *com_altivec*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *What is this used for?*
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  Description needed. 
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Toggle altivec support. Enables SIMD for specific processors. See                 |
+|                 | `altivec <https://en.wikipedia.org/wiki/AltiVec>`_                                |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_ansiColor*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  Enables color output in the system console. 
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 1                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Enables color output in the system console                                        |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_buildScript*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  Force loading of all possible data and error on failures for automated data building scripts. 
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Force loading of all possible data and error on failures for automated data       |
+|                 | building scripts                                                                  |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_hunkMegs*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "128"| *Possible values:*
- -  Amount of memory (RAM) assigned to the hunk, *in MB*.
- - *See also:* [[List_of_Cvars_(new)/#com_soundMegs|com_soundMegs]] and [[List_of_Cvars_(new)/#com_zoneMegs|com_zoneMegs]]
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 128                                                                               |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | 64 and above. (1 if dedicated)                                                    |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Amount of memory (RAM) assigned to the hunk, *in MB*                              |
++-----------------+-----------------------------------------------------------------------------------+
 
---------
-
-*com_logfile* / *logfile*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = buffer log; "2" = flush after each print
- -  Non-user CVAR
+ - *See also:* `com_soundMegs`_ and `com_zoneMegs`_
 
 --------
 
 *com_maxFPS*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "85"| *Possible range:* "20" < "333"
- -  Specifies the maximum frames per second the game can reach for a stable render rate.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 125                                                                               |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | 20 -333                                                                           |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Specifies the maximum frames per second the game can reach for a stable render    |
+|                 | rate                                                                              |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_soundMegs*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "160"| *Possible values:*
- -  Amount of memory (RAM) allocated for loading sound files, *in MB*.
- - *See also:* [[List_of_Cvars_(new)/#com_hunkMegs|com_hunkMegs]] and [[List_of_Cvars_(new)/#com_zoneMegs|com_zoneMegs]]
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 160                                                                               |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | any positive integer                                                              |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Amount of memory (RAM) allocated for loading sound files, *in MB*                 |
++-----------------+-----------------------------------------------------------------------------------+
+
+ - *See also:* `com_hunkMegs`_ and `com_zoneMegs`_
 
 --------
 
 *com_zoneMegs*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* " "| *Possible values:*
- -  Amount of memory (RAM) allocated for the random block zone, *in MB*.
- - *NOTE:* com_zoneMegs can only be set on the command line, and not in etconfig.cfg or Com_StartupVariable. "[Reference]":https://github.com/etlegacy/etlegacy/blob/f0bf85d7e1b1675b9e69ce6b47d3c12604406560/src/qcommon/common.c#L1674
- - *See also:* [[List_of_Cvars_(new)/#com_hunkMegs|com_hunkMegs]] and [[List_of_Cvars_(new)/#com_soundMegs|com_soundMegs]]
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 64                                                                                |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | 64 and above                                                                      |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Amount of memory (RAM) allocated for the random block zone, *in MB*               |
++-----------------+-----------------------------------------------------------------------------------+
+
+ - *NOTE:* "com_zoneMegs" can only be set on the command line, and not in etconfig.cfg or Com_StartupVariable.
+ - *See also:* `com_hunkMegs`_ and `com_soundMegs`_
 
 --------
 
-Internal / developer cvars
+Developer cvars
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *com_crashed*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Is this supposed to be accessible by the user? It sounds like this should be an automated internal CVAR.*
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Set in case of a crash, prevents CVAR_UNSAFE variables from being set from a cfg  |
++-----------------+-----------------------------------------------------------------------------------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  Enable in case of a crash to prevent CVAR_UNSAFE variables from being set from a cfg.
- - *See also:* [[List_of_Cvars_(new)/#com_ignoreCrash|com_ignoreCrash]]
+ - *See also:* `com_ignoreCrash`_
 
 --------
 
 *com_downloadURL*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* " " = Windows| *Possible values:* address string
- -  Non-user CVAR specifying the address which is used for the download command.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | "http://mirror.etlegacy.com/etmain"                                               |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Specifies the address which is used for the download command                      |
++-----------------+-----------------------------------------------------------------------------------+
+
+ -  See the "download" command in :ref:`commands <commands>`
 
 --------
 
 *com_hunkUsed*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Should this be accessible to the user? This sounds like it should be read-only*
-{TODO} *Which unit is this?*
-
- - *Default:* "0"| *Possible values:*
- -  Size of the currently used hunk, *in [?]*.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | 0 - value of com_hunkMegs`_ * 1024 * 1024                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Size of the currently used hunk, *in bytes*                                       |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_errorDiagnoseIP*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} unknown CVAR ingame. Check.
-
- - *Default:* " "| *Possible values:* server address
- -  Catch a connection process that would turn bad.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | ""                                                                                |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Stores the address when connecting and gets cleared when connection is successful |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_ignoreCrash*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Combine with com_crashed*
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Let ET override CVAR_UNSAFE in case of crash                                      |
++-----------------+-----------------------------------------------------------------------------------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  Let ET override CVAR_UNSAFE in case of crash. Use only if you know what you are doing!
- - *See also:* [[List_of_Cvars_(new)/#com_crashed|com_crashed]]
+ - *See also:* `com_crashed`_
 
 --------
 
 *com_introPlayed*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Should this be accessible to the user? This sounds like it should be read-only*
-{TODO} *Also, since we don't have an intro, can this be removed?*
-
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  CVAR seems to have no effect in ETL and ET. Likely intended to fetch the status of the game at startup?
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Was used to determine if the intro should be played or not                        |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_journal* / *journal*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* "0" | *Possible values:*
- -  Non-user CVAR to open a journal?
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | When enabled, writes events and its data to "journal.dat" and journaldata.dat"    |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_masterServer*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "master.etlegacy.com:27950" = maximized| *Possible values:* domain:port
- -  Allow to override the default master server
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | "master.etlegacy.com"                                                             |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Sets the address for the master server. Default port 27950.                       |
++-----------------+-----------------------------------------------------------------------------------+
+
+ -  *See also:* `sv_master1`_ and `sv_master2`_
 
 --------
 
 *com_minimized*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Shouldn't this be read-only?*
-
- - *Default:* "0" = maximized| *Possible values:* "0" = maximized; "1" = minimized
- -  Used  to catch the state of the game. Is the window minimized or not?
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Used  to catch the state of the game. Is the window minimized or not?             |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_missingFiles*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* " "| *Possible values:*
- -  Non-user CVAR storing information regarding missing files. Used for displaying error messages to the user.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | ""                                                                                |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Storing information regarding missing files, used for displaying error messages   |
+|                 | to the user                                                                       |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_motd*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *What exactly is this used to? "0" also displays the MOTD*
-
- - *Default:* "1" = enabled| *Possible values:* "0" = disabled; "1" = enabled
- - Display the official ET: Legacy "message of the day".
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 1                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Enables automatically requesting the message of the day to be able to display it  |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_motdServer*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "motd.etlegacy.com:27951" = maximized| *Possible values:* domain:port
- -  Allow to override the default motd server
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | "motd.etlegacy.com"                                                               |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Allow to override the default motd server. Default port 27951.                    |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_motdString*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Description correct?*
-
- - *Default:* " "| *Possible values:* string
- - The official ET: Legacy "message of the day" string used to communicate news to players.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | ""                                                                                |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | The official ET: Legacy "message of the day" string used to communicate news to   |
+|                 | players                                                                           |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_pid*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* | *Possible values:*
- -  Read-only CVAR storing process id.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | No default                                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | any positive integer                                                              |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Read-only CVAR storing process id                                                 |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_pidFile*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* | *Possible values:* "profiles/name/profile.pid" = client
- -  - "etlegacy_server.pid" = server
-
- Full path to the pid file (contains process id).
-
---------
-
-*net_dropSim*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What's the point of this CVAR?*
-
- - *Default:* "0.0" = disabled| *Possible range:* "0.0" < "1.0"
- -  Simulated packet drops.
-
---------
-
-*com_fixedtime*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* "0" | *Possible values:*
- -  Non-user CVAR to fix time?
-
---------
-
-*com_recommended*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *This CVAR is used once during the entire installation lifecycle. Is it necessary?*
-
- - *Default:* " "| *Possible values:*
- -  Non-user CVAR used during the profile creation. Use recommended settings or not?
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | "profiles/name/profile.pid" = client, "etlegacy_server.pid" = server              |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Full path to the pid file (contains process id)                                   |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_recommendedSet*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Combine with com_recommended.*
-
- - *Default:* " "| *Possible values:*
- -  When enabled, the game uses default (recommended) values during profile creation.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | When enabled, the game uses default (recommended) values during profile creation  |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_showTrace*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *What information is printed here?*
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Prints trace information to the console. Used for debugging.                      |
++-----------------+-----------------------------------------------------------------------------------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  Prints trace information to the console. Used for debugging.
-
-.. image:: https://i.imgur.com/qJ3hTM8.jpg
+ - See `example <https://i.imgur.com/qJ3hTM8.jpg>`__
 
 --------
 
 *com_speeds*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *What information is printed here?*
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`List <cvar-types>`                                                          |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Prints speed information per frame to the console. Used for debugging.            |
++-----------------+-----------------------------------------------------------------------------------+
 
- - *Default:* "0" = disabled| *Possible values:* "0" = disabled; "1" = enabled
- -  Prints speed information per frame to the console. Used for debugging.
++-------+---------------------------------------------------------------------------------------------+
+| Value | Effect                                                                                      |
++=======+=============================================================================================+
+| **0** | Disabled                                                                                    |
++-------+---------------------------------------------------------------------------------------------+
+| **1** | Enabled, print frame speed information to console                                           |
++-------+---------------------------------------------------------------------------------------------+
+| **3** | Enabled, print server packet time and frame speed information to console                    |
++-------+---------------------------------------------------------------------------------------------+
 
-.. image:: https://i.imgur.com/lXq6Lv3.jpg
-
---------
-
-*com_sv_running* / *sv_running*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* "0"| *Possible values:*
- -  Non-user CVAR
-
---------
-
-*com_timeDemo* / *timedemo*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* "0"| *Possible values:*
- -  Non-user CVAR
-
---------
-
-*com_timeScale* / *timescale*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* "1.0"| *Possible values:*
- -  Non-user CVAR used to change speed of the game?
- - From code: if com_timescale below 1.0, then we pass one frame on "1.0/com_timescale" (eg: com_timescale = 0.5, then 1.0/0.5 = 2, so we pass one frame on two)
+ - See `example <https://i.imgur.com/lXq6Lv3.jpg>`__
 
 --------
 
 *com_unfocused*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Shouldn't this be read-only?!*
-
- - *Default:* "0" = focused| *Possible values:* "0" = focused; "1" = unfocused
- -  Used mainly in windowed mode to catch the state of the game. Is the window active or not?
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | A state cvar to change behaviour when window is active or not. If unfocused,      |
+|                 | mouse cursor is not captured.                                                     |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_updateAvailable*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "0" = no| *Possible values:* "0" = no; "1" = yes
- - If there is a newer version than the current one this CVAR is enabled.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`List <cvar-types>`                                                          |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 0                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | If there is a new version of the client available compared to the version         |
+|                 | installed, this CVAR is enabled. Read-only internally used.                       |
++-----------------+-----------------------------------------------------------------------------------+
+
++-------+---------------------------------------------------------------------------------------------+
+| Value | Effect                                                                                      |
++=======+=============================================================================================+
+| **0** | Signals no update available                                                                 |
++-------+---------------------------------------------------------------------------------------------+
+| **1** | Signals update available                                                                    |
++-------+---------------------------------------------------------------------------------------------+
+| **2** | Will set `com_updatefiles`_ with the files to update and when forceUpdate is enabled        |
+|       | will auto-update                                                                            |
++-------+---------------------------------------------------------------------------------------------+
 
 --------
 
 *com_updateFiles*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* " " | *Possible values:*
- - Stores information regarding remainging files needed for the update.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | ""                                                                                |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Stores information regarding remaining files needed for the update                |
++-----------------+-----------------------------------------------------------------------------------+
+
+ - *See also:* `com_updateAvailable`_
 
 --------
 
 *com_updateMessage*
 """"""""""""""""""""""""""""""""""""""""
 
-{TODO} *Shouldn't this be read-only? Or rather, shouldn't this be hardcoded without a CVAR?*
-
- - *Default:* "New version available. Do you want to update now?" | *Possible values:*
- - Stores the string used for the pop-up when there is a new update.
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | "New version available. Do you want to update now?"                               |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Stores the string used for the pop-up when there is a new update                  |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_updateServer*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "update.etlegacy.com:27951" = maximized| *Possible values:* domain:port
- -  Allow to override the default update server
-
---------
-
-*com_version* / *version*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* " "| *Possible values:*
- -  Non-user CVAR.
-
---------
-
-*com_viewLog* / *viewlog*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* "0" = hidden| *Possible values:* "0" = hidden, "1" = visible, "2" = minimized
- -  Non-user CVAR used to view the log?
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | "update.etlegacy.com"                                                             |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Allow to override the default update server. Default port is 27951.               |
++-----------------+-----------------------------------------------------------------------------------+
 
 --------
 
 *com_watchdog*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* "60"| *Possible values:*
- -  Non-user CVAR used to check whether the game died with an ERR_DROP or any situation leading to server running with no map.
- - *See also:* [[List_of_Cvars_(new)/#com_watchdog_cmd|com_watchdog_cmd]]
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Range <cvar-types>`                                                         |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 60                                                                                |
++-----------------+-----------------------------------------------------------------------------------+
+| **Range**       | any positive integer                                                              |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | used to check whether the game died with an ERR_DROP or any situation leading to  |
+|                 | server running with no map                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+
+ - *See also:* `com_watchdog_cmd`_
 
 --------
 
 *com_watchdog_cmd*
 """"""""""""""""""""""""""""""""""""""""
 
- - *Default:* " "| *Possible values:* e.g. "exec mapvotecycle.cfg"
- -  Non-user CVAR specifying the actions in an event where com_watchdog triggers.
- - *See also:* [[List_of_Cvars_(new)/#com_watchdog|com_watchdog]]
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`String <cvar-types>`                                                        |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | ""                                                                                |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | CVAR specifying the actions in an event where com_watchdog triggers. When empty   |
+|                 | the default command used is quit. This is not reflected by the default value      |
++-----------------+-----------------------------------------------------------------------------------+
+
+ - *See also:* `com_watchdog`_
 
 --------
 
 Server cvars
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*sv_running*
+""""""""""""""""""""""""""""""""""""""""
+
++-----------------+-----------------------------------------------------------------------------------+
+| **Type**        | :ref:`Boolean <cvar-types>`                                                       |
++-----------------+-----------------------------------------------------------------------------------+
+| **Default**     | 1                                                                                 |
++-----------------+-----------------------------------------------------------------------------------+
+| **Description** | Lean while using the activate button                                              |
++-----------------+-----------------------------------------------------------------------------------+
+
+
+ - *Default:* "0"| *Possible values:*
+ -  Non-user CVAR
+
+--------
 
 *com_dedicated* / *dedicated*
 """"""""""""""""""""""""""""""""""""""""
@@ -4454,16 +4653,6 @@ Player cvars
 Developer cvars
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*com_developer* / *developer*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What is this used for? "Unknown CVAR" ingame*
-
- - *Default:* | *Possible values:*
- -  Non-user CVAR to toggle some sort of developer mode?
-
---------
-
 *con_drawNotify*
 """"""""""""""""""""""""""""""""""""""""
 
@@ -4472,16 +4661,6 @@ Developer cvars
  - *Default:* "0" = disabled | *Possible values:* "0" = disabled; "1" = enabled 
  -  Prints the last few lines of console output transparently on the top of the screen. 
  - *See also:* `con_notifyTime`_, `con_numNotifies`_
-
---------
-
-*com_dropSim* / *net_dropsim*
-""""""""""""""""""""""""""""""""""""""""
-
-{TODO} *What's the point of this CVAR?*
-
- - *Default:* "0.0" = disabled| *Possible range:* "0.0" < "1.0"
- -  Simulated packet drops.
 
 --------
 
@@ -4500,6 +4679,19 @@ Developer cvars
  - *Default:* "7" | *Possible range:* "0" = disabled; < ?
  -  Change number of drawable notifies. Allows to draw up to 10 lines.
  - *See also:* `con_drawNotify`_, `con_numNotifies`_
+
+--------
+
+*NET_* (Network)
+----------------------------------------
+
+*net_dropsim*
+""""""""""""""""""""""""""""""""""""""""
+
+{TODO} *What's the point of this CVAR?*
+
+ - *Default:* "0.0" = disabled| *Possible range:* "0.0" < "1.0"
+ -  Simulated packet drops.
 
 --------
 
