@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ET: Legacy'
-copyright = '2012-2020, ET: Legacy Team'
+copyright = '2012-2023, ET: Legacy Team'
 author = 'ET: Legacy Team'
 
 # The full version, including alpha/beta/rc tags
