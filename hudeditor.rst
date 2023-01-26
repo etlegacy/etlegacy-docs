@@ -6,7 +6,13 @@ Introduction
 ^^^^^^^^^^^^
 Since the 2.81.0, ET:Legacy introduced a new way to fully customize all HUD components by using the in-game editor and using the extended json hud file.
 
-50 components are currently customizable,
+50 components are currently customizable, with generic customization options and for some more specifics linked to styles options.
+
+The hud file is compatible with both 4:3 and 16:9 resolution. Position adjustment is done automaticly and component aspect ratio are conserved.
+
+Old `hud.dat` file is still compatible with new system, but the visual aspect may changes depending of the component.
+
+New `hud.dat` file path has changed. The new storage location is under `fs_homepath` at `legacy/profiles/<name>` directory (see https://github.com/etlegacy/etlegacy/wiki/Path-and-File-Structure#homepath---fs_homepath)
 
 In-game editor
 ^^^^^^^^^^^^^^
@@ -17,7 +23,13 @@ The in-game editor is reachable by using the menu UI ``Menu`` -> ``Options`` -> 
 
 **Note**: The HUD editor is not available from main menu.
 
-HUD view window
+The HUD editor is divided in 3 differents frames : 
+
+* Rescaled in-game view 
+* Customization panel on the left
+* Components selection panel on the bottom
+
+HUD Editor view window
 """""""""""""""
 
 Components selection panel
@@ -100,42 +112,49 @@ Components list
 Parameters list
 """""""""""""""
 
-+--------------------+-----------------------------------------+--------------------------------------+
-| Parameter          | 	Description                            | Range                                |
-+====================+=========================================+======================================+
-| X 	             | X coordinate                            |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| W 	             | Component Width                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| H 	             | Component Height                        |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| visible            |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| style              |                                         | See Style Section                    |
-+--------------------+-----------------------------------------+--------------------------------------+
-| scale              |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| ColorMain          |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| colorSecondary     |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| showBackGround     |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| colorBackground    |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| showBorder         |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| colorBorder        |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| styleText          |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| alignText          |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| autoAdjust         |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-| styleText          |                                         |                                      |
-+--------------------+-----------------------------------------+--------------------------------------+
-
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| Parameter          | Description                            											 | Range                                		   |
++====================+=========================================------------------------------------------+=================================================+
+| x 	             | X coordinate                            											 | 0 - 640 (visible grid limit, can be out ranged) |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| y 	             | Y coordinate                            											 | 0 - 480 (visible grid limit, can be out ranged) |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| w 	             | Component Width                         											 | 0 - 640 (visible grid limit, can be out ranged) |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| h 	             | Component Height                        											 | 0 - 480 (visible grid limit, can be out ranged) |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| visible            | Toogle component visibility             											 | 0 - 1 (boolean)                      		   |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| style              | Customize component depending of his usage (if available)                       	 | See Style Section                    		   |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| scale              | Change font scale where 100 is the default value (normalized)				     | 0 - 300 (recommanded range, can be out ranged)  |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| colorMain          | Change either the font color (text component) or main component color (specific)  | See Color Section                               |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| colorSecondary     | Change secondary component color (specific, not available for text component)     | See Color Section                               |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| showBackGround     | Toogle background visibility            											 | 0 - 1 (boolean)                      		   |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| colorBackground    | Change the component background color 											 | See Color Section                               |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| showBorder         | Toogle border visibility                											 | 0 - 1 (boolean)                      		   |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| colorBorder        | Change the component border color       											 | See Color Section                               |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| styleText          | Customize font style aspect (only available for component with text only)         | See Style Text Section                          |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| alignText          | Customize font alignment position (only available for component with text only)   | See Align Text Section                          |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+| autoAdjust         | Adjust border and background size to component content (available for text only)  | 0 - 1 (boolean)                      		   |
++--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
 
 Component Style
 """""""""""""""
+
+Color Usage
+"""""""""""
+
+There are 3 differents formats to customize colors : 
+
+* Hexadecimal format RRGGBB[AA] (alpha is optional) with hexdecimal ranged value from 00 to FF 
+* Decimal format 
