@@ -19,7 +19,7 @@ There are two aspects to this project:
 
 .. important:: This documentation aims to be a centralized reference only. For information about common issues, getting help or contributing to the project, ensure to visit the official `website <https://www.etlegacy.com>`_ and `wiki <https://github.com/etlegacy/etlegacy/wiki>`_.
 
-.. note:: For scripting customization of Legacy mod, check the `Lua API reference <https://legacy-lua-api.readthedocs.io/>`_.
+.. note:: For scripting customization of Legacy mod, check the `Lua API reference <https://etlegacy-lua-docs.readthedocs.io/>`_.
 
 .. toctree::
    :maxdepth: 2
