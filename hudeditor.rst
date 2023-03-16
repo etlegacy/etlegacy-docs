@@ -8,7 +8,9 @@ Since the 2.81.0, ET:Legacy introduced a new way to fully customize all HUD comp
 
 50 components are currently customizable, with generic customization options and for some more specifics linked to styles options.
 
-The hud file is compatible with both 4:3 and 16:9 resolution. Position adjustment is done automaticly and component aspect ratio are conserved.
+The HUD file is compatible with both 4:3 and 16:9 resolution. Position adjustment is done automaticly and component aspect ratio are conserved.
+
+The HUD view is a 640 per 480 virtual grid, rescaled horizontaly depending of aspect ratio.
 
 Old `hud.dat` file is still compatible with new system, but the visual aspect may changes depending of the component.
 
@@ -29,26 +31,111 @@ The HUD editor is divided in 3 differents frames :
 * Customization panel on the left
 * Components selection panel on the bottom
 
-HUD Editor view window
+Components can be toogle visible / invisble, which allow there usage or not. An invisible component is not rendered at all and the related functionnality aren't called.
+
+HUD view window
 """"""""""""""""""""""
+The rescaled HUD view allow reposionning visible elements by selecting them with left mouse buton then doing a drag & drop movement.
+
+Drag & drop is achievable by holding left mouse buton on a component, moving the mouse cursor in the HUD view and release the left mouse butoon to the new wanted position.
+
+On fly over a visible component with mouse cursor, a green rectangle outline the component indicating the possibility to select it. Also, a tooltip showing the component name is displayed.
+
+Once selected, the component outline color change to yellow and it gain the focus for customization.
+
+When 2 or more components are stacked under the same cursor position, it is possible to do multiple left mouse buton click to select the differents components.
 
 Components selection panel
 """"""""""""""""""""""""""
+The components selection panel list all the components availables for customization and allow selection of a component.
+The text color may change depending of the components visibily and/or selection state :
 
-Parameters customization panel
+* Yellow : The current selected component
+* Green  : Visible components
+* Red    : Invisible components
+
+Invisible components can only be selected from this panel.
+
+Settings customization panel
 """"""""""""""""""""""""""""""
+The settings customization panel provide options to manage HUDs and customize selected component in HUD view or component selection panel.
+The panel is divided in 4 differents categories :
+
+* HUD setup, to select and manipulate HUD:
+	- Select HUD : list of HUD index number used to select the HUD to display/use.
+		- **NOTE**: This modify the related ``cg_altHud`` cvar.
+	- Save : Save ALL the HUDs mofication into `hud.dat` file
+	- Clone : Duplicate the selected HUD to a free HUD index and select it. It doesn't save it in `hud.dat` file.
+	- Delete : Delete the selected HUD from `hud.dat` file. The selected HUD will change to the default one `(0: ETmain)`
+	- Reset component : Reset **ALL** settings from the selected component to the default values from HUD `(0: ETmain)`
+	- Name : HUD name which can be used to select HUD with ``cg_altHud`` cvar from the name
+* Position & Size, to modify component position and size according 4 values:
+	- X : abscissa coordinate
+	- Y : ordinate coordinate
+	- W : Width
+	- H : Height
+* Text, to modify font size and style
+	- S : Scale ratio, depending of original font size, where 100% is the default
+	- Style : Font Style, see :ref:`Style Text`
+	- Align : Font alignment depending of component position, see :ref:`Align Text`
+* Color & Style, to colorize the component and customize the style: 
+	- Main : Main color, see :ref:`Component Color`
+	- Second : Secondary color, see :ref:`Component Color`
+	- Backgrnd : Background color, delimited by the size of the component
+	- Border : Border color, delimited by the size of the component with a width of 1px
+	- Style: Customizable options separated in 2 categories, generic option and specific one. All component have access to generic option, but not all use specific one.
+		- Visible : Toogle the component visibility 
+		- AutoAdj : Toogle the automatic adjustement of the border position and size depending of the content
+		- Background : Toogle the background visibility
+		- Border : Toogle the border visibility
 
 Usage
 """""
+
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Key Sequences                      | Description                                                                                                          |
++=====================+==============+======================================================================================================================+
+| Down Arrow                         | Move down a component by 1px                                                                                         |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Left Arrow                         | Move left a component by 1px                                                                                         |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Up Arrow                           | Move up a component by 1px                                                                                           |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Right Arrow                        | Move right a component by 1px                                                                                        |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| CTRL (hold) + Arrow                | Move to direction by 0.1px                                                                                           |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| SHIFT (hold) + Arrow               | Move to direction by 5px                                                                                             |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| ALT (hold) + Arrow                 | Resize by enlarging to the right / down or shrinking to the left / up by 1px                                         |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| ALT (hold) + CTRL (hold) + Arrow   | Resize by 0.1px to pressed arrow direction                                                                           |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| ALT (hold) + SHIFT (hold) + Arrow  | Resize by 5px to pressed arrow direction                                                                             |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Mouse wheel down                   | Enlarge by 1px the width and the height without moving the component                                                 |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Mouse wheel up                     | Shrink by 1px the width and the height without moving the component                                                  |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| CTRL (hold) + Mouse wheel down/up  | Resize on position by 0.1px                                                                                          |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Insert                             | Move component to the center of the HUD                                                                              |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Home                               | Move component to the middle width of the HUD (if on the right of it) or to the left of the HUD                      |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| End                                | Move component to the middle width of the HUD (if on the left of it) or to the right of the HUD                      |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Page up                            | Move component to the middle height of the HUD (if under it) or to the top of the HUD                                |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Page Down                          | Move component to the middle height of the HUD (if above it) or to the bottom of the HUD                             |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| l                                  | Toogle the layout visibilty of **ALL** components (aka outline)                                                      |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| h                                  | Toogle the help window visibility                                                                                    |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 New hud.dat json file
 ^^^^^^^^^^^^^^^^^^^^^
-
-Overview
-""""""""
-
-Usage
-"""""
 
 Annexe
 ^^^^^^
@@ -59,7 +146,7 @@ Components list
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 | Components Name    | Description                                                                                                 | Game type Availabilty |
 +====================+=============================================================================================================+=======================+
-|    crosshair       |                                                                                                             |                       |
+|    crosshair       | Draw the crosshair used to aim at something, such as ground, sky, tree, bullet and so on.                   | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    compass         |                                                                                                             |                       |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -97,7 +184,7 @@ Components list
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    weaponstability |                                                                                                             |                       |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    livesleft       |  Indicate the number of lives left in Last Man Standing game type (LMS). Doesn't show on other game types.  | Last Man Standing     |
+|    livesleft       | Indicate the number of lives left in Last Man Standing game type (LMS). Doesn't show on other game types.   | Last Man Standing     |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    roundtimer      |                                                                                                             |                       |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -137,7 +224,7 @@ Components list
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    disconnect      |                                                                                                             |                       |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    chat            |                                                                                                             |                       |
+|    chat            | Meow                                                                                                        |                       |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    spectatorstatus |                                                                                                             |                       |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -157,7 +244,7 @@ Components list
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    crosshairbar    |                                                                                                             |                       |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    stats           |                                                                                                             |                       |
+|    stats           |                                                                                                             | Demo replay only      |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 
 Parameters list
@@ -179,24 +266,27 @@ Parameters list
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
 | scale              | Change font scale where 100 is the default value (normalized)                     | 0 - 300 (recommanded range, can be out ranged)  |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
-| colorMain          | Change either the font color (text component) or main component color (specific)  | See Color Section                               |
+| colorMain          | Change either the font color (text component) or main component color (specific)  | See :ref:`Color Usage`                          |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
-| colorSecondary     | Change secondary component color (specific, not available for text component)     | See Color Section                               |
+| colorSecondary     | Change secondary component color (specific, not available for text component)     | See :ref:`Color Usage`                          |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
 | showBackGround     | Toogle background visibility                                                      | 0 - 1 (boolean)                                 |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
-| colorBackground    | Change the component background color                                             | See Color Section                               |
+| colorBackground    | Change the component background color                                             | See :ref:`Color Usage`                          |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
 | showBorder         | Toogle border visibility                                                          | 0 - 1 (boolean)                                 |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
-| colorBorder        | Change the component border color                                                 | See Color Section                               |
+| colorBorder        | Change the component border color                                                 | See :ref:`Color Usage`                          |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
-| styleText          | Customize font style aspect (only available for component with text only)         | See Style Text Section                          |
+| styleText          | Customize font style aspect (only available for component with text only)         | See :ref:`Style Text`                           |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
-| alignText          | Customize font alignment position (only available for component with text only)   | See Align Text Section                          |
+| alignText          | Customize font alignment position (only available for component with text only)   | See :ref:`Align Text`                           |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
 | autoAdjust         | Adjust border and background size to component content (available for text only)  | 0 - 1 (boolean)                                 |
 +--------------------+-----------------------------------------------------------------------------------+-------------------------------------------------+
+
+Component Color
+"""""""""""""""
 
 Component Style
 """""""""""""""
@@ -233,3 +323,9 @@ There are 3 differents formats to customize colors :
 |             |                                                                                               | "dkgrey"                                   |
 |             |                                                                                               | "black"                                    |
 +-------------+-----------------------------------------------------------------------------------------------+--------------------------------------------+
+
+Style Text
+""""""""""
+
+Align Text
+""""""""""""""
