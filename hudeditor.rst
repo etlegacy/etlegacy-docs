@@ -16,6 +16,8 @@ Old `hud.dat` file is still compatible with new system, but the visual aspect ma
 
 New `hud.dat` file path has changed. The new storage location is under `fs_homepath` at `legacy/profiles/<name>` directory (see https://github.com/etlegacy/etlegacy/wiki/Path-and-File-Structure#homepath---fs_homepath)
 
+TODO: Anchor behaviour
+
 In-game editor
 ^^^^^^^^^^^^^^
 Overview
@@ -31,7 +33,7 @@ The HUD editor is divided in 3 differents frames :
 * Customization panel on the left
 * Components selection panel on the bottom
 
-Components can be toogle visible / invisble, which allow there usage or not. An invisible component is not rendered at all and the related functionnality aren't called.
+Components can be toogle visible / invisble, which allow their usage or not. An invisible component is not rendered at all and the related functionnality aren't called.
 
 HUD view window
 """"""""""""""""""""""
@@ -66,8 +68,8 @@ The panel is divided in 4 differents categories :
 		- **NOTE**: This modify the related ``cg_altHud`` cvar.
 	- Save : Save ALL the HUDs mofication into `hud.dat` file
 	- Clone : Duplicate the selected HUD to a free HUD index and select it. It doesn't save it in `hud.dat` file.
-	- Delete : Delete the selected HUD from `hud.dat` file. The selected HUD will change to the default one `(0: ETmain)`
-	- Reset component : Reset **ALL** settings from the selected component to the default values from HUD `(0: ETmain)`
+	- Delete : Delete the selected HUD from `hud.dat` file. The selected HUD will change to the default one ``(0: ETmain)``
+	- Reset component : Reset **ALL** settings from the selected component to the default values from HUD ``(0: ETmain)``
 	- Name : HUD name which can be used to select HUD with ``cg_altHud`` cvar from the name
 * Position & Size, to modify component position and size according 4 values:
 	- X : abscissa coordinate
@@ -83,7 +85,11 @@ The panel is divided in 4 differents categories :
 	- Second : Secondary color, see :ref:`Component Color`
 	- Backgrnd : Background color, delimited by the size of the component
 	- Border : Border color, delimited by the size of the component with a width of 1px
-	- Style: Customizable options separated in 2 categories, generic option and specific one. All component have access to generic option, but not all use specific one.
+	- R: Red color selector ranged from 0 to 255
+	- G: Green color selector ranged from 0 to 255
+	- B: Blue color selector ranged from 0 to 255
+	- A: Alpha (aka transparency) selector ranged from 0 to 255
+	- Style: Customizable options separated in 2 categories, generic option and specific one. All component have access to generic option, but not all use specific one. See :ref:`Component Style`.
 		- Visible : Toogle the component visibility 
 		- AutoAdj : Toogle the automatic adjustement of the border position and size depending of the content
 		- Background : Toogle the background visibility
@@ -146,103 +152,103 @@ Components list
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 | Components Name    | Description                                                                                                 | Game type Availabilty |
 +====================+=============================================================================================================+=======================+
-|    crosshair       | Draw the crosshair used to aim at something, such as ground, sky, tree, bullet and so on.                   | All                   |
+|    crosshair       | The crosshair used to aim at something, such as ground, sky, tree, bullet and so on                         | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    compass         |                                                                                                             |                       |
+|    compass         | The minimap indicating players/objectives position, players quick chat call, wounded players                | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    staminabar      |                                                                                                             |                       |
+|    staminabar      | The endurance bar indicating the remaining sprint availability. Also drained by jump                        | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    breathbar       |                                                                                                             |                       |
+|    breathbar       | The breath bar indicating the remaining time to hold breath under water before starting to drow             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    healthbar       |                                                                                                             |                       |
+|    healthbar       | The player health bar. At 0, the player is wounded                                                          | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    weaponchargebar |                                                                                                             |                       |
+|    weaponchargebar | The weapon usage capability, drained depending of class and weapon usage                                    | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    healthtext      |                                                                                                             |                       |
+|    healthtext      | The player health numeric value. Suffixed with "HP"                                                         | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    xptext          |                                                                                                             |                       |
+|    xptext          | The player experience numeric value. Suffixed with "XP"                                                     | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    ranktext        |                                                                                                             |                       |
+|    ranktext        | The player rank mini name (Trigram) depending of the team (Axis / Allies)                                   | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    statsdisplay    |                                                                                                             |                       |
+|    statsdisplay    | The skill level for current class, battle sense and light (heavy for tank and nested-MG) weapon skill       | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    weaponicon      |                                                                                                             |                       |
+|    weaponicon      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    weaponammo      |                                                                                                             |                       |
+|    weaponammo      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    fireteam        |                                                                                                             |                       |
+|    fireteam        |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    popupmessages   |                                                                                                             |                       |
+|    popupmessages   |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    powerups        |                                                                                                             |                       |
+|    powerups        |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    objectives      |                                                                                                             |                       |
+|    objectives      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    hudhead         | Draw the head of the incarnate caractere.                                                                   | All                   |
+|    hudhead         | The head of the incarnate caractere. The animation depend of the player action and states                   | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    cursorhints     |                                                                                                             |                       |
+|    cursorhints     |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    weaponstability |                                                                                                             |                       |
+|    weaponstability |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    livesleft       | Indicate the number of lives left in Last Man Standing game type (LMS). Doesn't show on other game types.   | Last Man Standing     |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    roundtimer      |                                                                                                             |                       |
+|    roundtimer      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    reinforcement   |                                                                                                             |                       |
+|    reinforcement   |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    spawntimer      |                                                                                                             |                       |
+|    spawntimer      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    localtime       |                                                                                                             |                       |
+|    localtime       |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    votetext        |                                                                                                             |                       |
+|    votetext        |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    spectatortext   |                                                                                                             |                       |
+|    spectatortext   |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    limbotext       |                                                                                                             |                       |
+|    limbotext       |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    followtext      |                                                                                                             |                       |
+|    followtext      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    demotext        |                                                                                                             |                       |
+|    demotext        |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    missilecamera   |                                                                                                             |                       |
+|    missilecamera   |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    sprinttext      |                                                                                                             |                       |
+|    sprinttext      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    breathtext      |                                                                                                             |                       |
+|    breathtext      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    weaponchargetext|                                                                                                             |                       |
+|    weaponchargetext|                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    fps             |                                                                                                             |                       |
+|    fps             |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    snapshot        |                                                                                                             |                       |
+|    snapshot        |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    ping            |                                                                                                             |                       |
+|    ping            |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    speed           |                                                                                                             |                       |
+|    speed           |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    lagometer       |                                                                                                             |                       |
+|    lagometer       |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    disconnect      |                                                                                                             |                       |
+|    disconnect      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    chat            | Meow                                                                                                        |                       |
+|    chat            | Meow                                                                                                        | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    spectatorstatus |                                                                                                             |                       |
+|    spectatorstatus |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    pmitemsbig      |                                                                                                             |                       |
+|    pmitemsbig      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    warmuptitle     |                                                                                                             |                       |
+|    warmuptitle     |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    warmuptext      |                                                                                                             |                       |
+|    warmuptext      |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    objectivetext   |                                                                                                             |                       |
+|    objectivetext   |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    centerprint     |                                                                                                             |                       |
+|    centerprint     | The center text display custom or kill/revive message received from server `cp` command (Center Print)      | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    banner          |                                                                                                             |                       |
+|    banner          | The banner text display custom message received from server `bp` command (Banner Print)                     | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    crosshairtext   |                                                                                                             |                       |
+|    crosshairtext   |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-|    crosshairbar    |                                                                                                             |                       |
+|    crosshairbar    |                                                                                                             | All                   |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 |    stats           |                                                                                                             | Demo replay only      |
 +--------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -294,14 +300,16 @@ Component Style
 Color Usage
 """""""""""
 
-There are 3 differents formats to customize colors : 
+There are 3 formats to customize colors : 
 
 +-------------+-----------------------------------------------------------------------------------------------+--------------------------------------------+
 | Format      | Description                                                                                   | Values And Range                           |
 +=============+===============================================================================================+============================================+
 | Hexadecimal | RRGGBB[AA] => RR is Red value, GG is green value, BB is blue value and AA is alpha (optional) | 00 to FF (Double Hexa value)               |
 +-------------+-----------------------------------------------------------------------------------------------+--------------------------------------------+
-| Decimal     | R G B [A]  => is Red value, GG is green value, BB is blue value and AA is alpha (optional)    | 0.0 to 1.0 (float)                         |
+|             |                                                                                               | 0.0 to 1.0 color normalized (float)        |
+| Decimal     | R G B [A]  => R is Red value, G is green value, B is blue value and A is alpha (optional)     | or                                         |
+|             |                                                                                               | 0 to 255 color component (integer)         |
 +-------------+-----------------------------------------------------------------------------------------------+--------------------------------------------+
 |             |                                                                                               | "white"                                    |
 |             |                                                                                               | "red"                                      |
@@ -312,7 +320,7 @@ There are 3 differents formats to customize colors :
 |             |                                                                                               | "cyan"                                     |
 |             |                                                                                               | "orange"                                   |
 |             |                                                                                               | "mdred"                                    |
-| String      | Predefined color as string values                                                             | "mdgreen"                                  |
+| String      | Predefined color as string values with Alpha set to 1.0 (255)                                 | "mdgreen"                                  |
 |             |                                                                                               | "dkgreen"                                  |
 |             |                                                                                               | "mdcyan"                                   |
 |             |                                                                                               | "mdyellow"                                 |
