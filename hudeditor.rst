@@ -33,7 +33,7 @@ The HUD editor is divided in 3 differents frames :
 * Customization panel on the left
 * Components selection panel on the bottom
 
-Components can be toogle visible / invisble, which allow their usage or not. An invisible component is not rendered at all and the related functionnality aren't called.
+Components can be toogle visible / invisible, which allow their usage or not. An invisible component is not rendered at all and the related functionnality aren't called.
 
 HUD 0 (aka ``ETmain``) is the default HUD and can't be modified or deleted.
 
@@ -143,9 +143,15 @@ Usage
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | h                                  | Toogle the help window visibility                                                                                    |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| n                                  | Toogle the noise generator to simulate components animation                                                          |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| f                                  | Toogle the HUD editor in full screen (back to normal resolution and hiding component and settings panel)             |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 New hud.dat json file
 ^^^^^^^^^^^^^^^^^^^^^
+
+TODO
 
 Annexe
 ^^^^^^
@@ -297,6 +303,8 @@ Components list
 
 Component Color
 """""""""""""""
+
+TODO
 
 Component Style
 """""""""""""""
