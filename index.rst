@@ -30,3 +30,4 @@ There are two aspects to this project:
    vsays
    resources
    skillrating
+   hudeditor

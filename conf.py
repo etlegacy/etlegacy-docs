@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ET: Legacy'
-copyright = '2012-2020, ET: Legacy Team'
+copyright = '2012-2023, ET: Legacy Team'
 author = 'ET: Legacy Team'
 
 # The full version, including alpha/beta/rc tags
@@ -35,6 +35,7 @@ master_doc = 'index'
 extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
