@@ -63,7 +63,7 @@ The text color may change depending of the components visibily and/or selection 
 Invisible components can only be selected from this panel.
 
 Settings customization panel
-""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 The settings customization panel provide options to manage HUDs and customize selected component in HUD view or component selection panel.
 The panel is divided in 4 differents categories :
 
