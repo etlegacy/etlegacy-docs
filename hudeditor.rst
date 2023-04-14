@@ -14,7 +14,7 @@ The HUD view is a 640 per 480 virtual grid, rescaled horizontaly depending of as
 
 Old `hud.dat` file is still compatible with new system, but the visual aspect may changes depending of the component.
 
-New `hud.dat` file path has changed. The new storage location is under `fs_homepath` at `legacy/profiles/<name>` directory (see https://github.com/etlegacy/etlegacy/wiki/Path-and-File-Structure#homepath---fs_homepath)
+New `hud.dat` file path has changed. The new storage location is under `fs_homepath` at `legacy/profiles/<name>` directory, see [Path and File Structure](https://github.com/etlegacy/etlegacy/wiki/Path-and-File-Structure#homepath---fs_homepath)
 
 TODO: Anchor behaviour
 
