@@ -2,10 +2,11 @@
 ETLTV
 ===================
 
-TO BE DONE
-
 Introduction
 ^^^^^^^^^^^^
+
+TO BE DONE
+
 Add ettv protocol support to etlded - ettv client can connect to etlded server and players can join and view the game.
 
 * ettv demo recording is possible
