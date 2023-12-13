@@ -5254,9 +5254,9 @@ Developer cvars
 *G_related CVARS without prefix*
  - `dedicated`_
  - `developer`_
- - `gamestate`_
- - `timelimit`_
- - `vote_flags`_
+ - `gamestate`
+ - `timelimit`
+ - `vote_flags`
 
 User cvars
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6261,7 +6261,7 @@ User cvars
 +-----------------+-----------------------------------------------------------------------------------+
 | **Default**     | 0 (disabled)                                                                      |
 +-----------------+-----------------------------------------------------------------------------------+
-| **Range**       | 0 - `sv_maxClients`_                                                              |
+| **Range**       | 0 - `sv_maxClients`                                                               |
 +-----------------+-----------------------------------------------------------------------------------+
 | **Description** | Limits the amount of clients that can join a team, regardless of how many can     |
 |                 | join the server                                                                   |
@@ -6359,12 +6359,12 @@ User cvars
 +-----------------+-----------------------------------------------------------------------------------+
 | **Default**     | 8                                                                                 |
 +-----------------+-----------------------------------------------------------------------------------+
-| **Range**       | 0 - `sv_maxClients`_                                                              |
+| **Range**       | 0 - `sv_maxClients`                                                               |
 +-----------------+-----------------------------------------------------------------------------------+
 | **Description** | Minimum amount of players needed to start a match                                 |
 +-----------------+-----------------------------------------------------------------------------------+
 
- - *See also:* `match_minPlayers`_ and `g_maxGameClients`_
+ - *See also:* `match_minPlayers` and `g_maxGameClients`_
 
 --------
 
@@ -6499,7 +6499,7 @@ User cvars
 |                 | used to update the timelimit. Time in *minutes*                                   |
 +-----------------+-----------------------------------------------------------------------------------+
 
- - *See also:* `timelimit`_ and `g_userTimeLimit`_
+ - *See also:* `timelimit` and `g_userTimeLimit`_
 
 --------
 
@@ -6621,7 +6621,7 @@ User cvars
 | **2**  | Enforced max lives ban through GUID check instead of IP address                             |
 +--------+---------------------------------------------------------------------------------------------+
 
- - *See also:* `sv_protect`_
+ - *See also:* `sv_protect`
 
 --------
 
@@ -6930,7 +6930,7 @@ User cvars
 +-----------------+-----------------------------------------------------------------------------------+
 | **Range**       | any positive decimal                                                              |
 +-----------------+-----------------------------------------------------------------------------------+
-| **Description** | Overrides `timelimit`_                                                            |
+| **Description** | Overrides `timelimit`                                                             |
 +-----------------+-----------------------------------------------------------------------------------+
 
 --------
@@ -6968,7 +6968,7 @@ User cvars
 +--------+---------------------------------------------------------------------------------------------+
 | **1**  | Use total voters instead of total players to decide if a vote passes                        |
 +--------+---------------------------------------------------------------------------------------------+
-| **2**  | Successful votes do not count towards the vote limit per player, see `vote_limit`_          |
+| **2**  | Successful votes do not count towards the vote limit per player, see `vote_limit`           |
 +--------+---------------------------------------------------------------------------------------------+
 | **4**  | Shows who called the vote in the voting text                                                |
 +--------+---------------------------------------------------------------------------------------------+
