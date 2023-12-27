@@ -139,7 +139,7 @@ Usage
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | Page Down                          | Move component to the middle height of the HUD (if above it) or to the bottom of the HUD                             |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| l                                  | Toogle the layout visibilty of **ALL** components (aka outline)                                                      |
+| l                                  | Toogle the layout visibilty of **None** / **Visible** / **All** components (aka outline)                                                      |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | h                                  | Toogle the help window visibility                                                                                    |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------+
@@ -374,11 +374,11 @@ crosshairbar
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | Style Name            | Description                                                                                        | Values |
 +=======================+====================================================================================================+========+
-| Class                 | Toggle class icon visibility of targeted player                                                    | 1      |
+| Class                 | Toogle class icon visibility of targeted player                                                    | 1      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
-| Rank                  | Toggle rank icon visibility of targeted player                                                     | 2      |
+| Rank                  | Toogle rank icon visibility of targeted player                                                     | 2      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
-| Prestige              | Toggle prestige icon visibility of targeted player                                                 | 4      |
+| Prestige              | Toogle prestige icon visibility of targeted player                                                 | 4      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | Left                  | Move maximum on left. If ``Vertical`` is set, maximum is on top. Ignored if ``Center`` is set      | 8      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
@@ -884,7 +884,9 @@ pmitemsbig
 popupmessages
 """""""""""""
 
-:Description: The pop-up list feed for objectives/kill/connection/dynamites/mines/constructions states or custom message
+:Description: The pop-up list feed for objectives/kill/connection/dynamites/mines/constructions states or custom message.
+
+**Note**: This component is available in 3 distincts components, allowing to display different list feed independatly.
 
 :Game type Availability: All
 
@@ -1199,11 +1201,11 @@ staminabar
 stats
 """""
 
-:Description: Quick view displaying player stats (Kill, Death, Self Kill, Damage Given, Damage received)
+:Description: Banner displaying player stats (Kill, Death, Self Kill, Damage Given, Damage received) and status
 
-:Game type Availability: Demo replay only
+:Game type Availability: Demo replay and Shoutcaster
 
-:Type: Multiline Text
+:Type: Specific
 
 +-----------------------+-------------------------------------------------------------------------------------------------------------+
 | Color                 | Description                                                                                                 |
@@ -1480,10 +1482,35 @@ weaponstability
 | Icon                  | Draw the icon depending of ``Left`` and ``Vertical`` values set                                    | 4096   |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 
+xpgain
+""""""
+
+:Description: The gained player experience pop-up.
+
+:Game type Availability: All
+
+:Type: Specific
+
++-----------------------+-------------------------------------------------------------------------------------------------------------+
+| Color                 | Description                                                                                                 |
++=======================+=============================================================================================================+
+| Main Color            | Font color                                                                                                  |
++-----------------------+-------------------------------------------------------------------------------------------------------------+
+| Secondary Color       | N/A                                                                                                         |
++-----------------------+-------------------------------------------------------------------------------------------------------------+
+
++-----------------------+----------------------------------------------------------------------------------------------------+--------+
+| Style Name            | Description                                                                                        | Values |
++=======================+====================================================================================================+========+
+| Scroll Down           | Toogle pop-up appearance beginning from Up or Bottom                                               | 1      |
++-----------------------+----------------------------------------------------------------------------------------------------+--------+
+| No Reason             | Toogle XP gain message visility and draw skill icon + gain only                                    | 2      |
++-----------------------+----------------------------------------------------------------------------------------------------+--------+
+
 xptext
 """"""
 
-:Description: The player experience numeric value. Suffixed with "XP"
+:Description: The total player experience numeric value. Suffixed with "XP"
 
 :Game type Availability: All
 
