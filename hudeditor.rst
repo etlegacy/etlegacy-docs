@@ -6,7 +6,7 @@ Introduction
 ^^^^^^^^^^^^
 Since the 2.81.0, ET:Legacy introduced a new way to fully customize all HUD components by using the in-game editor and using the extended json hud file.
 
-50 components are currently customizable, with generic customization options and for some more specifics linked to styles options.
+More than 50 components are currently customizable, with generic customization options and for some more specifics linked to styles options.
 
 The HUD file is compatible with both 4:3 and 16:9 resolution. Position adjustment is done automaticly and component aspect ratio are conserved.
 
