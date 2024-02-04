@@ -2,11 +2,15 @@
 ETLTV
 ===================
 
+!!! UNDER CONSTRUCTION !!!
+
 Introduction
 ^^^^^^^^^^^^
 
 TO BE DONE
 
+Feature
+^^^^^^^
 Add ettv protocol support to etlded - ettv client can connect to etlded server and players can join and view the game.
 
 * ettv demo recording is possible
@@ -25,3 +29,26 @@ Add legacy tvgame as replacment for etpro tvgame
 * /follow [id/name] or just classic legacy mod following (minus aim and follow whoever is under crosshair)
 * rcon and ref for muting/kicking viewers
 * LUA is "in" but disabled
+
+Add possibility for etlded to act as a client (ettv)
+
+* add possibility for etlded to act as a client
+* add command tv connect <ip> <masterpassword> (sv_etltv_maxslaves and sv_etltv_password must be set on master server)
+* add command tv disconnect
+* add command record <name> (optional) for recording tv demos
+* add command stoprecord for stopping recording
+* add command demo <name> for demo playback
+* add command ff <seconds> command - fastforwarding demo (works similiar to timescale) stops on map_restart or can stop it with ff 0
+* add cvar sv_etltv_autorecord <0/1> automatically record tv demos
+* add cvar sv_etltv_autoplay <0/1> automatically play demos (only on specifically named demos from autorecording, fe. demo0001->demo0002 etc.)
+* add cvar sv_etltv_clientname etltv client name
+* demos are recorded into tvdemos folder with extension tv_84
+* etpro tv demos are playable, best is to use ettv tvgame and start etlded with +fs_game etpro (put etpro tvgame into etpro mod folder). Need 2.6b client in order to watch
+* slave server will not download missing files from master server, so need to make sure it has every pk3 it needs
+* only available for dedicated server
+
+Missing ettv features:
+
+* more than 64 client servers
+* chaining slave server still not tested
+* delayed feed (ettv_delay), everything is live, old like ettv solution of delay by playing back demo might work (not tested)
