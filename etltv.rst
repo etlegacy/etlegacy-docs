@@ -47,8 +47,18 @@ Add possibility for etlded to act as a client (ettv)
 * slave server will not download missing files from master server, so need to make sure it has every pk3 it needs
 * only available for dedicated server
 
+Add automatic feed delay to etltv
+
+* add cvar sv_etltv_delay <seconds> - setable only on etlded init, delays feed from master server
+* add cvar sv_etltv_shownet - for network debugging
+* disabled /scores command in tvgame because it can easily lag the server
+* add parseEntitiesNum check to etlded for snapshot generation - current check doesn't seem to work at all (svs.nextSnapshotEntities), server will send on its own uncompressed snapshot if it detects that client will go over MAX_PARSE_ENTITIES
+* add optional privatepassword argument to tv connect command. tv connect server masterpassword privatepassword
+* add cvar sv_etltv_queue_ms (read only) for storing the amount of time till the game will start (backward compatible with etpro)
+* various other general improvments to etltv
+* players can connect to delayed slave server even before the game starts just like on ettv
+
 Missing ettv features:
 
 * more than 64 client servers
 * chaining slave server still not tested
-* delayed feed (ettv_delay), everything is live, old like ettv solution of delay by playing back demo might work (not tested)
