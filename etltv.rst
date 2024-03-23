@@ -58,7 +58,16 @@ Add automatic feed delay to etltv
 * various other general improvments to etltv
 * players can connect to delayed slave server even before the game starts just like on ettv
 
+> 2.82
+
+* add 64+ players server support
+
+Notes:
+* setting sv_maxclients higher than 64 might require setting higher com_hunkMegs.
+* legacy cgame doesn't support higher than 64 sv_maxclients, notably CG_ParseFireteams uses cgs.maxclients which will break the game if it goes over 64.
+* legacy ui doesn't support showing higher than 64 sv_maxclients servers in the browser, unless ui_serverBrowserSettings 4 is set on game init.
+
+
 Missing ettv features:
 
-* more than 64 client servers
 * chaining slave server still not tested
