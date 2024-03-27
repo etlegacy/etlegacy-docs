@@ -36,6 +36,7 @@ The HUD editor is divided in 3 differents frames :
 Components can be toggle visible / invisible, which allow their usage or not. An invisible component is not rendered at all and the related functionnality aren't called.
 
 There are 5 pre-existing HUDs availabl. They can't be modified or deleted :
+
 * ``ETmain`` (HUD 0 the default)
 * ``Alternate Hud 1``
 * ``Alternate Hud 2``
