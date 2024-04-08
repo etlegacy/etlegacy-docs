@@ -67,7 +67,20 @@ Notes:
 * legacy cgame doesn't support higher than 64 sv_maxclients, notably CG_ParseFireteams uses cgs.maxclients which will break the game if it goes over 64.
 * legacy ui doesn't support showing higher than 64 sv_maxclients servers in the browser, unless ui_serverBrowserSettings 4 is set on game init.
 
+> 2.82.1
 
-Missing ettv features:
+* Added chaining support to ETLTV
 
-* chaining slave server still not tested
+* Added gamenametv server info cvar so it is possible to tell apart standard mod from tvmod
+* Made etltv register server info cvars on it's own (any mod will now show it's own server info cvars)
+* Removed unused and unnecessary cvars and rename some from g_* to tvg_*
+* Fixed server info cvars not being updated beside during server spawn
+* Fixed only legacy mod working using tvgame (broke after some update)
+* Removed tvg_character.c and other no longer necessary code
+* Fixed viewers playerstate clientNum being updated to incorrect value in TVG_ClientUserinfoChanged (interfered with correct snapshot generation)
+* Implemented cvar tvg_inactivity <seconds> - kicks viewers after specified amount of time of inactivity (following a player counts as activity)
+* Added a way to recognize currently run mod inside tvgame (as of right now Legacy, ETJump, ETPro)
+* Added mod specific game commands auto updates and exlcuded ETJump from some that are related to weapon stats
+* Added handling for two ETJump game commands GUID_REQUEST and HAS_TIMERUN (just ignored)
+* Added handling for old IMPKD game command (ETMain and possibly most other mods still use it)
+
