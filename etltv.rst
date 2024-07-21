@@ -84,3 +84,31 @@ Notes:
 * Added handling for two ETJump game commands GUID_REQUEST and HAS_TIMERUN (just ignored)
 * Added handling for old IMPKD game command (ETMain and possibly most other mods still use it)
 
+> 2.8X.X
+
+* Added lua support to ETLTV
+  * Main differences from legacy mod for scripts:
+
+    remove some hooks and functions that are not relevant to tvgame
+    add et.gentity_get access to master server entityState_t and entityShared_t structs
+    add et.level_get added access to level_locals_t struct
+    add et.ps_get access to master server players playerState_t struct
+    add et.gclient_get access to viewers gclient_t struct
+    add et.client_set access to viewers gclient_t struct
+    only viewers struct is writeable (at least as of now)
+    remove and add a bunch of accessible fields
+    add et.TeleportPlayer( clientnum, vec3_t origin, vec3_t angles )
+    add clientnum = et.MasterClientNumberFromString( string ) searches through master clients for one partial match with string
+
+NOTE: lua works only for sv_pure 0 slave server because otherwise lua scripts cannot be read (in short because of extension whitelist in file system, might be not possible to properly fix)
+
+* Fixed incorrect mods type in tvcmd_reference_t
+* Refactored some if statements
+* Removeed `g_mdx.c` from build
+* Removed not needed or "incompatible" code
+* Init r.ownerNum to ENTITYNUM_NONE for player entities
+* Fixed and added `SpectatorAttackFollow` trace
+* Removed CVAR_SERVERINFO flag from g_fixedphysics, g_fixedphysicsfps and g_pronedelay cvars
+* `G_ETTV` gameexport is now only kept for ETTV compatibility
+
+
