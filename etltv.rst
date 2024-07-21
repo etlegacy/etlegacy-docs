@@ -86,19 +86,17 @@ Notes:
 
 > 2.8X.X
 
-* Added lua support to ETLTV
-  * Main differences from legacy mod for scripts:
-
-    remove some hooks and functions that are not relevant to tvgame
-    add et.gentity_get access to master server entityState_t and entityShared_t structs
-    add et.level_get added access to level_locals_t struct
-    add et.ps_get access to master server players playerState_t struct
-    add et.gclient_get access to viewers gclient_t struct
-    add et.client_set access to viewers gclient_t struct
-    only viewers struct is writeable (at least as of now)
-    remove and add a bunch of accessible fields
-    add et.TeleportPlayer( clientnum, vec3_t origin, vec3_t angles )
-    add clientnum = et.MasterClientNumberFromString( string ) searches through master clients for one partial match with string
+* Added lua support to ETLTV. Main differences from legacy mod for scripts:
+  * Removed some hooks and functions that are not relevant to tvgame
+  * Added et.gentity_get access to master server entityState_t and entityShared_t structs
+  * Added et.level_get added access to level_locals_t struct
+  * Added et.ps_get access to master server players playerState_t struct
+  * Added et.gclient_get access to viewers gclient_t struct
+  * Added et.client_set access to viewers gclient_t struct
+  * Only viewers struct is writeable (at least as of now)
+  * Removed and add a bunch of accessible fields
+  * Added et.TeleportPlayer( clientnum, vec3_t origin, vec3_t angles )
+  * Added clientnum = et.MasterClientNumberFromString( string ) searches through master clients for one partial match with string
 
 NOTE: lua works only for sv_pure 0 slave server because otherwise lua scripts cannot be read (in short because of extension whitelist in file system, might be not possible to properly fix)
 
