@@ -19,7 +19,7 @@ Add ettv protocol support to etlded - ettv client can connect to etlded server a
 * add cvar g_etltv_flags "Bitflag 1 and 2. 1 = prevent slaves from being kicked. 2 = grant shoutcaster status to slaves."
 * removed CVAR_SERVERINFO from g_fixedphysics, g_fixedphysicsfps, g_pronedelay, g_floodProtection, sv_floodProtect, sv_userInfoFloodProtect. Server info is too long and can crash ettv slave so until etltv is a thing it needs to get shorter.
 
-Add legacy tvgame as replacment for etpro tvgame
+Add legacy tvgame as replacement for etpro tvgame
 
 * players can join ettv server connected to etlded server and watch and chat about the game
 * most commands supported with some flood protection in place - up to change in the future still
@@ -108,5 +108,8 @@ NOTE: lua works only for sv_pure 0 slave server because otherwise lua scripts ca
 * Fixed and added `SpectatorAttackFollow` trace
 * Removed CVAR_SERVERINFO flag from g_fixedphysics, g_fixedphysicsfps and g_pronedelay cvars
 * `G_ETTV` gameexport is now only kept for ETTV compatibility
+* Added `tvgamecommands` help info (/commands, excludes commands that are not available for currently running mod)
+* Added possibility to intercept master server commands in lua (et_ClientCommand clientnum == -2), with this addition not natively supported mods could add support for their game commands fully in lua: client requests stats->lua sends requests to master server->intercept response->save/send over to client, or even auto updates without interaction with clients)
+
 
 
