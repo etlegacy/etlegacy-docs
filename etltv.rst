@@ -113,8 +113,7 @@ NOTE: lua works only for sv_pure 0 slave server because otherwise lua scripts ca
 
 * Added possibility to watch tv_84 demos on client (listen server)
   * Added tv demo console command (client only) to play demo
-  * Added tv ff console command (client only) to fast-forward demo by
-    NOTE: still cannot connect listen server as tv server although a lot of the tv server code is now compiled into client (too lazy to add DEDICATED guards and splitting a lot of the places with them is not something I like). This is also very unlikely to ever change because by design the connected tv server should be a spectator and preferably never move too.
+  * Added tv ff console command (client only) to fast-forward demo by. NOTE: still cannot connect listen server as tv server although a lot of the tv server code is now compiled into client (too lazy to add DEDICATED guards and splitting a lot of the places with them is not something I like). This is also very unlikely to ever change because by design the connected tv server should be a spectator and preferably never move too.
   * Connecting tv server to a listen server is not recommended (looks buggy), other clients should be fine
   * Fixed tv server(s) and their client(s) not properly disconnecting when master server shuts down (imported ettv bug)
   * Fixed improper server shutdown on demo end if there are no more demos to play next (imported ettv bug)
