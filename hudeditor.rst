@@ -67,8 +67,6 @@ The text color may change depending of the components visibily and/or selection 
 * Green  : Visible components
 * Red    : Invisible components
 
-Invisible components can only be selected from this panel.
-
 Settings customization panel
 """"""""""""""""""""""""""""
 The settings customization panel provide options to manage HUDs and customize selected component in HUD view or component selection panel.
