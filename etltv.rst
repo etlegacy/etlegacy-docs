@@ -118,6 +118,19 @@ NOTE: lua works only for sv_pure 0 slave server because otherwise lua scripts ca
   * Fixed tv server(s) and their client(s) not properly disconnecting when master server shuts down (imported ettv bug)
   * Fixed improper server shutdown on demo end if there are no more demos to play next (imported ettv bug)
 
+* Renamed game system call
+* Moved configstring initialization to `SV_InitGameVM`, this means that now it is possible to look up configstrings during `GAME_INIT`. (not possible in ettv, so anything that relies on it won't work there)
+* Parsed `CS_WARMUP` and `CS_WOLFINFO` on `GAME_INIT` and `GAME_CLIENT_COMMAND`
+* Added `tvg_autoAction` cvar, bit values `AA_DEMORECORD 1 AA_STATS 2`. Autorecord start demo recording the same way cg_autoaction does with client demos (with the same name schema too), only difference as of now is that demo will not be stopped during intermission (client demos are round seperated because of this). Autostats controls if tv server will periodically send commands requesting stats.
+* Improved handling of spawn points, especially if game is delayed the spawnpoint can end up being very wrong (improvement over etpro tvgame)
+* Fixed animation files breaking mod loading on different mods than legacy
+* Extract pmove code from `bg_pmove` to `tvg_pmove`
+* Fixed various pmove prediction issues on mods like ETJump or ETPro
+* Overwrited master server `CS_SVCVAR` configstring
+* Properly shutdown server on tv disconnect
+
+NOTE: `sv_etltv_autorecord 1` is equal to `cl_autorecord 1` and `tvg_autoAction & 1` is equal to `cg_autoaction & 1`. So sv_etltv_autorecord records everything, while tvg_autoAction starts at the warmup countdown or GS_PLAYING (but doesn't end on itermission so whatever is after will keep being recorded. It's not impossible to change in the future if wanted.
+
 
 
 
