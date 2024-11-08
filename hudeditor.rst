@@ -23,7 +23,9 @@ In-game editor
 Overview
 """"""""
 
-The in-game editor is reachable by using the menu UI ``Menu`` -> ``Options`` -> ``View`` -> ``HUD Editor`` or by typing in console the edithud command.
+The in-game editor is reachable by using the menu UI ``Menu`` -> ``Options`` -> ``View`` -> ``HUD Editor``,
+or by typing in console the `edithud` command,
+or by using binded `F7` key (customizable).
 
 **Note**: The HUD editor is not available from main menu.
 
