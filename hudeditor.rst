@@ -35,7 +35,7 @@ The HUD editor is divided in 3 differents frames :
 
 Components can be toggle visible / invisible, which allow their usage or not. An invisible component is not rendered at all and the related functionnality aren't called.
 
-There are 5 pre-existing HUDs availabl. They can't be modified or deleted :
+There are 5 pre-existing HUDs available. They can't be modified or deleted :
 
 * ``ETmain`` (HUD 0 the default)
 * ``Alternate Hud 1``
@@ -44,7 +44,7 @@ There are 5 pre-existing HUDs availabl. They can't be modified or deleted :
 * ``Competitor Hud``
 * ``Shoutcaster``
 
-To start creating / setting a custom HUD, it is required to ``clone`` (copy) an existing HUD or using an existing one but HUD 0.
+To start creating / setting a custom HUD, it is required to ``clone`` (copy) an existing HUD.
 
 HUD view window
 """"""""""""""""""""""
@@ -56,7 +56,7 @@ On fly over a visible component with mouse cursor, a green rectangle outline the
 
 Once selected, the component outline color change to yellow and it gain the focus for customization.
 
-When 2 or more components are stacked under the same cursor position, it is possible to do multiple left mouse buton click to select the differents components.
+When 2 or more components are stacked under the same cursor position, it is possible to do multiple left click with mouse to select the differents components.
 
 Components selection panel
 """"""""""""""""""""""""""
@@ -80,10 +80,10 @@ The panel is divided in 4 differents categories :
 	- Delete : Delete the selected HUD from `hud.dat` file. The selected HUD will change to the default one ``(0: ETmain)``
 	- Reset component : Reset **ALL** settings from the selected component to the default values from HUD ``(0: ETmain)``
 	- Name : HUD name which can be used to select HUD with ``cg_altHud`` cvar from the name
-        - Parent : HUD parent name used for default value for components. If No parent is selected, the saved HUD will copy all the comps values in the HUD file. The HUD become standalone.
+        - Parent : HUD parent name used to default value components. If No parent is selected, the saved HUD will copy all the comps values in the HUD file. The HUD become standalone.
 * Position & Size, to modify component position and size according 4 values:
-	- X : abscissa coordinate
-	- Y : ordinate coordinate
+	- X : Abscissa coordinate
+	- Y : Ordinate coordinate
 	- W : Width
 	- H : Height
 * Text, to modify font size and style
