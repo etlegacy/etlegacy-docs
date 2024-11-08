@@ -80,6 +80,7 @@ The panel is divided in 4 differents categories :
 	- Delete : Delete the selected HUD from `hud.dat` file. The selected HUD will change to the default one ``(0: ETmain)``
 	- Reset component : Reset **ALL** settings from the selected component to the default values from HUD ``(0: ETmain)``
 	- Name : HUD name which can be used to select HUD with ``cg_altHud`` cvar from the name
+        - Parent : HUD parent name used for default value for components. If No parent is selected, the saved HUD will copy all the comps values in the HUD file. The HUD become standalone.
 * Position & Size, to modify component position and size according 4 values:
 	- X : abscissa coordinate
 	- Y : ordinate coordinate
@@ -1703,7 +1704,9 @@ xpgain
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | No Reason             | Toggle XP gain message visility and draw skill icon + gain only                                    | 2      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
-| No Stack              | Don't merge XP gain values by message (expect for construction / repairing)                        | 4      |
+| No Stack              | Don't merge message (expect for construction / repairing)                                          | 4      |
++-----------------------+----------------------------------------------------------------------------------------------------+--------+
+| No XP Add Up          | Don't merge XP gain values for same message (expect for construction / repairing)                  | 8      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 
 xptext
