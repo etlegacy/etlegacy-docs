@@ -84,7 +84,7 @@ Notes:
 * Added handling for two ETJump game commands GUID_REQUEST and HAS_TIMERUN (just ignored)
 * Added handling for old IMPKD game command (ETMain and possibly most other mods still use it)
 
-> 2.8X.X
+> 2.82.2
 
 * Added lua support to ETLTV. Main differences from legacy mod for scripts:
   * Removed some hooks and functions that are not relevant to tvgame
@@ -130,6 +130,15 @@ NOTE: lua works only for sv_pure 0 slave server because otherwise lua scripts ca
 * Properly shutdown server on tv disconnect
 
 NOTE: `sv_etltv_autorecord 1` is equal to `cl_autorecord 1` and `tvg_autoAction & 1` is equal to `cg_autoaction & 1`. So sv_etltv_autorecord records everything, while tvg_autoAction starts at the warmup countdown or GS_PLAYING (but doesn't end on itermission so whatever is after will keep being recorded. It's not impossible to change in the future if wanted.
+
+> 2.8X.X
+
+* Added etpro support
+    * Added entity bitstream
+    * Added etpro commands support (working scoreboard, compass and other)
+    * Removed unused g_debugBullets, team_riflegranades, g_pronedelay, g_debugAnim cvars
+    * Added sv_etltv_netblast cvar (etpro ettv_netblast). Controls whether message fragments are sent all at once instead of delayed. Helps with lag introduced by fragmented messages. Default: ON
+
 
 
 
