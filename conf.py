@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ET: Legacy'
-copyright = '2012-2024, ET: Legacy Team'
+copyright = '2012-2025, ET: Legacy Team'
 author = 'ET: Legacy Team'
 
 # The full version, including alpha/beta/rc tags
-release = '2.82.1'
+release = '2.82.2'
 
 # -- General configuration ---------------------------------------------------
 
