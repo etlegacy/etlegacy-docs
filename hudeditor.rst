@@ -417,7 +417,7 @@ crosshairbar
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | Rank                  | Toggle rank icon visibility of targeted player                                                     | 2      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
-| Prestige              | Toggle prestige icon visibility of targeted player                                                 | 4      |
+| Unused                | Unused                                                                                             | 4      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | Left                  | Move maximum on left. If ``Vertical`` is set, maximum is on top. Ignored if ``Center`` is set      | 8      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
@@ -975,7 +975,7 @@ ping
 pmitemsbig
 """"""""""
 
-:Description: The text and icon indicating ranking/skill/prestige gain up
+:Description: The text and icon indicating ranking/skill gain up
 
 :Game type Availability: All
 
@@ -995,8 +995,6 @@ pmitemsbig
 | No Skill              | Filter out skill up message                                                                        | 1      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | No Rank               | Filter out rank up message                                                                         | 2      |
-+-----------------------+----------------------------------------------------------------------------------------------------+--------+
-| No Prestige           | Filter out prestige gain message                                                                   | 4      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 
 popupmessages
