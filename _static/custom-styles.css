@@ -1,3 +1,927 @@
+/* ==========================================================================
+   ET: Legacy documentation theme
+   --------------------------------------------------------------------------
+   Re-skins the Read the Docs theme so the documentation matches the look and
+   feel of the official website: https://www.etlegacy.com
+
+   Design language (extracted from the website stylesheet):
+     background        #302429
+     header / footer   #1a1316
+     accent            #ff634c   (hover #ff3f23, light #ff7560)
+     body text         rgba(255,255,255,.88)
+     headings          #fff  (display headings use the "Kenzo" font, uppercase)
+     display font      Kenzo     (uppercase headings)
+     heading font      Bitter    (serif, bold)
+     body font         Open Sans
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Fonts - self-hosted, identical to the ones used by the website
+   -------------------------------------------------------------------------- */
+@font-face {
+    font-family: "kenzo";
+    src: url("fonts/kenzo.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/opensans.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Bitter";
+    src: url("fonts/bitter.otf") format("opentype");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+    --etl-bg: #302429;
+    --etl-bg-dark: #1a1316;
+    --etl-bg-panel: #3a2b31;
+    --etl-bg-code: #241a1e;
+
+    --etl-accent: #ff634c;
+    --etl-accent-hover: #ff3f23;
+    --etl-accent-soft: rgba(255, 99, 76, 0.14);
+    --etl-accent-softer: rgba(255, 99, 76, 0.08);
+
+    --etl-text: rgba(255, 255, 255, 0.88);
+    --etl-text-strong: #ffffff;
+    --etl-text-muted: rgba(255, 255, 255, 0.55);
+
+    --etl-border: rgba(255, 255, 255, 0.14);
+    --etl-border-soft: rgba(255, 255, 255, 0.08);
+
+    --etl-code: #f66d9b;
+
+    --etl-header-h: 60px;
+    --etl-sidebar-w: 300px;
+
+    /* Shared page container: the site header and the documentation column
+       (navigation panel + document body) share the same width and the same
+       horizontal alignment. */
+    --etl-container-w: 75rem;
+    --etl-container-pad: 1.25rem;
+    --etl-gutter: max(0px, calc((100% - var(--etl-container-w)) / 2));
+
+    --etl-font-body: "Open Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --etl-font-heading: "Bitter", Georgia, "Times New Roman", serif;
+    --etl-font-display: "kenzo", "Bitter", cursive;
+    --etl-font-mono: "SFMono-Regular", Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+html {
+    background: var(--etl-bg);
+    scroll-padding-top: calc(var(--etl-header-h) + 12px);
+}
+
+body,
+.wy-body-for-nav {
+    background: var(--etl-bg);
+    color: var(--etl-text);
+    font-family: var(--etl-font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: var(--etl-accent);
+    color: #fff;
+}
+
+/* Keep the wide HUD grid tables readable. */
 .wy-table-responsive table td {
     white-space: normal;
+}
+
+/* --------------------------------------------------------------------------
+   Top site header (mirrors the website header)
+   -------------------------------------------------------------------------- */
+.etl-header {
+    position: relative;
+    z-index: 1100;
+    background: rgba(26, 19, 22, 0.97);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-bottom: 2px solid var(--etl-accent);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.etl-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: var(--etl-container-w);
+    min-height: var(--etl-header-h);
+    margin-left: var(--etl-gutter);
+    margin-right: var(--etl-gutter);
+    padding: 0 var(--etl-container-pad);
+}
+
+.etl-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex: none;
+    text-decoration: none;
+}
+
+.etl-header-logo img {
+    display: block;
+    height: 2rem;
+    width: auto;
+}
+
+.etl-header-logo .etl-header-tag {
+    padding-left: 0.65rem;
+    border-left: 1px solid var(--etl-border);
+    color: var(--etl-accent);
+    font-family: var(--etl-font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.etl-header-nav {
+    margin-left: auto;
+}
+
+.etl-header-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.etl-header-nav li {
+    margin: 0;
+}
+
+.etl-header-nav a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.etl-header-nav a:hover,
+.etl-header-nav a:focus {
+    color: #fff;
+    background: var(--etl-accent-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar (documentation navigation)
+   -------------------------------------------------------------------------- */
+/* The panel background extends to the left edge of the window while its
+   content stays aligned with the site header. */
+.wy-nav-side {
+    top: var(--etl-header-h);
+    left: 0;
+    width: calc(var(--etl-sidebar-w) + var(--etl-gutter) + var(--etl-container-pad));
+    padding-left: calc(var(--etl-gutter) + var(--etl-container-pad));
+    background: var(--etl-bg-dark);
+    border-right: 1px solid var(--etl-border-soft);
+    color: var(--etl-text-muted);
+    transition: top 0.2s ease;
+}
+
+.wy-side-scroll {
+    width: var(--etl-sidebar-w);
+}
+
+/* Once the site header scrolled out of view, the navigation panel anchors
+   itself to the top of the screen. */
+.wy-nav-side.etl-anchored-top {
+    top: 0;
+}
+
+.wy-side-nav-search {
+    padding: 1rem 0.9rem;
+    margin-bottom: 0;
+    background: transparent;
+    border-bottom: 1px solid var(--etl-border-soft);
+    color: var(--etl-text);
+}
+
+.wy-side-nav-search input[type="text"] {
+    width: 100%;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--etl-border);
+    border-radius: 50px;
+    background: var(--etl-bg);
+    box-shadow: none;
+    color: var(--etl-text);
+    font-family: var(--etl-font-body);
+}
+
+.wy-side-nav-search input[type="text"]::placeholder {
+    color: var(--etl-text-muted);
+}
+
+.wy-side-nav-search input[type="text"]:focus {
+    border-color: var(--etl-accent);
+    outline: none;
+}
+
+.wy-menu-vertical {
+    background: transparent;
+}
+
+.wy-menu-vertical a {
+    padding: 0.45em 1.4em;
+    border-radius: 0.25rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 88%;
+    transition: background 0.12s ease, color 0.12s ease;
+}
+
+.wy-menu-vertical a:hover {
+    background: var(--etl-accent-soft);
+    color: #fff;
+}
+
+.wy-menu-vertical li.current,
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a {
+    background: transparent;
+    border: none;
+    color: var(--etl-accent);
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a {
+    background: var(--etl-accent-soft);
+    border-radius: 0.25rem;
+    font-weight: 700;
+}
+
+.wy-menu-vertical li.current > a:hover,
+.wy-menu-vertical li.on a:hover {
+    background: rgba(255, 99, 76, 0.22);
+    color: #fff;
+}
+
+.wy-menu-vertical li.current ul,
+.wy-menu-vertical li.current li > a {
+    background: transparent;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+    border-top: none;
+    border-bottom: none;
+}
+
+.wy-menu-vertical .caption,
+.wy-menu-vertical p.caption {
+    margin: 1.2em 0 0.4em;
+    padding: 0 0.9em;
+    color: var(--etl-accent);
+    font-family: var(--etl-font-display);
+    font-size: 95%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.wy-menu-vertical li.current > a button.toctree-expand:before,
+.wy-menu-vertical li.on a button.toctree-expand:before,
+.wy-menu-vertical li button.toctree-expand:before {
+    color: var(--etl-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Content area
+   -------------------------------------------------------------------------- */
+.wy-nav-content-wrap {
+    margin-left: calc(var(--etl-gutter) + var(--etl-container-pad) + var(--etl-sidebar-w));
+    margin-right: calc(var(--etl-gutter) + var(--etl-container-pad));
+    background: var(--etl-bg);
+}
+
+.wy-nav-content {
+    max-width: 1100px;
+    background: var(--etl-bg);
+}
+
+.rst-content {
+    color: var(--etl-text);
+    font-family: var(--etl-font-body);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.rst-content .section > .section > * {
+    color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+    color: var(--etl-text-strong);
+    font-family: var(--etl-font-heading);
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
+.rst-content h1 {
+    margin-bottom: 0.6em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid var(--etl-accent);
+    color: var(--etl-text-strong);
+    font-family: var(--etl-font-display);
+    font-size: 2.15rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.rst-content h2 {
+    color: var(--etl-accent);
+    font-family: var(--etl-font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.rst-content h3 {
+    font-size: 1.35rem;
+}
+
+.rst-content h4 {
+    font-size: 1.15rem;
+}
+
+.rst-content h5,
+.rst-content h6 {
+    font-size: 1rem;
+}
+
+.rst-content p,
+.rst-content li,
+.rst-content dd,
+.rst-content dt,
+.rst-content td,
+.rst-content th {
+    color: var(--etl-text);
+}
+
+.rst-content strong {
+    color: var(--etl-text-strong);
+}
+
+.rst-content hr {
+    border: none;
+    border-top: 1px solid var(--etl-border);
+}
+
+/* Anchor (headerlink) markers */
+.rst-content .headerlink {
+    color: var(--etl-accent);
+    opacity: 0.5;
+    transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.rst-content .headerlink:hover {
+    color: var(--etl-accent);
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+.rst-content a,
+.rst-content a:visited {
+    color: var(--etl-accent);
+    text-decoration: none;
+}
+
+.rst-content a:hover,
+.rst-content a:focus {
+    color: var(--etl-text-strong);
+    text-decoration: none;
+}
+
+.rst-content a:hover code,
+.rst-content a:hover tt {
+    color: var(--etl-text-strong);
+}
+
+.rst-content a code,
+.rst-content a tt {
+    color: var(--etl-accent);
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.rst-content a.reference.external:after {
+    color: var(--etl-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Lists
+   -------------------------------------------------------------------------- */
+.rst-content .section ul li,
+.rst-content .toctree-wrapper ul li,
+.rst-content section ul li {
+    color: var(--etl-text);
+}
+
+.rst-content .toctree-wrapper > ul > li > a {
+    color: var(--etl-accent);
+    font-family: var(--etl-font-heading);
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumbs
+   -------------------------------------------------------------------------- */
+.wy-breadcrumbs li {
+    color: var(--etl-text-muted);
+}
+
+.wy-breadcrumbs a {
+    color: var(--etl-accent);
+}
+
+.wy-breadcrumbs li.wy-breadcrumbs-aside a {
+    color: var(--etl-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Tables
+   -------------------------------------------------------------------------- */
+.rst-content table.docutils,
+.rst-content table.field-list,
+.wy-table {
+    border: 1px solid var(--etl-border);
+    border-radius: 0.25rem;
+    color: var(--etl-text);
+}
+
+.rst-content table.docutils thead,
+.rst-content table.field-list thead,
+.wy-table thead {
+    color: var(--etl-text-strong);
+}
+
+.rst-content table.docutils thead th,
+.rst-content table.field-list thead th,
+.wy-table thead th {
+    background: var(--etl-bg-dark);
+    border: 1px solid var(--etl-border);
+    color: var(--etl-accent);
+    font-family: var(--etl-font-heading);
+    font-weight: 700;
+}
+
+.rst-content table.docutils td,
+.rst-content table.field-list td,
+.wy-table td {
+    border: 1px solid var(--etl-border);
+    background: transparent;
+    color: var(--etl-text);
+}
+
+.rst-content table.docutils tbody tr:nth-child(odd) td,
+.wy-table tbody tr:nth-child(odd) td {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.rst-content table.docutils tbody tr:hover td,
+.wy-table tbody tr:hover td {
+    background: var(--etl-accent-softer);
+}
+
+.rst-content table.docutils caption {
+    color: var(--etl-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Code & literal blocks
+   -------------------------------------------------------------------------- */
+.rst-content code,
+.rst-content tt,
+.rst-content kbd,
+.rst-content samp {
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--etl-border);
+    border-radius: 0.25rem;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--etl-code);
+    font-family: var(--etl-font-mono);
+    font-size: 0.9em;
+}
+
+.rst-content div[class^="highlight"],
+.rst-content pre.literal-block {
+    border: 1px solid var(--etl-border);
+    border-left: 3px solid var(--etl-accent);
+    border-radius: 0.25rem;
+    background: var(--etl-bg-code);
+    box-shadow: none;
+}
+
+.rst-content div[class^="highlight"] pre,
+.rst-content pre.literal-block {
+    background: transparent;
+    color: #e8e0e3;
+    font-family: var(--etl-font-mono);
+}
+
+.rst-content div[class^="highlight"] .linenos,
+.rst-content div[class^="highlight"] .linenodiv pre {
+    color: var(--etl-text-muted);
+    border-right-color: var(--etl-border);
+}
+
+.rst-content .highlighted {
+    background: var(--etl-accent-soft);
+    box-shadow: 0 0 0 2px var(--etl-accent-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Admonitions (note, important, warning, ...)
+   -------------------------------------------------------------------------- */
+.rst-content .admonition,
+.rst-content .admonition-todo,
+.rst-content .attention,
+.rst-content .caution,
+.rst-content .danger,
+.rst-content .error,
+.rst-content .hint,
+.rst-content .important,
+.rst-content .note,
+.rst-content .seealso,
+.rst-content .tip,
+.rst-content .warning,
+.wy-alert {
+    padding: 12px 16px;
+    border: 1px solid var(--etl-border);
+    border-left: 4px solid var(--etl-accent);
+    border-radius: 0.25rem;
+    background: var(--etl-bg-panel);
+    color: var(--etl-text);
+}
+
+.rst-content .admonition-title,
+.wy-alert-title {
+    margin: -12px -16px 12px;
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--etl-border-soft);
+    background: transparent;
+    color: var(--etl-accent);
+    font-family: var(--etl-font-heading);
+    font-weight: 700;
+}
+
+.rst-content .admonition-title:before,
+.rst-content .admonition-title:before {
+    color: var(--etl-accent);
+}
+
+.rst-content .note .admonition-title,
+.rst-content .seealso .admonition-title,
+.rst-content .important .admonition-title,
+.rst-content .hint .admonition-title,
+.rst-content .tip .admonition-title,
+.rst-content .warning .admonition-title,
+.rst-content .caution .admonition-title,
+.rst-content .attention .admonition-title,
+.rst-content .danger .admonition-title,
+.rst-content .error .admonition-title {
+    background: transparent;
+    color: var(--etl-accent);
+}
+
+.rst-content .admonition table td,
+.rst-content .admonition table th {
+    background: transparent !important;
+    border-color: var(--etl-border) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons (previous / next, neutral)
+   -------------------------------------------------------------------------- */
+.rst-content .btn,
+.wy-btn {
+    border: 1px solid var(--etl-accent);
+    border-radius: 0.375rem;
+    background: transparent;
+    color: var(--etl-accent);
+    font-weight: 600;
+    box-shadow: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.rst-content .btn:hover,
+.wy-btn:hover {
+    background: var(--etl-accent);
+    color: #fff;
+}
+
+.rst-content .btn-neutral {
+    background: transparent;
+    color: var(--etl-accent);
+}
+
+.rst-content .btn-neutral:hover {
+    background: var(--etl-accent);
+    color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   In-content footer + website-style footer
+   -------------------------------------------------------------------------- */
+.rst-content footer {
+    color: var(--etl-text-muted);
+}
+
+.rst-content footer hr {
+    border-top: 1px solid var(--etl-border);
+}
+
+.rst-content footer a {
+    color: var(--etl-accent);
+}
+
+.rst-content footer a:hover {
+    color: var(--etl-text-strong);
+}
+
+.etl-site-footer {
+    margin-top: 2.5rem;
+    padding-top: 1.75rem;
+    border-top: 2px solid var(--etl-accent);
+    color: var(--etl-text-muted);
+}
+
+.etl-site-footer-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.etl-site-footer-brand img {
+    flex: none;
+    height: 2rem;
+    width: auto;
+    margin: 0;
+}
+
+.etl-site-footer-brand p {
+    margin: 0;
+    color: var(--etl-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.etl-site-footer-brand a {
+    color: var(--etl-accent);
+}
+
+.etl-site-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25rem;
+    margin: 1.25rem 0;
+}
+
+.etl-site-footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.etl-site-footer-links a:hover {
+    color: var(--etl-accent);
+}
+
+.etl-site-footer-bottom {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--etl-border-soft);
+    color: var(--etl-text-muted);
+    font-size: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   Read the Docs version flyout + mobile top bar
+   -------------------------------------------------------------------------- */
+.rst-versions {
+    left: calc(var(--etl-gutter) + var(--etl-container-pad));
+    background: var(--etl-bg-dark);
+    font-family: var(--etl-font-body);
+    color: var(--etl-text);
+}
+
+.rst-versions .rst-current-version {
+    background: #120d0f;
+    color: #fff;
+}
+
+.rst-versions .rst-current-version .fa,
+.rst-versions .rst-current-version .icon {
+    color: var(--etl-accent);
+}
+
+.rst-versions a {
+    color: var(--etl-accent);
+}
+
+.rst-versions .rst-other-versions dt {
+    color: var(--etl-text-muted);
+}
+
+.wy-nav-top {
+    background: var(--etl-bg-dark);
+    border-bottom: 2px solid var(--etl-accent);
+    color: #fff;
+}
+
+.wy-nav-top a {
+    color: #fff;
+}
+
+.wy-nav-top i {
+    color: var(--etl-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Search results
+   -------------------------------------------------------------------------- */
+.rst-content .search > ul > li > a {
+    color: var(--etl-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Scrollbars (WebKit)
+   -------------------------------------------------------------------------- */
+.wy-side-scroll::-webkit-scrollbar,
+.wy-nav-content-wrap::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.wy-side-scroll::-webkit-scrollbar-thumb,
+.wy-nav-content-wrap::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: rgba(255, 99, 76, 0.4);
+    border-radius: 5px;
+}
+
+.wy-side-scroll::-webkit-scrollbar-thumb:hover,
+.wy-nav-content-wrap::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--etl-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Overrides for Read the Docs theme defaults that assume a light background
+   -------------------------------------------------------------------------- */
+/* Zebra striping on grid/list tables: RTD paints odd rows light (#f3f6f6). */
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+.wy-table-backed,
+.wy-table-odd td,
+.wy-table-striped tr:nth-child(2n-1) td {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Neutral admonition box (RTD light default). */
+.rst-content .wy-alert-neutral.admonition,
+.rst-content .wy-alert-neutral.admonition-todo,
+.rst-content .wy-alert-neutral.attention,
+.rst-content .wy-alert-neutral.caution,
+.rst-content .wy-alert-neutral.danger,
+.rst-content .wy-alert-neutral.error,
+.rst-content .wy-alert-neutral.hint,
+.rst-content .wy-alert-neutral.important,
+.rst-content .wy-alert-neutral.note,
+.rst-content .wy-alert-neutral.seealso,
+.rst-content .wy-alert-neutral.tip,
+.rst-content .wy-alert-neutral.warning,
+.wy-alert.wy-alert-neutral {
+    background: var(--etl-bg-panel) !important;
+    color: var(--etl-text) !important;
+}
+
+.rst-content .wy-alert-neutral.admonition-todo .admonition-title,
+.rst-content .wy-alert-neutral.admonition .admonition-title,
+.rst-content .wy-alert-neutral.attention .admonition-title,
+.rst-content .wy-alert-neutral.caution .admonition-title,
+.rst-content .wy-alert-neutral.danger .admonition-title,
+.rst-content .wy-alert-neutral.error .admonition-title,
+.rst-content .wy-alert-neutral.hint .admonition-title,
+.rst-content .wy-alert-neutral.important .admonition-title,
+.rst-content .wy-alert-neutral.note .admonition-title,
+.rst-content .wy-alert-neutral.seealso .admonition-title,
+.rst-content .wy-alert-neutral.tip .admonition-title,
+.rst-content .wy-alert-neutral.warning .admonition-title,
+.wy-alert.wy-alert-neutral .admonition-title {
+    background: transparent !important;
+    color: var(--etl-accent) !important;
+}
+
+/* Previous / next buttons (RTD uses !important light styling). */
+.rst-content .btn-neutral {
+    background-color: var(--etl-bg-dark) !important;
+    color: var(--etl-accent) !important;
+}
+
+.rst-content .btn-neutral:hover {
+    background-color: var(--etl-accent) !important;
+    color: #fff !important;
+}
+
+/* Nested current items in the sidebar (RTD light defaults). */
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l3.current > a,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+    background: var(--etl-accent-soft) !important;
+    color: var(--etl-accent) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    :root {
+        --etl-header-h: 0px;
+    }
+
+    .etl-header {
+        display: none;
+    }
+
+    /* The navigation panel becomes the RTD slide-in drawer again. */
+    .wy-nav-side {
+        left: -300px;
+        width: 300px;
+        padding-left: 0;
+    }
+
+    .wy-nav-side.shift {
+        left: 0;
+    }
+
+    .wy-side-scroll {
+        width: auto;
+    }
+
+    .wy-nav-content-wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .etl-header-inner {
+        gap: 0.75rem;
+    }
+
+    .rst-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .rst-content h2 {
+        font-size: 1.35rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .etl-header-nav {
+        display: none;
+    }
 }

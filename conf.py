@@ -59,8 +59,46 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+# The favicon of the docs (the ET: Legacy logo).
+html_favicon = '_static/images/favicon.ico'
+
+# The ET: Legacy website look & feel is applied through custom-styles.css.
+# Hide the default "Built with Sphinx" and copyright lines: they are replaced
+# by a website-style footer (see _templates/footer.html).
+html_show_sphinx = False
+html_show_copyright = False
+
+# Read the Docs theme options.  The documentation mimics the look and feel of
+# https://www.etlegacy.com (dark background, coral accent, Kenzo/Bitter/Open
+# Sans typography) through _static/custom-styles.css.
+html_theme_options = {
+    'logo_only': True,
+    'navigation_depth': 4,
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'includehidden': False,
+    'titles_only': False,
+    'style_external_links': True,
+    'prev_next_buttons_location': 'bottom',
+}
+
+# Extra links shown in the documentation top header, mirroring the website
+# main navigation.
+html_context = {
+    'etl_nav': [
+        ('Downloads', 'https://www.etlegacy.com/download'),
+        ('Blog', 'https://www.etlegacy.com/blog'),
+        ('Servers', 'https://www.etlegacy.com/servers'),
+        ('About', 'https://www.etlegacy.com/about'),
+        ('Wiki', 'https://github.com/etlegacy/etlegacy/wiki'),
+        ('GitHub', 'https://github.com/etlegacy/etlegacy'),
+        ('Discord', 'https://discord.gg/UBAZFys'),
+    ],
+}
+
+# The name of the Pygments (syntax highlighting) style to use.  A dark style
+# is used so that code blocks blend with the website-inspired dark theme.
+pygments_style = 'monokai'
 
 # -- Extension configuration -------------------------------------------------
 

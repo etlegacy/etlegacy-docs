@@ -1,0 +1,70 @@
+{% extends "!layout.html" %}
+
+{#
+    Top site header - mirrors the header of https://www.etlegacy.com
+    (dark bar, coral bottom border, logo on the left, quick links on the right).
+#}
+{% block extrabody %}
+<header class="etl-header" role="banner">
+  <div class="etl-header-inner">
+    <a class="etl-header-logo" href="{{ pathto(master_doc) }}" title="ET: Legacy documentation">
+      <img src="{{ pathto('_static/images/logo.png', 1) }}" alt="ET: Legacy" width="155" height="31"/>
+      <span class="etl-header-tag">Docs</span>
+    </a>
+    <nav class="etl-header-nav" aria-label="ET: Legacy">
+      <ul>
+        {%- for label, href in etl_nav %}
+        <li><a href="{{ href }}">{{ label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+{% endblock %}
+
+{#
+    The logo already lives in the top header, so the sidebar only keeps the
+    search box.
+#}
+{% block sidebartitle %}
+  {%- if READTHEDOCS or DEBUG %}
+    {%- if theme_version_selector or theme_language_selector %}
+      <div class="switch-menus">
+        <div class="version-switch"></div>
+        <div class="language-switch"></div>
+      </div>
+    {%- endif %}
+  {%- endif %}
+  {%- include "searchbox.html" %}
+{% endblock %}
+
+{#
+    The site header scrolls away with the document. As soon as it is out of
+    view, the left navigation panel anchors itself to the top of the screen.
+#}
+{% block footer %}
+<script>
+(function () {
+  var header = document.querySelector('.etl-header');
+  var side = document.querySelector('.wy-nav-side');
+  if (!header || !side) { return; }
+
+  var pending = false;
+
+  function update() {
+    pending = false;
+    var height = header.offsetHeight;
+    side.classList.toggle('etl-anchored-top', height > 0 && window.pageYOffset > height);
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!pending) {
+      pending = true;
+      window.requestAnimationFrame(update);
+    }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+{% endblock %}

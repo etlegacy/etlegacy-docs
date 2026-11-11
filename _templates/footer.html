@@ -1,0 +1,30 @@
+{% extends "!footer.html" %}
+
+{#
+    Website-style footer, mirroring the bottom of https://www.etlegacy.com
+    (logo + tagline, quick links, legal line).
+#}
+{% block extrafooter %}
+<div class="etl-site-footer" role="contentinfo">
+  <div class="etl-site-footer-brand">
+    <img src="{{ pathto('_static/images/logo.png', 1) }}" alt="ET: Legacy" width="155" height="31"/>
+    <p>
+      An open source project keeping Wolfenstein: Enemy Territory alive.
+      The code is licensed under the
+      <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPLv3</a>.
+    </p>
+  </div>
+  <nav class="etl-site-footer-links" aria-label="ET: Legacy">
+    <a href="https://www.etlegacy.com" target="_blank" rel="noopener">Website</a>
+    <a href="https://www.etlegacy.com/download" target="_blank" rel="noopener">Downloads</a>
+    <a href="https://www.etlegacy.com/blog" target="_blank" rel="noopener">Blog</a>
+    <a href="https://www.etlegacy.com/servers" target="_blank" rel="noopener">Servers</a>
+    <a href="https://github.com/etlegacy/etlegacy/wiki" target="_blank" rel="noopener">Wiki</a>
+    <a href="https://github.com/etlegacy/etlegacy" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://discord.gg/UBAZFys" target="_blank" rel="noopener">Discord</a>
+  </nav>
+  <div class="etl-site-footer-bottom">
+    &copy; 2012&ndash;2025 ET: Legacy team. All rights reserved.
+  </div>
+</div>
+{% endblock %}
