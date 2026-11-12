@@ -876,6 +876,112 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Read the Docs theme hard-codes the light-theme text colour (#404040) on
+   several elements. It is unreadable on the dark background, so every one of
+   them gets an explicit colour here.
+   -------------------------------------------------------------------------- */
+
+/* Nested navigation entries (toctree level 2 and deeper). */
+.wy-menu-vertical li.toctree-l2 a {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.wy-menu-vertical li.toctree-l3 a,
+.wy-menu-vertical li.toctree-l4 a,
+.wy-menu-vertical li.toctree-l5 a,
+.wy-menu-vertical li.toctree-l6 a,
+.wy-menu-vertical li.toctree-l7 a,
+.wy-menu-vertical li.toctree-l8 a,
+.wy-menu-vertical li.toctree-l9 a,
+.wy-menu-vertical li.toctree-l10 a {
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.wy-menu-vertical li.toctree-l2 a:hover,
+.wy-menu-vertical li.toctree-l3 a:hover,
+.wy-menu-vertical li.toctree-l4 a:hover,
+.wy-menu-vertical li.toctree-l5 a:hover,
+.wy-menu-vertical li.toctree-l6 a:hover,
+.wy-menu-vertical li.toctree-l7 a:hover,
+.wy-menu-vertical li.toctree-l8 a:hover,
+.wy-menu-vertical li.toctree-l9 a:hover,
+.wy-menu-vertical li.toctree-l10 a:hover {
+    color: #fff;
+}
+
+/* The back-reference wraps the section title text. */
+.rst-content .toc-backref {
+    color: inherit;
+}
+
+/* Definition list permalinks (RTD uses a very specific selector here). */
+.rst-content dt .headerlink {
+    color: var(--etl-accent) !important;
+}
+
+/* Cross references with a title. */
+.rst-content code.xref,
+.rst-content tt.xref {
+    color: var(--etl-accent);
+}
+
+/* Generic neutral text helper. */
+.wy-text-neutral {
+    color: var(--etl-text) !important;
+}
+
+/* Form controls. */
+.wy-checkbox,
+.wy-radio {
+    color: var(--etl-text);
+}
+
+/* Menu separators. */
+.wy-menu-vertical li.divide-top {
+    border-top-color: var(--etl-border);
+}
+
+.wy-menu-vertical li.divide-bottom {
+    border-bottom-color: var(--etl-border);
+}
+
+/* Dropdown panels (Read the Docs version switcher). */
+.wy-dropdown-menu,
+.wy-dropdown.wy-dropdown-bubble .wy-dropdown-menu {
+    background: var(--etl-bg-dark);
+    border-color: var(--etl-border);
+}
+
+.wy-dropdown-menu > dd > a {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.wy-dropdown-menu > dd > a:hover,
+.wy-dropdown.wy-dropdown-bubble .wy-dropdown-menu a:hover {
+    background: var(--etl-accent);
+    color: #fff;
+}
+
+.wy-dropdown-menu > dd.divider {
+    border-top-color: var(--etl-border);
+}
+
+.wy-dropdown-menu > dd.call-to-action {
+    background: var(--etl-bg-panel);
+    color: var(--etl-text);
+}
+
+.wy-dropdown-menu > dd.call-to-action .btn {
+    color: var(--etl-accent);
+}
+
+.wy-dropdown-menu > dd.search input[type="search"] {
+    background: var(--etl-bg);
+    border: 1px solid var(--etl-border);
+    color: var(--etl-text);
+}
+
+/* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
