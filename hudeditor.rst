@@ -106,8 +106,8 @@ The panel is divided in a HUD setup area, always displayed component options and
 	- ``Style``, to customize the component specific options, see Component ``Style Name`` table.
 	- ``Font``, to modify font size and style (not available for ``Bar`` components):
 		- Scale : Font scale ratio, depending of original font size, where 100 is the default
-		- Align : Font alignment depending of component position, see :ref:`Align Text`
-		- Style : Font Style, see :ref:`Style Text`
+		- Align : Font alignment depending of component position, see :ref:`Align Text <align-text>`
+		- Style : Font Style, see :ref:`Style Text <style-text>`
 	- ``Bar``, to customize the bar (only available for ``Bar`` components):
 		- Density : Number of points used to draw the circular bar
 		- Start Angle : Starting angle of the circular bar
@@ -2030,21 +2030,21 @@ Options list
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
 | scale                 | Change font scale where 100 is the default value (normalized)                  | 0 - 300 (recommended range, can be out ranged)  |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
-| colorMain             | Change either the font color (text) or main component color                    | See :ref:`Color Usage`                          |
+| colorMain             | Change either the font color (text) or main component color                    | See :ref:`Color Usage <color-usage>`            |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
-| colorSecondary        | Change secondary component color                                               | See :ref:`Color Usage`                          |
+| colorSecondary        | Change secondary component color                                               | See :ref:`Color Usage <color-usage>`            |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
 | showBackGround        | Toggle background visibility                                                   | 0 - 1 (boolean)                                 |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
-| colorBackground       | Change the component background color                                          | See :ref:`Color Usage`                          |
+| colorBackground       | Change the component background color                                          | See :ref:`Color Usage <color-usage>`            |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
 | showBorder            | Toggle border visibility                                                       | 0 - 1 (boolean)                                 |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
-| colorBorder           | Change the component border color                                              | See :ref:`Color Usage`                          |
+| colorBorder           | Change the component border color                                              | See :ref:`Color Usage <color-usage>`            |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
-| styleText             | Customize font style aspect (text component only)                              | See :ref:`Style Text`                           |
+| styleText             | Customize font style aspect (text component only)                              | See :ref:`Style Text <style-text>`              |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
-| alignText             | Customize font alignment position (text component only)                        | See :ref:`Align Text`                           |
+| alignText             | Customize font alignment position (text component only)                        | See :ref:`Align Text <align-text>`              |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
 | autoAdjust            | Adjust border and background size to component content                         | 0 - 1 (boolean)                                 |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
@@ -2074,6 +2074,9 @@ Options list
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
 | feedFadeTime          | Fade in/out duration of a feed line in milliseconds                            | 0 - 6000                                        |
 +-----------------------+--------------------------------------------------------------------------------+-------------------------------------------------+
+
+.. _color-usage:
+
 Color Usage
 """""""""""
 
@@ -2109,6 +2112,8 @@ There are 3 formats to customize colors :
 |             |                                                                                               | "black"                                    |
 +-------------+-----------------------------------------------------------------------------------------------+--------------------------------------------+
 
+.. _style-text:
+
 Style Text
 """"""""""
 
@@ -2129,6 +2134,8 @@ Style Text
 +-------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
 | Shadowed More     | Bold more the shadow effect                                                                                                | 6       |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
+
+.. _align-text:
 
 Align Text
 """"""""""""""

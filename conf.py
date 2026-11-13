@@ -39,6 +39,12 @@ extensions = [
     'sphinx_rtd_theme',
 ]
 
+# Section titles are only labeled up to the second level, and the labels are
+# prefixed with the document name. This keeps the references unique, as the
+# same subsection titles are repeated in several documents.
+autosectionlabel_prefix_document = True
+autosectionlabel_maxdepth = 2
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
