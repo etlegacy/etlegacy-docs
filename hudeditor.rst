@@ -16,7 +16,8 @@ Old `hud.dat` file is still compatible with new system, but the visual aspect ma
 
 New `hud.dat` file path has changed. The new storage location is under `fs_homepath` at `legacy/profiles/<name>` directory, see [Path and File Structure](https://github.com/etlegacy/etlegacy/wiki/Path-and-File-Structure#homepath---fs_homepath)
 
-TODO: Anchor behaviour
+.. todo::
+   Anchor behaviour
 
 In-game editor
 ^^^^^^^^^^^^^^
@@ -27,7 +28,8 @@ The in-game editor is reachable by using the menu UI ``Menu`` -> ``Options`` -> 
 or by typing in console the `edithud` command,
 or by using binded `F7` key (customizable).
 
-**Note**: The HUD editor is not available from main menu.
+.. note::
+   The HUD editor is not available from main menu.
 
 The HUD editor is divided in 3 different frames : 
 
@@ -76,14 +78,16 @@ The panel is divided in a HUD setup area, always displayed component options and
 
 * HUD setup, to select and manipulate HUDs:
 	- Select HUD : dropdown list of the available HUDs used to select the HUD to display/use.
-		- **NOTE**: This modifies the related ``cg_altHud`` cvar.
+		.. note::
+		   This modifies the related ``cg_altHud`` cvar.
 	- Save : Save **ALL** the HUDs modifications into `hud.dat` file
 	- Clone : Duplicate the selected HUD to a free HUD index and select it. It doesn't save it in `hud.dat` file.
 	- Delete : Delete the selected HUD from `hud.dat` file. The selected HUD will change to the default one ``(0: ETmain)``
 	- Reset Component : Reset **ALL** settings from the selected component to the default values from HUD ``(0: ETmain)``
 	- Name : HUD name which can be used to select HUD with ``cg_altHud`` cvar from the name
 	- Parent : HUD parent name used to default value components. If No parent is selected, the saved HUD will copy all the component values in the HUD file. The HUD becomes standalone.
-		- **NOTE**: Editing a default HUD automatically clone it first, so the changes are applied to the copy.
+		.. note::
+		   Editing a default HUD automatically clone it first, so the changes are applied to the copy.
 * Position & Size, always displayed when a component is selected:
 	- X : Abscissa coordinate
 	- Y : Ordinate coordinate
@@ -436,7 +440,7 @@ compass
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | Draw Prim Obj         | Draw primary objective on compass                                                                  | 8      |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
-| Decor                 | Draw the compass border decor. Not available with ``Square`` compass                               | 16     |
+| Decor                 | Draw the compass border decor                                                                      | 16     |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
 | Direction             | Draw the red arrow pointing to the cardinal pointing direction                                     | 32     |
 +-----------------------+----------------------------------------------------------------------------------------------------+--------+
@@ -1152,7 +1156,8 @@ popupmessages
 
 :Description: The pop-up list feed for objectives/kill/connection/dynamites/mines/constructions states or custom message.
 
-**Note**: This component is available in 4 distinct components, allowing to display different list feeds independently.
+.. note::
+   This component is available in 4 distinct components, allowing to display different list feeds independently.
 
 :Game type Availability: All
 

@@ -2,12 +2,14 @@
 ETLTV
 ===================
 
-!!! UNDER CONSTRUCTION !!!
+.. todo::
+   !!! UNDER CONSTRUCTION !!!
 
 ETLTV Introduction
 ^^^^^^^^^^^^^^^^^^
 
-TO BE DONE
+.. todo::
+   TO BE DONE
 
 Feature
 ^^^^^^^
